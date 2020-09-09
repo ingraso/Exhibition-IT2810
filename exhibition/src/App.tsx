@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from './components/Example/Carousel/carousel';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <Carousel/>
     </div>
   );
 }
