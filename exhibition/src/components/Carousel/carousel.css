@@ -1,0 +1,115 @@
+#carousel {
+  display: grid;
+  width: 70%;
+  margin: auto;
+  grid-template-columns: 10% 10% 60% 10% 10%;
+  justify-content: center;
+
+  grid-template-areas:
+    "leftArrow installation installation installation rightArrow"
+    ". . artInfo . .";
+}
+
+.arrows {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid white;
+  padding: 10px;
+  height: 30px; /*FIX*/
+  width: 30px;
+  background-color: rgb(5, 180, 180);
+  align-self: center;
+  justify-self: center;
+}
+
+.arrows:hover {
+  background-color: darkcyan;
+  cursor: pointer;
+}
+
+.arrows:hover .arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+}
+
+.leftArrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  grid-area: leftArrow;
+
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.rightArrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px 5px 0 0;
+  grid-area: rightArrow;
+
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+#installation {
+  display: inline-block;
+  border: 2px solid grey;
+  height: 500px; /* FIX ME */
+  position: relative;
+  top: 0;
+
+  grid-area: installation;
+}
+
+#artistInfo {
+  text-align: center;
+  grid-area: artInfo;
+}
+
+@media screen and (max-width: 800px) {
+  #carousel {
+    width: 70%;
+    min-width: 300px;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas:
+      "installation installation installation"
+      "leftArrow artInfo rightArrow";
+  }
+
+  .arrows {
+    height: 20px;
+    width: 20px;
+    align-self: start;
+    justify-self: end;
+  }
+
+  .arrows:hover {
+    /* Do we want some kind of response when you click? Test with/without on mobile device! */
+    background-color: rgb(5, 180, 180);
+  }
+
+  .left {
+    justify-self: start;
+  }
+
+  .right {
+    justify-self: end;
+  }
+
+  .leftArrow {
+    margin: 0 0 0 2px;
+    padding: 8px;
+  }
+
+  .rightArrow {
+    margin: 0 0 0 -2px;
+    padding: 8px;
+  }
+}
