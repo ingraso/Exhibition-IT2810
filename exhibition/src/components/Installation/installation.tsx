@@ -1,31 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
 
 interface InstallationState {
-  poem: [];
-  url: string;
+  txt : string[];
 }
 
-interface InstallationProps {}
+interface InstallationProps {
+  url: string;
+}
 
 class Installation extends React.Component<
   InstallationProps,
   InstallationState
 > {
-  constructor(props: InstallationProps, poetryUrl: string) {
-    super(props);
-    this.state = { poem: [], url: poetryUrl };
+  constructor({url}: InstallationProps) {
+    super({url});
+    this.state = {
+      txt : []
+    }
   }
 
   componentDidMount() {
-    fetch(this.state.url)
+    fetch(this.props.url)
       .then((response) => response.json())
-      .then((poem) => poem[0].lines);
+      .then(poem => {this.setState({txt : poem[0].lines});})
   }
 
   render() {
     return (
       <div>
-        {this.state.poem.map((item) => (
+        {this.state.txt.map((item) => (
           <p>{item}</p>
         ))}
       </div>
