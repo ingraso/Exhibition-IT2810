@@ -14,6 +14,8 @@ const installation1 = {
   title: "Dark dots",
   year: 2000,
   artist: "Mary Cassatt",
+  audioUrl:
+    "https://docs.google.com/uc?export=download&id=1gAzs4UwdenQmNbEm9mdDIunb8Ef-kn5i",
 };
 const installation2 = {
   shapes: [
@@ -25,6 +27,8 @@ const installation2 = {
   title: "Polka",
   year: 1952,
   artist: "Mary Cassatt",
+  audioUrl:
+    "https://docs.google.com/uc?export=download&id=13-YgFevw6zqpnV96zCkuvxCZL9ij7FvA",
 };
 const installation3 = {
   shapes: [
@@ -33,9 +37,11 @@ const installation3 = {
     new Circle("c12", "175", "175", "100", "50", "white", "#6bffb5"),
     new Circle("c13", "175", "175", "50", "50", "white", "#6bffb5"),
   ],
-  title: "Changig colors",
+  title: "Changing colors",
   year: 1974,
   artist: "Mary Cassatt",
+  audioUrl:
+    "https://docs.google.com/uc?export=download&id=1DIDOj7PlYM0XczQKTlmK5zbr_jwn4nNB",
 };
 const installation5 = {
   shapes: [
@@ -46,6 +52,7 @@ const installation5 = {
   title: "Please name me",
   year: 2024,
   artist: "No idea",
+  audioUrl: "",
 };
 const installation4 = {
   shapes: [
@@ -56,8 +63,15 @@ const installation4 = {
   title: "Title",
   year: 1997,
   artist: "Him",
+  audioUrl: "",
 };
-export const installations = [installation1, installation2, installation3, installation4, installation5];
+export const installations = [
+  installation1,
+  installation2,
+  installation3,
+  installation4,
+  installation5,
+];
 
 export const createShape = (shape: Object): Object => {
   if (shape instanceof Circle) {
