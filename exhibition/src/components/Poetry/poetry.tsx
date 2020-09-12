@@ -5,6 +5,7 @@ interface PoetryState {
 }
 
 interface PoetryProps {
+  id: string
   url: string;
 }
 
@@ -12,8 +13,8 @@ class Poetry extends React.Component<
   PoetryProps,
   PoetryState
 > {
-  constructor({url}: PoetryProps) {
-    super({url});
+  constructor({id, url}: PoetryProps) {
+    super({id, url});
     this.state = {
       txt : []
     }
@@ -27,7 +28,7 @@ class Poetry extends React.Component<
 
   render() {
     return (
-      <div>
+      <div id={this.props.id} className={"poem"}>
         {this.state.txt.map((poemLine, index) => (
           <p key={index}>{poemLine}</p>
         ))}
