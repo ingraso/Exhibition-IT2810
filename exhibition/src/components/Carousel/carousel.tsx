@@ -39,6 +39,7 @@ class Carousel extends React.Component<{}, CarouselState> {
             });
       }
     };
+
     return (
       <div>
         <div id="carousel">
@@ -58,7 +59,10 @@ class Carousel extends React.Component<{}, CarouselState> {
                 installations[this.state.displayedInstallationIndex].audioUrl
               }
             />
-            <Poetry url={installations[this.state.displayedInstallationIndex].poemUrl} id={installations[this.state.displayedInstallationIndex].poemId}/>
+            <Poetry
+              url={installations[this.state.displayedInstallationIndex].poemUrl}
+              id={installations[this.state.displayedInstallationIndex].poemId}
+            />
           </div>
           <div
             className="arrows right"
@@ -66,15 +70,17 @@ class Carousel extends React.Component<{}, CarouselState> {
           >
             <div className="rightArrow"></div>
           </div>
-        </div>
-        <div id="artistInfo">
-          <InstallationInfo
-            installationTitle={
-              installations[this.state.displayedInstallationIndex].title
-            }
-            year={installations[this.state.displayedInstallationIndex].year}
-            artist={installations[this.state.displayedInstallationIndex].artist}
-          />
+          <div id="artInfo">
+            <InstallationInfo
+              installationTitle={
+                installations[this.state.displayedInstallationIndex].title
+              }
+              year={installations[this.state.displayedInstallationIndex].year}
+              artist={
+                installations[this.state.displayedInstallationIndex].artist
+              }
+            />
+          </div>
         </div>
       </div>
     );
