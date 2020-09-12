@@ -1,0 +1,43 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#svg1 {
+  background-color: #4e4e4e;
+}
+
+#c1 {
+  animation: circle-animation 4s ease-in-out infinite;
+}
+
+#c2 {
+  animation: circle-animation 10s ease-in-out infinite;
+}
+
+#c3 {
+  animation: circle-animation 3s ease-in-out infinite;
+}
+
+#c4 {
+  animation: circle-animation 4s ease-in-out infinite;
+}
+
+#c5 {
+  animation: circle-animation 5s ease-in-out infinite;
+}
+
+#c6 {
+  animation: circle-animation 6s ease-in-out infinite;
+}
+
+#c7 {
+  animation: circle-animation 6s ease-in-out infinite;
+}
+
+@keyframes circle-animation {
+  50% {
+    fill: #4e4e4e;
+  }
+}

@@ -1,6 +1,9 @@
 import React from "react";
 import "./carousel.css";
 import Installation from "../../../installations/intallation4";
+import InstallationOne from "../../../installations/installation1";
+import InstallationTwo from "../../../installations/installation2";
+import InstallationThree from "../../../installations/installation3";
 
 interface CarouselState {
   displayedInstallationIndex: number;
@@ -25,6 +28,9 @@ const installations = [
   <Installation id1="rect1" id2="rect2" width="100" height="100" />,
   <Installation id1="rect2" id2="rect1" width="50" height="50" />,
   <Installation id1="rect2" id2="rect2" width="30" height="30" />,
+  <InstallationOne />,
+  <InstallationTwo />,
+  <InstallationThree />,
 ];
 
 class Carousel extends React.Component<{}, CarouselState> {
