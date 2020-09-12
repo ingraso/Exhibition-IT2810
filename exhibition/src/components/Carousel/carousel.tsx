@@ -1,10 +1,10 @@
 import React from "react";
 import "./carousel.css";
-import "../../installations2/installation1.css";
-import "../../installations2/installation2.css";
-import "../../installations2/installation3.css";
+import "../../installations/installation1.css";
+import "../../installations/installation2.css";
+import "../../installations/installation3.css";
 import InstallationContent from "../InstallationContent/installationContent";
-import { installations } from "../../installations";
+import { installations } from "../../installations/installations";
 import InstallationInfo from "../InstallationInfo/installationInfo";
 
 interface CarouselState {
@@ -38,7 +38,6 @@ class Carousel extends React.Component<{}, CarouselState> {
             });
       }
     };
-
     return (
       <div>
         <div id="carousel">
@@ -54,9 +53,15 @@ class Carousel extends React.Component<{}, CarouselState> {
               installation={
                 installations[this.state.displayedInstallationIndex].shapes
               }
+              audioUrl={
+                installations[this.state.displayedInstallationIndex].audioUrl
+              }
             />
           </div>
-          <div className="arrows right" onClick={() => changeInstallation(true)}>
+          <div
+            className="arrows right"
+            onClick={() => changeInstallation(true)}
+          >
             <div className="rightArrow"></div>
           </div>
         </div>
