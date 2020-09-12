@@ -1,22 +1,15 @@
 import React from "react";
 import "./carousel.css";
-import Installation from "../../installations/installation4";
-import InstallationOne from "../../installations/installation1";
-import InstallationTwo from "../../installations/installation2";
-import InstallationThree from "../../installations/installation3";
+import "../../installations2/installation1.css";
+import "../../installations2/installation2.css";
+import "../../installations2/installation3.css";
+import InstallationContent from "../InstallationContent/installationContent";
+import { installations } from "../../installations";
+import InstallationInfo from "../InstallationInfo/installationInfo";
 
 interface CarouselState {
   displayedInstallationIndex: number;
 }
-
-const installations = [
-  <Installation id1="rect1" id2="rect2" width="100" height="100" />,
-  <Installation id1="rect2" id2="rect1" width="50" height="50" />,
-  <Installation id1="rect2" id2="rect2" width="30" height="30" />,
-  <InstallationOne />,
-  <InstallationTwo />,
-  <InstallationThree />,
-];
 
 class Carousel extends React.Component<{}, CarouselState> {
   constructor(props: {}) {
@@ -57,20 +50,24 @@ class Carousel extends React.Component<{}, CarouselState> {
           </div>
 
           <div id="installation">
-            {installations[this.state.displayedInstallationIndex]}
+            <InstallationContent
+              installation={
+                installations[this.state.displayedInstallationIndex].shapes
+              }
+            />
           </div>
-
-          <div
-            className="arrows right"
-            onClick={() => changeInstallation(true)}
-          >
+          <div className="arrows right" onClick={() => changeInstallation(true)}>
             <div className="rightArrow"></div>
           </div>
-
-          <div id="artistInfo">
-            <h2>The Ferd on Mars</h2>
-            <h4>Name Namesen (1889)</h4>
-          </div>
+        </div>
+        <div id="artistInfo">
+          <InstallationInfo
+            installationTitle={
+              installations[this.state.displayedInstallationIndex].title
+            }
+            year={installations[this.state.displayedInstallationIndex].year}
+            artist={installations[this.state.displayedInstallationIndex].artist}
+          />
         </div>
       </div>
     );

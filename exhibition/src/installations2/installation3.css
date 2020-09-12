@@ -1,0 +1,16 @@
+#svg3 {
+    background-color: #ecb5ff;
+  }
+  
+  #c11,
+  #c12,
+  #c13 {
+    animation: circle-animation-10 10s ease-in-out infinite;
+  }
+  
+  @keyframes circle-animation-10 {
+    50% {
+      stroke-width: 0;
+    }
+  }
+  
