@@ -6,6 +6,7 @@ import "../../installations2/installation3.css";
 import InstallationContent from "../InstallationContent/installationContent";
 import { installations } from "../../installations";
 import InstallationInfo from "../InstallationInfo/installationInfo";
+import Poetry from "../Poetry/poetry";
 
 interface CarouselState {
   displayedInstallationIndex: number;
@@ -55,6 +56,7 @@ class Carousel extends React.Component<{}, CarouselState> {
                 installations[this.state.displayedInstallationIndex].shapes
               }
             />
+            <Poetry url={installations[this.state.displayedInstallationIndex].poemUrl} id={installations[this.state.displayedInstallationIndex].poemId}/>
           </div>
           <div className="arrows right" onClick={() => changeInstallation(true)}>
             <div className="rightArrow"></div>

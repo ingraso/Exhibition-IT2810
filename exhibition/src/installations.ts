@@ -14,6 +14,8 @@ const installation1 = {
   title: "Dark dots",
   year: 2000,
   artist: "Mary Cassatt",
+  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemId: "poem1",
 };
 const installation2 = {
   shapes: [
@@ -25,6 +27,8 @@ const installation2 = {
   title: "Polka",
   year: 1952,
   artist: "Mary Cassatt",
+  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemId: "poem2",
 };
 const installation3 = {
   shapes: [
@@ -36,6 +40,8 @@ const installation3 = {
   title: "Changig colors",
   year: 1974,
   artist: "Mary Cassatt",
+  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemId: "poem3",
 };
 const installation5 = {
   shapes: [
@@ -46,6 +52,8 @@ const installation5 = {
   title: "Please name me",
   year: 2024,
   artist: "No idea",
+  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemId: "poem5",
 };
 const installation4 = {
   shapes: [
@@ -56,6 +64,8 @@ const installation4 = {
   title: "Title",
   year: 1997,
   artist: "Him",
+  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemId: "poem4",
 };
 export const installations = [installation1, installation2, installation3, installation4, installation5];
 

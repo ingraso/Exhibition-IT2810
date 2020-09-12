@@ -50,9 +50,18 @@
   display: inline-block;
   border: 2px solid grey;
   min-width: 70%;
-  height: 500px; /* FIX ME */
+  position: relative;
+  text-align: center;
 }
 
 #artistInfo {
   text-align: center;
+}
+
+.poem {
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
