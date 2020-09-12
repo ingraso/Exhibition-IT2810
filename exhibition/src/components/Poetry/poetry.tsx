@@ -28,8 +28,8 @@ class Poetry extends React.Component<
   render() {
     return (
       <div>
-        {this.state.txt.map((item, index) => (
-          <p key={index}>{item}</p>
+        {this.state.txt.map((poemLine, index) => (
+          <p key={index}>{poemLine}</p>
         ))}
       </div>
     );
