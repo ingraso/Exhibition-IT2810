@@ -57,7 +57,13 @@ const installation4 = {
   year: 1997,
   artist: "Him",
 };
-export const installations = [installation1, installation2, installation3, installation4, installation5];
+export const installations = [
+  installation1,
+  installation2,
+  installation3,
+  installation4,
+  installation5,
+];
 
 export const createShape = (shape: Object): Object => {
   if (shape instanceof Circle) {

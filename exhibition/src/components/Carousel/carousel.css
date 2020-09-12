@@ -1,8 +1,13 @@
 #carousel {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  width: 70%;
+  margin: auto;
+  grid-template-columns: 10% 80% 10%;
+  justify-content: center;
+
+  grid-template-areas:
+    "leftArrow installation rightArrow"
+    ". artInfo .";
 }
 
 .arrows {
@@ -13,6 +18,8 @@
   height: 30px; /*FIX*/
   width: 30px;
   background-color: rgb(5, 180, 180);
+  align-self: center;
+  justify-self: center;
 }
 
 .arrows:hover {
@@ -27,21 +34,26 @@
   padding: 10px;
 }
 
-.arrow {
+.leftArrow {
   border: solid white;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 10px;
-}
-
-.left {
   margin: 5px;
+  grid-area: leftArrow;
+
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
 
-.right {
-  margin: 0 5px 0 0;
+.rightArrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px 5px 0 0;
+  grid-area: rightArrow;
+
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
@@ -49,10 +61,53 @@
 #installation {
   display: inline-block;
   border: 2px solid grey;
-  min-width: 70%;
   height: 500px; /* FIX ME */
+  position: relative;
+  top: 0;
+
+  grid-area: installation;
 }
 
-#artistInfo {
+#artInfo {
   text-align: center;
+  grid-area: artInfo;
+}
+
+@media screen and (max-width: 800px) {
+  #carousel {
+    width: 70%;
+    min-width: 300px;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas:
+      "installation installation installation"
+      "leftArrow artInfo rightArrow";
+  }
+
+  .arrows {
+    height: 20px;
+    width: 20px;
+  }
+
+  .arrows:hover {
+    /* Do we want some kind of response when you click? Test with/without on mobile device! */
+    background-color: rgb(5, 180, 180);
+  }
+
+  .left {
+    justify-self: start;
+  }
+
+  .right {
+    justify-self: end;
+  }
+
+  .leftArrow {
+    margin: 0 0 0 2px;
+    padding: 8px;
+  }
+
+  .rightArrow {
+    margin: 0 0 0 -2px;
+    padding: 8px;
+  }
 }

@@ -1,13 +1,3 @@
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#svg1 {
-  background-color: #4e4e4e;
-}
-
 #c1 {
   animation: circle-animation 4s ease-in-out infinite;
 }
