@@ -13,9 +13,18 @@ class Installation extends React.Component<InstallationProps, {}> {
   render() {
     return (
       <svg>
-          <rect id={this.props.id1} width={this.props.width} height={this.props.height}/>
-          <rect id={this.props.id2} x="75" y="41" width={this.props.width} height={this.props.height}/>
-        
+        <rect
+          id={this.props.id1}
+          width={this.props.width}
+          height={this.props.height}
+        />
+        <rect
+          id={this.props.id2}
+          x="75"
+          y="41"
+          width={this.props.width}
+          height={this.props.height}
+        />
       </svg>
     );
   }
