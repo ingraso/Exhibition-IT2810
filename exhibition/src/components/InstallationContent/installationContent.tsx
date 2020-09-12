@@ -1,5 +1,5 @@
 import React from "react";
-import { createShape } from "../../installations";
+import { createShape } from "../../installations/installations";
 
 interface InstallationContentProps {
   installation: Object[];

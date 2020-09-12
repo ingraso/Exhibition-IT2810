@@ -1,10 +1,10 @@
 import React from "react";
 import "./carousel.css";
-import "../../installations2/installation1.css";
-import "../../installations2/installation2.css";
-import "../../installations2/installation3.css";
+import "../../installations/installation1.css";
+import "../../installations/installation2.css";
+import "../../installations/installation3.css";
 import InstallationContent from "../InstallationContent/installationContent";
-import { installations } from "../../installations";
+import { installations } from "../../installations/installations";
 import InstallationInfo from "../InstallationInfo/installationInfo";
 
 interface CarouselState {
@@ -56,18 +56,23 @@ class Carousel extends React.Component<{}, CarouselState> {
               }
             />
           </div>
-          <div className="arrows right" onClick={() => changeInstallation(true)}>
+          <div
+            className="arrows right"
+            onClick={() => changeInstallation(true)}
+          >
             <div className="rightArrow"></div>
           </div>
-        </div>
-        <div id="artistInfo">
-          <InstallationInfo
-            installationTitle={
-              installations[this.state.displayedInstallationIndex].title
-            }
-            year={installations[this.state.displayedInstallationIndex].year}
-            artist={installations[this.state.displayedInstallationIndex].artist}
-          />
+          <div id="artInfo">
+            <InstallationInfo
+              installationTitle={
+                installations[this.state.displayedInstallationIndex].title
+              }
+              year={installations[this.state.displayedInstallationIndex].year}
+              artist={
+                installations[this.state.displayedInstallationIndex].artist
+              }
+            />
+          </div>
         </div>
       </div>
     );

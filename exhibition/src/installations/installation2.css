@@ -1,24 +1,21 @@
-#svg2 {
-  background-color: #f7c4d4;
-}
-
 #c8 {
-  animation: circle-animation-8 4s infinite;
-}
-
-@keyframes circle-animation-8 {
-  50% {
-    transform: scale(2);
+    animation: circle-animation-8 4s infinite;
   }
-}
-
-#c9,
-#c13 {
-  animation: circle-animation-9 4s infinite;
-}
-
-@keyframes circle-animation-9 {
-  50% {
-    transform: scale(1.5);
+  
+  @keyframes circle-animation-8 {
+    50% {
+      transform: scale(2);
+    }
   }
-}
+  
+  #c9,
+  #c10 {
+    animation: circle-animation-9 4s infinite;
+  }
+  
+  @keyframes circle-animation-9 {
+    50% {
+      transform: scale(1.5);
+    }
+  }
+  
