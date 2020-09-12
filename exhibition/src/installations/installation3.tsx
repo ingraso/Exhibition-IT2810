@@ -36,7 +36,7 @@ const InstallationThree = () => {
 
       <audio controls>
         <source src="https://docs.google.com/uc?export=download&id=1DIDOj7PlYM0XczQKTlmK5zbr_jwn4nNB" />
-        Your browser does not supprt this
+        Your browser does not support audio-tag
       </audio>
     </div>
   );

@@ -18,7 +18,7 @@ const InstallationTwo = () => {
       </svg>
       <audio controls>
         <source src=" https://docs.google.com/uc?export=download&id=13-YgFevw6zqpnV96zCkuvxCZL9ij7FvA" />
-        Your browser does not supprt this
+        Your browser does not support audio-tag
       </audio>
     </div>
   );

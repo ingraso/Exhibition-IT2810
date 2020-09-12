@@ -59,7 +59,7 @@ export default class InstallationOne extends Component {
 
         <audio controls>
           <source src="https://docs.google.com/uc?export=download&id=1gAzs4UwdenQmNbEm9mdDIunb8Ef-kn5i" />
-          Your browser does not supprt this
+          Your browser does not support audio-tag
         </audio>
       </div>
     );
