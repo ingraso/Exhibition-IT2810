@@ -9,7 +9,7 @@ interface InstallationInfoProps {
 class InstallationInfo extends React.Component<InstallationInfoProps, {}> {
   render() {
     return (
-      <div className="artInfo">
+      <div>
         <h2>
           {this.props.installationTitle} ({this.props.year})
         </h2>

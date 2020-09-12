@@ -16,7 +16,8 @@ const installation1 = {
   artist: "Mary Cassatt",
   audioUrl:
     "https://docs.google.com/uc?export=download&id=1gAzs4UwdenQmNbEm9mdDIunb8Ef-kn5i",
-  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemUrl:
+    "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem1",
 };
 const installation2 = {
@@ -31,7 +32,8 @@ const installation2 = {
   artist: "Mary Cassatt",
   audioUrl:
     "https://docs.google.com/uc?export=download&id=13-YgFevw6zqpnV96zCkuvxCZL9ij7FvA",
-  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemUrl:
+    "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem2",
 };
 const installation3 = {
@@ -46,7 +48,8 @@ const installation3 = {
   artist: "Mary Cassatt",
   audioUrl:
     "https://docs.google.com/uc?export=download&id=1DIDOj7PlYM0XczQKTlmK5zbr_jwn4nNB",
-  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemUrl:
+    "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem3",
 };
 const installation5 = {
@@ -59,7 +62,8 @@ const installation5 = {
   year: 2024,
   artist: "No idea",
   audioUrl: "",
-  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemUrl:
+    "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem5",
 };
 const installation4 = {
@@ -72,7 +76,8 @@ const installation4 = {
   year: 1997,
   artist: "Him",
   audioUrl: "",
-  poemUrl: "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemUrl:
+    "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem4",
 };
 export const installations = [
