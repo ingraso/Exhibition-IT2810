@@ -1,18 +1,18 @@
 import React from "react";
 
-interface InstallationState {
+interface PoetryState {
   txt : string[];
 }
 
-interface InstallationProps {
+interface PoetryProps {
   url: string;
 }
 
-class Installation extends React.Component<
-  InstallationProps,
-  InstallationState
+class Poetry extends React.Component<
+  PoetryProps,
+  PoetryState
 > {
-  constructor({url}: InstallationProps) {
+  constructor({url}: PoetryProps) {
     super({url});
     this.state = {
       txt : []
@@ -28,12 +28,12 @@ class Installation extends React.Component<
   render() {
     return (
       <div>
-        {this.state.txt.map((item) => (
-          <p>{item}</p>
+        {this.state.txt.map((item, index) => (
+          <p key={index}>{item}</p>
         ))}
       </div>
     );
   }
 }
 
-export default Installation;
+export default Poetry;
