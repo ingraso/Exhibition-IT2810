@@ -1,31 +1,12 @@
 import React from "react";
 import "./carousel.css";
-import Installation from "../../../installations/intallation4";
+import InstallationContent from "../InstallationContent/installationContent";
+import { installations } from "../../installations";
+import InstallationInfo from "../InstallationInfo/installationInfo";
 
 interface CarouselState {
   displayedInstallationIndex: number;
 }
-
-/**
- * TODO:
- * have to get the installation and artist name somehow
- * maybe think of a good way to do this with props
- * insert an installation, which is both the picture,
- * and with {.title}, {.artistName} and {.year}
- *
- * Create installations in the same way as I did in project 1?
- * Have to have an effective way to add animations
- *
- *
- * Responsive design for mobile:
- *    - Move buttons below installation
- */
-
-const installations = [
-  <Installation id1="rect1" id2="rect2" width="100" height="100" />,
-  <Installation id1="rect2" id2="rect1" width="50" height="50" />,
-  <Installation id1="rect2" id2="rect2" width="30" height="30" />,
-];
 
 class Carousel extends React.Component<{}, CarouselState> {
   constructor(props: {}) {
@@ -44,7 +25,6 @@ class Carousel extends React.Component<{}, CarouselState> {
                 this.state.displayedInstallationIndex + 1,
             });
       } else {
-        // should one be able to go from element 1 to the last (backwards) by pressing the arrows?
         this.state.displayedInstallationIndex === 0
           ? this.setState({
               displayedInstallationIndex: installations.length - 1,
@@ -64,16 +44,24 @@ class Carousel extends React.Component<{}, CarouselState> {
           </div>
 
           <div id="installation">
-            {installations[this.state.displayedInstallationIndex]}
+            <InstallationContent
+              installation={
+                installations[this.state.displayedInstallationIndex].shapes
+              }
+            />
           </div>
-
           <div className="arrows" onClick={() => changeInstallation(true)}>
             <i className="arrow right"></i>
           </div>
         </div>
         <div id="artistInfo">
-          <h2>The Ferd on Mars</h2>
-          <h4>Name Namesen (1889)</h4>
+          <InstallationInfo
+            installationTitle={
+              installations[this.state.displayedInstallationIndex].title
+            }
+            year={installations[this.state.displayedInstallationIndex].year}
+            artist={installations[this.state.displayedInstallationIndex].artist}
+          />
         </div>
       </div>
     );

@@ -56,3 +56,13 @@
 #artistInfo {
   text-align: center;
 }
+
+#c1 {
+  animation: circle-animation 1s ease-in-out infinite;
+}
+
+@keyframes circle-animation {
+  50% {
+    fill: #4e4e4e;
+  }
+}
