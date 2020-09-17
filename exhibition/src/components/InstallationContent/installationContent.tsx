@@ -3,7 +3,6 @@ import { createShape } from "../../installations/installations";
 
 interface InstallationContentProps {
   installation: Object[];
-  audioUrl: string;
 }
 
 class InstallationContent extends React.Component<
@@ -12,15 +11,12 @@ class InstallationContent extends React.Component<
 > {
   render() {
     return (
-      <div key={this.props.audioUrl}>
+      <div>
         <svg width="350" height="350">
           {this.props.installation.map((shape: Object) => createShape(shape))}
         </svg>
         <br />
-        <audio controls>
-          <source src={this.props.audioUrl} />
-          Your browser does not support audio-tag
-        </audio>
+        
       </div>
     );
   }
