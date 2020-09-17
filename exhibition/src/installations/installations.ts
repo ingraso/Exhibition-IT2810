@@ -88,7 +88,7 @@ const installation7 = {
     new Circle("c71", "270", "65", "50", "3", "#464049", "#65D4C1"),
     new Circle("c72", "300", "270", "30", "3", "#464049", "#BFD6D2"),
   ],
-  title: "Title",
+  title: "Time",
   year: 1998,
   artist: "A Literal Crow",
   audioUrl: "",
@@ -96,7 +96,22 @@ const installation7 = {
       "https://poetrydb.org/title/Yesterday%20is%20History,/lines.json",
   poemId: "poem7",
 };
-
+const installation8 = {
+  shapes: [
+    new Rect("r81", "0", "0", "350", "350", "#94C4BD", "#94C4BD"),
+    new Rect("r82", "100", "150", "100", "100", "#66776B", "#324655"),
+    new Rect("r83", "50", "200", "100", "100", "#324655", "#66776B"),
+    new Circle("c81", "270", "65", "50", "3", "#324655", "#66776B"),
+    new Circle("c82", "300", "270", "30", "3", "#66776B", "#324655"),
+  ],
+  title: "Title",
+  year: 2000,
+  artist: "A Literal Crow",
+  audioUrl: "",
+  poemUrl:
+      "https://poetrydb.org/title/Pain%20has%20but%20one%20Acquaintance/lines.json",
+  poemId: "poem8",
+};
 
 export const installations = [
   installation1,
@@ -105,6 +120,7 @@ export const installations = [
   installation4,
   installation5,
   installation7,
+  installation8,
 ];
 
 export const createShape = (shape: Object): Object => {
