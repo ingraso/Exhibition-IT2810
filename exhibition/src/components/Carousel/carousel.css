@@ -1,5 +1,7 @@
 #carousel {
   display: grid;
+  position: relative;
+  top: 70px;
   width: 70%;
   margin: auto;
   grid-template-columns: 10% 80% 10%;
@@ -7,23 +9,25 @@
 
   grid-template-areas:
     "leftArrow installation rightArrow"
+    ". sound ."
     ". artInfo .";
 }
 
 .arrows {
   display: inline-block;
   border-radius: 50%;
-  border: 2px solid white;
+  /*border: 2px solid white;*/
   padding: 10px;
   height: 30px; /*FIX*/
   width: 30px;
-  background-color: rgb(5, 180, 180);
+  background-color: #bcc5ff;
   align-self: center;
   justify-self: center;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 .arrows:hover {
-  background-color: darkcyan;
+  background-color: #97a5ff;
   cursor: pointer;
 }
 
@@ -60,7 +64,6 @@
 
 #installation {
   display: inline-block;
-  border: 2px solid grey;
   position: relative;
   text-align: center;
   top: 0;
