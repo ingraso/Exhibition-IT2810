@@ -80,12 +80,31 @@ const installation4 = {
     "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem4",
 };
+const installation7 = {
+  shapes: [
+    new Rect("r71", "0", "0", "350", "350", "#656E70", "#464049"),
+    new Rect("r72", "100", "150", "100", "100", "#BFD6D2", "#464049"),
+    new Rect("r73", "50", "200", "100", "100", "#65D4C1", "#464049"),
+    new Circle("c71", "270", "65", "50", "3", "#464049", "#65D4C1"),
+    new Circle("c72", "300", "270", "30", "3", "#464049", "#BFD6D2"),
+  ],
+  title: "Title",
+  year: 1998,
+  artist: "A Literal Crow",
+  audioUrl: "",
+  poemUrl:
+      "https://poetrydb.org/title/Yesterday%20is%20History,/lines.json",
+  poemId: "poem7",
+};
+
+
 export const installations = [
   installation1,
   installation2,
   installation3,
   installation4,
   installation5,
+  installation7,
 ];
 
 export const createShape = (shape: Object): Object => {
