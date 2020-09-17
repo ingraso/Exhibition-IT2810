@@ -12,7 +12,7 @@ class InstallationContent extends React.Component<
   render() {
     return (
       <div>
-        <svg width="350" height="350">
+        <svg className="picture" width="350" height="350">
           {this.props.installation.map((shape: Object) => createShape(shape))}
         </svg>
         <br />

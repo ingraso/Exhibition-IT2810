@@ -6,7 +6,6 @@
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
     width: 100%;
     height: 60px;
-    /*Black color option: background-color: #fff;*/
     background-color: #bcc5ff;
     text-align: center;
 }
@@ -18,3 +17,9 @@ h1 {
     text-align: center;
 }
 
+@media screen and (max-width: 800px) {
+    h1 {
+        text-align: left;
+        margin-left: 10px;
+    }
+}

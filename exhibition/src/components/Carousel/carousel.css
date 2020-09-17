@@ -1,7 +1,9 @@
 #carousel {
   display: grid;
-  position: relative;
-  top: 70px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -65%);
   width: 70%;
   margin: auto;
   grid-template-columns: 10% 80% 10%;
@@ -39,7 +41,7 @@
 }
 
 .leftArrow {
-  border: solid white;
+  border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 10px;
@@ -51,7 +53,7 @@
 }
 
 .rightArrow {
-  border: solid white;
+  border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 10px;
@@ -79,6 +81,7 @@
 .poem {
   font-family: Georgia, serif;
   position: absolute;
+  width: 75%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -91,12 +94,20 @@
 
 @media screen and (max-width: 800px) {
   #carousel {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 70%;
     min-width: 300px;
     grid-template-columns: 20% 60% 20%;
     grid-template-areas:
       "installation installation installation"
+      "audio audio audio"
       "leftArrow artInfo rightArrow";
+  }
+  .picture {
+    width: 100%;
+    max-width: 350px;
   }
 
   .arrows {
@@ -105,8 +116,12 @@
   }
 
   .arrows:hover {
+    background-color: #bcc5ff;
+  }
+
+  .arrows:active {
     /* Do we want some kind of response when you click? Test with/without on mobile device! */
-    background-color: rgb(5, 180, 180);
+    background-color: #97a5ff;
   }
 
   .left {
@@ -120,10 +135,26 @@
   .leftArrow {
     margin: 0 0 0 2px;
     padding: 8px;
+
+    grid-area: leftArrow;
   }
 
   .rightArrow {
     margin: 0 0 0 -2px;
     padding: 8px;
+
+    grid-area: rightArrow;
+  }
+
+  audio {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  #carousel {
+    position: absolute;
+    top: 380px;
   }
 }
