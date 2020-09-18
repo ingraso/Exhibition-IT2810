@@ -98,7 +98,6 @@
   grid-area: audio;
 }
 
-
 /*Change layout when width shrinks*/
 
 @media screen and (max-width: 650px) {

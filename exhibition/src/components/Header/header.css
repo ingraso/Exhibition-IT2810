@@ -1,4 +1,4 @@
-#header {
+header {
   position: fixed;
   z-index: 5;
   top: 0px;
@@ -34,8 +34,8 @@ the left side*/
 }
 
 @media screen and (max-height: 500px) {
-  #header {
-    height: 40px
+  header {
+    height: 40px;
   }
 
   h1 {
