@@ -1,0 +1,56 @@
+#i4_r1,
+#i4_r2,
+#i4_r3,
+#i4_r4,
+#i4_r5,
+#i4_r6 {
+  x: 50%;
+  y: 50%;
+}
+
+#i4_r7,
+#i4_r8,
+#i4_r9 {
+  x: 50%;
+  y: 10%;
+}
+
+#i4_r10,
+#i4_r11,
+#i4_r12 {
+  x: 10%;
+  y: 50%;
+}
+
+#i4_r3,
+#i4_r6,
+#i4_r7,
+#i4_r10 {
+  animation: changeColor 3s linear 0s infinite;
+}
+
+#i4_r1,
+#i4_r4,
+#i4_r9,
+#i4_r12 {
+  animation: changeColor 3s linear 1s infinite;
+}
+
+#i4_r2,
+#i4_r5,
+#i4_r8,
+#i4_r11 {
+  animation: changeColor 3s linear 2s infinite;
+}
+
+@keyframes changeColor {
+  0% {
+    fill: blue;
+  }
+  50% {
+    fill: green;
+  }
+  100% {
+    fill: yellow;
+  }
+}
