@@ -11,8 +11,8 @@ interface PoetryProps {
 }
 
 class Poetry extends React.Component<PoetryProps, PoetryState> {
-  constructor({ id, url }: PoetryProps) {
-    super({ id, url });
+  constructor(props: PoetryProps) {
+    super(props);
     this.state = {
       txt: [],
       id: this.props.id,
