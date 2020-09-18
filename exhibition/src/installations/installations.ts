@@ -82,11 +82,11 @@ const installation4 = {
 };
 const installation7 = {
   shapes: [
-    new Rect("r71", "0", "0", "350", "350", "#656E70", "#464049"),
-    new Rect("r72", "100", "150", "100", "100", "#BFD6D2", "#464049"),
-    new Rect("r73", "50", "200", "100", "100", "#65D4C1", "#464049"),
-    new Circle("c71", "270", "65", "50", "3", "#464049", "#65D4C1"),
-    new Circle("c72", "300", "270", "30", "3", "#464049", "#BFD6D2"),
+    new Rect("i7_r1", "0", "0", "350", "350", "#656E70", "#464049"),
+    new Rect("i7_r2", "100", "150", "100", "100", "#BFD6D2", "#464049"),
+    new Rect("i7_r3", "50", "200", "100", "100", "#65D4C1", "#464049"),
+    new Circle("i7_c1", "270", "65", "50", "3", "#464049", "#65D4C1"),
+    new Circle("i7_c2", "300", "270", "30", "3", "#464049", "#BFD6D2"),
   ],
   title: "Time",
   year: 1998,
@@ -98,11 +98,11 @@ const installation7 = {
 };
 const installation8 = {
   shapes: [
-    new Rect("r81", "0", "0", "350", "350", "#94C4BD", "#94C4BD"),
-    new Rect("r82", "100", "150", "100", "100", "#66776B", "#324655"),
-    new Rect("r83", "50", "200", "100", "100", "#324655", "#66776B"),
-    new Circle("c81", "270", "65", "50", "3", "#324655", "#66776B"),
-    new Circle("c82", "300", "270", "30", "3", "#66776B", "#324655"),
+    new Rect("i8_r1", "0", "0", "350", "350", "#94C4BD", "#94C4BD"),
+    new Rect("i8_r2", "100", "150", "100", "100", "#66776B", "#324655"),
+    new Rect("i8_r3", "50", "200", "100", "100", "#324655", "#66776B"),
+    new Circle("i8_c1", "270", "65", "50", "3", "#324655", "#66776B"),
+    new Circle("i8_c2", "300", "270", "30", "3", "#66776B", "#324655"),
   ],
   title: "Title",
   year: 2000,
@@ -111,6 +111,22 @@ const installation8 = {
   poemUrl:
       "https://poetrydb.org/title/Pain%20has%20but%20one%20Acquaintance/lines.json",
   poemId: "poem8",
+};
+const installation9 = {
+  shapes: [
+    new Rect("i9_r1", "0", "0", "350", "350", "#94C4BD", "#94C4BD"),
+    new Rect("i9_r2", "100", "150", "100", "100", "#66776B", "#324655"),
+    new Rect("i9_r3", "50", "200", "100", "100", "#324655", "#66776B"),
+    new Circle("i9_c1", "270", "65", "50", "3", "#324655", "#66776B"),
+    new Circle("i9_c2", "300", "270", "30", "3", "#66776B", "#324655"),
+  ],
+  title: "Title",
+  year: 1881,
+  artist: "A Literal Crow",
+  audioUrl: "",
+  poemUrl:
+      "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+  poemId: "poem9",
 };
 
 export const installations = [
@@ -121,6 +137,7 @@ export const installations = [
   installation5,
   installation7,
   installation8,
+  installation9,
 ];
 
 export const createShape = (shape: Object): Object => {
