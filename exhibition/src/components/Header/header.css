@@ -20,9 +20,26 @@ h1 {
 /*When screen-width skrinks the title should be on
 the left side*/
 
-@media screen and (max-width: 800px) {
+@media (orientation: portrait) and (max-width: 650px) {
   h1 {
     text-align: left;
     margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  #header {
+    height: 40px
+  }
+
+  h1 {
+    margin: 10px 0px 10px 10px;
+    font-size: 20px;
   }
 }

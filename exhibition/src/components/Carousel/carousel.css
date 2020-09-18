@@ -3,11 +3,11 @@
 #carousel {
   display: grid;
   position: absolute;
-  top: 65%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -65%);
+  transform: translate(-50%, -50%);
   width: 70%;
-  margin: auto;
+  margin-top: 30px;
   grid-template-columns: 10% 80% 10%;
   justify-content: center;
 
@@ -98,9 +98,10 @@
   grid-area: audio;
 }
 
+
 /*Change layout when width shrinks*/
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 650px) {
   /*Styling for carousel*/
 
   #carousel {
@@ -168,11 +169,43 @@
 }
 
 /*When the height is smaller that an installation 
-we must make sure the carousel starts bellow the header*/
+we must make sure the carousel starts bellow the header, 
+and that the picture shrinks*/
 
 @media screen and (max-height: 500px) {
   #carousel {
-    position: absolute;
-    top: 380px;
+    height: auto;
+    margin-top: 23px;
+  }
+
+  .arrows:hover {
+    background-color: #bcc5ff;
+  }
+
+  .arrows:active {
+    background-color: #97a5ff;
+  }
+
+  .picture {
+    height: 60vh;
+  }
+
+  audio {
+    height: 100%;
+  }
+
+  .audio-control {
+    height: 10vh;
+    width: 100%;
+    justify-self: center;
+    max-width: 350px;
+  }
+
+  #installation-title {
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
   }
 }
