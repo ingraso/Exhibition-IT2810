@@ -1,0 +1,35 @@
+#i8_e2 {
+    animation: rain-animation 2s  infinite;
+}
+#i8_e3 {
+    animation: rain-animation 3s  infinite;
+}
+#i8_e4 {
+    animation: rain-animation 3s infinite;
+}
+#i8_e5 {
+    animation: rain-animation 2s infinite;
+}
+#i8_e6 {
+    animation: rain-animation 1s infinite;
+}
+#i8_e7 {
+    animation: rain-animation 4s infinite;
+}
+
+
+
+@keyframes rain-animation {
+    0% {
+        rx: 0;
+        ry: 0;
+    }
+    25% {
+        opacity: 1
+    }
+    100% {
+        rx: 20;
+        ry: 7;
+        opacity: 0;
+    }
+}
