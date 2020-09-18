@@ -113,7 +113,7 @@ const installation8 = {
     new Ellipse("i8_e6", "49%", "90%", "10", "5", "none", "#5D767B"),
     new Ellipse("i8_e7", "83%", "80%", "10", "5", "none", "#5D767B"),
   ],
-  title: "Title",
+  title: "Crow on the Grave",
   year: 2000,
   artist: "A Literal Crow",
   audioUrl: "https://docs.google.com/uc?export=download&id=19XOSLsjikfU3M1whFgDj5p9I4tZld89x",
