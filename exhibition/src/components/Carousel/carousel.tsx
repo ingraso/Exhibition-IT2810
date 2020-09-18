@@ -10,6 +10,7 @@ import InstallationContent from "../InstallationContent/installationContent";
 import { installations } from "../../installations/installations";
 import InstallationInfo from "../InstallationInfo/installationInfo";
 import Poetry from "../Poetry/poetry";
+import Audio from "../Audio/audio";
 
 interface CarouselState {
   displayedInstallationIndex: number;
@@ -58,15 +59,17 @@ class Carousel extends React.Component<{}, CarouselState> {
               installation={
                 installations[this.state.displayedInstallationIndex].shapes
               }
-              audioUrl={
-                installations[this.state.displayedInstallationIndex].audioUrl
-              }
             />
             <Poetry
               url={installations[this.state.displayedInstallationIndex].poemUrl}
               id={installations[this.state.displayedInstallationIndex].poemId}
             />
           </div>
+          <Audio
+            audioUrl={
+              installations[this.state.displayedInstallationIndex].audioUrl
+            }
+          />
           <div
             className="arrows right"
             onClick={() => changeInstallation(true)}
