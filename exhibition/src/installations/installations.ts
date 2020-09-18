@@ -1,4 +1,4 @@
-import { Circle, Rect } from "./shapes";
+import { Circle, Rect, Triangle, Ellipse } from "./shapes";
 
 const installation1 = {
   shapes: [
@@ -98,11 +98,20 @@ const installation7 = {
 };
 const installation8 = {
   shapes: [
-    new Rect("i8_r1", "0", "0", "350", "350", "#94C4BD", "#94C4BD"),
-    new Rect("i8_r2", "100", "150", "100", "100", "#66776B", "#324655"),
-    new Rect("i8_r3", "50", "200", "100", "100", "#324655", "#66776B"),
-    new Circle("i8_c1", "270", "65", "50", "3", "#324655", "#66776B"),
-    new Circle("i8_c2", "300", "270", "30", "3", "#66776B", "#324655"),
+    new Rect("i8_r1", "0", "0", "350", "350", "#B1B697", "#B1B697"),
+    //Tombstone
+    new Ellipse("i8_e1", "175", "225", "50", "45", "#F2F5F1", "#F2F5F1"),
+    new Rect("i8_r2", "125", "225", "100", "70", "#F2F5F1", "#F2F5F1"),
+    //Bird
+    new Triangle("i8_t2", "200,110 190,180 150,200 100,250 150,135 ", "#252629", "#2D4054"),
+    new Triangle("i8_t1", "200,100 220,200 175,125", "#252629", "#2D4054"),
+    //Rain
+    new Ellipse("i8_e2", "50", "300", "10", "5", "none", "#5D767B"),
+    new Ellipse("i8_e2", "220", "320", "10", "5", "none", "#5D767B"),
+    new Ellipse("i8_e2", "90", "330", "10", "5", "none", "#5D767B"),
+    new Ellipse("i8_e2", "310", "310", "10", "5", "none", "#5D767B"),
+    new Ellipse("i8_e2", "170", "315", "10", "5", "none", "#5D767B"),
+    new Ellipse("i8_e2", "290", "280", "10", "5", "none", "#5D767B"),
   ],
   title: "Title",
   year: 2000,
@@ -146,6 +155,12 @@ export const createShape = (shape: Object): Object => {
   }
   if (shape instanceof Rect) {
     return shape.createRect();
+  }
+  if (shape instanceof Ellipse) {
+    return shape.createEllipse();
+  }
+  if (shape instanceof Triangle) {
+    return shape.createTriangle();
   }
   return false;
 };
