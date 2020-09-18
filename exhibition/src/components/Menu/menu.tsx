@@ -21,9 +21,11 @@ const Menu = () => {
             <div className="line-two"></div>
           </div>
         </div>
-        <div id="up-arrow" 
+        <div
+          id="up-arrow"
           className={open ? "open" : "closed"}
-          onClick={() => setOpen(!open)}></div>
+          onClick={() => setOpen(!open)}
+        ></div>
       </div>
       <div
         id="burger-button"

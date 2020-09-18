@@ -3,23 +3,27 @@
     z-index: 5;
     top: 0px;
     left: 0px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 60px;
     background-color: #bcc5ff;
     text-align: center;
-}
-
-h1 {
+  }
+  
+  h1 {
     margin: 15px 0px;
     font-size: 30px;
     font-family: georgia, serif;
     text-align: center;
-}
-
-@media screen and (max-width: 800px) {
+  }
+  
+  /*When screen-width skrinks the title should be on
+  the left side*/
+  
+  @media screen and (max-width: 800px) {
     h1 {
-        text-align: left;
-        margin-left: 10px;
+      text-align: left;
+      margin-left: 10px;
     }
-}
+  }
+  

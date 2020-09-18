@@ -13,3 +13,25 @@
     stroke-width: 0;
   }
 }
+
+@media screen and (max-width: 800px) {
+  
+  /*Make sure the circle is allways centered*/
+
+  #c11,
+  #c12,
+  #c13 {
+    cx: 50%;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  
+  /*Make sure the circle is allways centered*/
+
+  #c11,
+  #c12,
+  #c13 {
+    cy: 50%;
+  }
+}
