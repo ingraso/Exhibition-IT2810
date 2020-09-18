@@ -17,7 +17,9 @@
     animation: rain-animation 4s infinite;
 }
 
-
+#poem8 {
+    color: #427363;
+}
 
 @keyframes rain-animation {
     0% {
