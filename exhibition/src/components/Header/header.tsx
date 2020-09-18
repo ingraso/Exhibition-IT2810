@@ -1,6 +1,8 @@
 import React from 'react';
 import './header.css';
 
+/*Component for the header*/
+
 const header = () => {
     return(
         <section id="header">

@@ -11,15 +11,11 @@
   box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
   z-index: 2;
   grid-template: 1fr 3fr 3fr 3fr 2fr 1fr / 1fr 10fr 1fr;
-  grid-area: 
-    ". . ."
-    ". filter1 ."
-    ". filter2 ."
-    ". filter3 ."
+  grid-area: ". . ." ". filter1 ." ". filter2 ." ". filter3 ."
     ". favoriteBlock .";
 }
 
-/*Styling for closed-button*/
+/*Styling for close-button*/
 
 .open#close-button {
   position: absolute;
@@ -30,11 +26,11 @@
 }
 
 .closed#close-button {
-    display: none;
+  display: none;
 }
 
 #close-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .line-one {
@@ -57,20 +53,20 @@
 /*Styling for blurry-area*/
 
 .open#blurry-area {
-    position: fixed;
-    top: 60px;
-    right: 0px;
-    bottom: 0px;
-    left: 300px;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    background-color: rgba(255, 255, 255, 0.562);
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
+  position: fixed;
+  top: 60px;
+  right: 0px;
+  bottom: 0px;
+  left: 300px;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.562);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
-/*Arrow-button*/
+/*Styling for arrow-button*/
 
 #up-arrow {
   width: 20px;
@@ -98,12 +94,12 @@
 }
 
 .open#burger-button {
-    display: none;
+  display: none;
 }
 
 .closed#burger-button:hover {
-    background-color: #97a5ff;
-    cursor: pointer;
+  background-color: #97a5ff;
+  cursor: pointer;
 }
 
 #top-line,
@@ -129,7 +125,12 @@
   top: 27px;
 }
 
+/*When screens width shrinks, we move the menu 
+to the top of the page*/
+
 @media screen and (max-width: 800px) {
+  /*Styling for menu*/
+
   .open#menu {
     display: grid;
     left: 0px;
@@ -138,20 +139,28 @@
     height: 400px;
     grid-template: 4fr 4fr 4fr 2fr / 1fr 8fr 8fr 2fr 1fr;
     justify-content: left;
-    grid-template-areas: 
+    grid-template-areas:
       ". filterOneLeft filterOneRight . ."
       ". filterTwoLeft filterTwoRight . ."
       ". filterThreeLeft filterThreeRight . ."
       ". favourite block arrow .";
   }
-  .closed#burger-button {
+
+  /*Styling for close-button*/
+
+  .open#close-button {
+    position: absolute;
     top: 10px;
-    left: unset;
     right: 10px;
-    border-radius: unset;
-    background-color: #bcc5ff;
-    box-shadow:unset;
+    width: 25px;
+    height: 25px;
   }
+
+  .open#close-button {
+    display: none;
+  }
+
+  /*Styling for blurry area*/
 
   .open#blurry-area {
     top: 460px;
@@ -162,13 +171,18 @@
     backdrop-filter: blur(4px);
   }
 
-  .open#close-button {
-    position: absolute;
+  /*Styling for burger-button*/
+
+  .closed#burger-button {
     top: 10px;
+    left: unset;
     right: 10px;
-    width: 25px;
-    height: 25px;
+    border-radius: unset;
+    background-color: #bcc5ff;
+    box-shadow: unset;
   }
+
+  /*Styling for up-arrow*/
 
   .open#up-arrow {
     display: inline-block;
@@ -180,9 +194,5 @@
 
   .closed#up-arrow {
     display: none;
-  }
-
-  .open#close-button {
-    display: none
   }
 }

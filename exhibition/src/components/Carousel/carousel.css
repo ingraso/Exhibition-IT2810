@@ -1,3 +1,5 @@
+/*styling for the carousel*/
+
 #carousel {
   display: grid;
   position: absolute;
@@ -15,17 +17,18 @@
     ". artInfo .";
 }
 
+/*Styling for arrows*/
+
 .arrows {
   display: inline-block;
   border-radius: 50%;
-  /*border: 2px solid white;*/
   padding: 10px;
-  height: 30px; /*FIX*/
+  height: 30px;
   width: 30px;
   background-color: #bcc5ff;
   align-self: center;
   justify-self: center;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .arrows:hover {
@@ -64,6 +67,9 @@
   -webkit-transform: rotate(-45deg);
 }
 
+/*Styling for the installations
+(poem, picture and audio)*/
+
 #installation {
   display: inline-block;
   position: relative;
@@ -92,7 +98,11 @@
   grid-area: audio;
 }
 
+/*Change layout when width shrinks*/
+
 @media screen and (max-width: 800px) {
+  /*Styling for carousel*/
+
   #carousel {
     top: 50%;
     left: 50%;
@@ -105,10 +115,8 @@
       "audio audio audio"
       "leftArrow artInfo rightArrow";
   }
-  .picture {
-    width: 100%;
-    max-width: 350px;
-  }
+
+  /*Styling for arrows*/
 
   .arrows {
     height: 20px;
@@ -120,7 +128,6 @@
   }
 
   .arrows:active {
-    /* Do we want some kind of response when you click? Test with/without on mobile device! */
     background-color: #97a5ff;
   }
 
@@ -146,11 +153,21 @@
     grid-area: rightArrow;
   }
 
+  /*Styling for installations*/
+
+  .picture {
+    width: 100%;
+    max-width: 350px;
+  }
+
   audio {
     width: 100%;
     max-width: 350px;
   }
 }
+
+/*When the height is smaller that an installation 
+we must make sure the carousel starts bellow the header*/
 
 @media screen and (max-height: 500px) {
   #carousel {
