@@ -18,3 +18,15 @@
     transform: scale(1.5);
   }
 }
+
+@media screen and (max-height: 500px) {
+  #c10 {
+    animation: circle-animation-max-height 4s infinite;
+  }
+
+  @keyframes circle-animation-max-height {
+    50% {
+      transform: scale(1.25);
+    }
+  }
+}
