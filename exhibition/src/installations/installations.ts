@@ -17,7 +17,7 @@ const installation1 = {
   audioUrl:
     "https://docs.google.com/uc?export=download&id=1gAzs4UwdenQmNbEm9mdDIunb8Ef-kn5i",
   poemUrl:
-    "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+    "https://poetrydb.org/title/Through%20the%20Dark%20Sod%20--%20as%20Education/lines.json",
   poemId: "poem1",
 };
 const installation2 = {
@@ -33,7 +33,7 @@ const installation2 = {
   audioUrl:
     "https://docs.google.com/uc?export=download&id=13-YgFevw6zqpnV96zCkuvxCZL9ij7FvA",
   poemUrl:
-    "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+    "https://poetrydb.org/lines/Snow%20flakes./lines.json",
   poemId: "poem2",
 };
 const installation3 = {
@@ -49,7 +49,7 @@ const installation3 = {
   audioUrl:
     "https://docs.google.com/uc?export=download&id=1DIDOj7PlYM0XczQKTlmK5zbr_jwn4nNB",
   poemUrl:
-    "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
+    "https://poetrydb.org/title/Great%20Streets%20of%20silence%20led%20away/lines.json",
   poemId: "poem3",
 };
 const installation5 = {
