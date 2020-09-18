@@ -1,0 +1,29 @@
+#i9_r2 {
+    animation: color-transition 6s ease-in-out infinite;
+}
+
+#i9_t5 {
+    animation: color-transition 6s ease-in-out infinite;
+}
+
+#i9_r1 {
+    animation: bg-color-transition 6s ease-in-out infinite;
+}
+
+@keyframes color-transition {
+    50% {
+        fill: #94C4BD/*#4F6C62*/;
+        stroke: #94C4BD;
+    }
+}
+
+@keyframes bg-color-transition {
+    50% {
+        fill: #66776B;
+        stroke: #66776B;
+    }
+}
+
+#poem9 {
+    color: #F3EEE4;
+}
