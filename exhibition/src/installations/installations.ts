@@ -1,4 +1,4 @@
-import { Circle, Rect } from "./shapes";
+import { Circle, Rect, Triangle, Ellipse } from "./shapes";
 
 const installation1 = {
   shapes: [
@@ -146,6 +146,12 @@ export const createShape = (shape: Object): Object => {
   }
   if (shape instanceof Rect) {
     return shape.createRect();
+  }
+  if (shape instanceof Ellipse) {
+    return shape.createEllipse();
+  }
+  if (shape instanceof Triangle) {
+    return shape.createTriangle();
   }
   return false;
 };
