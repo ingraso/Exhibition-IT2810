@@ -34,7 +34,7 @@ class Poetry extends React.Component<PoetryProps, PoetryState> {
   }
 
   render() {
-    if (this.props.id != this.state.id) this.fetchPoetry();
+    if (this.props.id !== this.state.id) this.fetchPoetry();
     return (
       <div id={this.props.id} className={"poem"}>
         {this.state.txt.map((poemLine, index) => (
