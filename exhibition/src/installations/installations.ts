@@ -91,7 +91,7 @@ const installation7 = {
   title: "Time",
   year: 1998,
   artist: "A Literal Crow",
-  audioUrl: "",
+  audioUrl: "https://docs.google.com/uc?export=download&id=1t7nx2CCSaqM-qirDU2bSgtQWcW6CpzU0",
   poemUrl:
       "https://poetrydb.org/title/Yesterday%20is%20History,/lines.json",
   poemId: "poem7",
@@ -135,7 +135,7 @@ const installation9 = {
   title: "Happy Turtle",
   year: 1881,
   artist: "A Literal Crow",
-  audioUrl: "",
+  audioUrl: "https://docs.google.com/uc?export=download&id=1GcEfc1iy6p-EK-22SlyvSacaYC3igZT8",
   poemUrl:
       "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem9",
