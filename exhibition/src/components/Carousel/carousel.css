@@ -1,29 +1,38 @@
+/*styling for the carousel*/
+
 #carousel {
   display: grid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 70%;
-  margin: auto;
+  margin-top: 30px;
   grid-template-columns: 10% 80% 10%;
   justify-content: center;
 
   grid-template-areas:
     "leftArrow installation rightArrow"
+    ". audio ."
     ". artInfo .";
 }
+
+/*Styling for arrows*/
 
 .arrows {
   display: inline-block;
   border-radius: 50%;
-  border: 2px solid white;
   padding: 10px;
-  height: 30px; /*FIX*/
+  height: 30px;
   width: 30px;
-  background-color: rgb(5, 180, 180);
+  background-color: #bcc5ff;
   align-self: center;
   justify-self: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .arrows:hover {
-  background-color: darkcyan;
+  background-color: #97a5ff;
   cursor: pointer;
 }
 
@@ -35,7 +44,7 @@
 }
 
 .leftArrow {
-  border: solid white;
+  border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 10px;
@@ -47,7 +56,7 @@
 }
 
 .rightArrow {
-  border: solid white;
+  border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 10px;
@@ -58,9 +67,11 @@
   -webkit-transform: rotate(-45deg);
 }
 
+/*Styling for the installations
+(poem, picture and audio)*/
+
 #installation {
   display: inline-block;
-  border: 2px solid grey;
   position: relative;
   text-align: center;
   top: 0;
@@ -76,20 +87,37 @@
 .poem {
   font-family: Georgia, serif;
   position: absolute;
+  width: 75%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 800px) {
+.audio-control {
+  text-align: center;
+  grid-area: audio;
+}
+
+/*Change layout when width shrinks*/
+
+@media screen and (max-width: 650px) {
+  /*Styling for carousel*/
+
   #carousel {
+    margin-top: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 70%;
     min-width: 300px;
     grid-template-columns: 20% 60% 20%;
     grid-template-areas:
       "installation installation installation"
+      "audio audio audio"
       "leftArrow artInfo rightArrow";
   }
+
+  /*Styling for arrows*/
 
   .arrows {
     height: 20px;
@@ -97,8 +125,11 @@
   }
 
   .arrows:hover {
-    /* Do we want some kind of response when you click? Test with/without on mobile device! */
-    background-color: rgb(5, 180, 180);
+    background-color: #bcc5ff;
+  }
+
+  .arrows:active {
+    background-color: #97a5ff;
   }
 
   .left {
@@ -112,10 +143,68 @@
   .leftArrow {
     margin: 0 0 0 2px;
     padding: 8px;
+
+    grid-area: leftArrow;
   }
 
   .rightArrow {
     margin: 0 0 0 -2px;
     padding: 8px;
+
+    grid-area: rightArrow;
+  }
+
+  /*Styling for installations*/
+
+  .picture {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  audio {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/*When the height is smaller that an installation 
+we must make sure the carousel starts bellow the header, 
+and that the picture shrinks*/
+
+@media screen and (max-height: 500px) {
+  #carousel {
+    height: auto;
+    margin-top: 23px;
+  }
+
+  .arrows:hover {
+    background-color: #bcc5ff;
+  }
+
+  .arrows:active {
+    background-color: #97a5ff;
+  }
+
+  .picture {
+    height: 60vh;
+  }
+
+  audio {
+    height: 100%;
+  }
+
+  .audio-control {
+    height: 10vh;
+    width: 100%;
+    justify-self: center;
+    max-width: 350px;
+  }
+
+  #installation-title {
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
   }
 }

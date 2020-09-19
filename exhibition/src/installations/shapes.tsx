@@ -106,13 +106,13 @@ export class Ellipse {
   createEllipse = () => {
     return (
         <ellipse
-            id={this.id}
-            cx={this.cx}
-            cy={this.cy}
-            rx={this.rx}
-            ry={this.ry}
-            fill={this.fill}
-            stroke={this.stroke}
+          id={this.id}
+          cx={this.cx}
+          cy={this.cy}
+          rx={this.rx}
+          ry={this.ry}
+          fill={this.fill}
+          stroke={this.stroke}
         />
     );
   };
@@ -133,12 +133,12 @@ export class Triangle {
 
   createTriangle = () => {
     return(
-        <polygon
-            id={this.id}
-            points={this.points}
-            stroke={this.stroke}
-            fill={this.fill}
-        />
+      <polygon
+        id={this.id}
+        points={this.points}
+        stroke={this.stroke}
+        fill={this.fill}
+      />
     );
   };
 }
