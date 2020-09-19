@@ -125,48 +125,60 @@ const installation6 = {
 };
 const installation7 = {
   shapes: [
-    new Rect("i7_r1", "0", "0", "350", "350", "#656E70", "#464049"),
-    new Rect("i7_r2", "100", "150", "100", "100", "#BFD6D2", "#464049"),
-    new Rect("i7_r3", "50", "200", "100", "100", "#65D4C1", "#464049"),
-    new Circle("i7_c1", "270", "65", "50", "3", "#464049", "#65D4C1"),
-    new Circle("i7_c2", "300", "270", "30", "3", "#464049", "#BFD6D2"),
+    new Rect("i7_r1", "0%", "0%", "100%", "100%", "#656E70", "#464049"),
+    new Rect("i7_r2", "29%", "43%", "29%", "29%", "#BFD6D2", "#464049"),
+    new Rect("i7_r3", "14%", "57%", "29%", "29%", "#65D4C1", "#464049"),
+    new Circle("i7_c1", "77%", "19%", "14%", "3", "#464049", "#65D4C1"),
+    new Circle("i7_c2", "86%", "77%", "9%", "3", "#464049", "#BFD6D2"),
   ],
   title: "Time",
   year: 1998,
   artist: "A Literal Crow",
-  audioUrl: "",
+  audioUrl: "https://docs.google.com/uc?export=download&id=1t7nx2CCSaqM-qirDU2bSgtQWcW6CpzU0",
   poemUrl:
       "https://poetrydb.org/title/Yesterday%20is%20History,/lines.json",
   poemId: "poem7",
 };
 const installation8 = {
   shapes: [
-    new Rect("i8_r1", "0", "0", "350", "350", "#94C4BD", "#94C4BD"),
-    new Rect("i8_r2", "100", "150", "100", "100", "#66776B", "#324655"),
-    new Rect("i8_r3", "50", "200", "100", "100", "#324655", "#66776B"),
-    new Circle("i8_c1", "270", "65", "50", "3", "#324655", "#66776B"),
-    new Circle("i8_c2", "300", "270", "30", "3", "#66776B", "#324655"),
+    new Rect("i8_r1", "0", "0", "100%", "100%", "#B1B697", "#B1B697"),
+    //Tombstone
+    new Ellipse("i8_e1", "50%", "64%", "14%", "13%", "#F2F5F1", "#F2F5F1"),
+    new Rect("i8_r2", "36%", "64%", "29%", "20%", "#F2F5F1", "#F2F5F1"),
+    //Bird
+    new Triangle("i8_t2", "200,110 190,180 150,200 100,250 150,135 ", "#252629", "#2D4054"),
+    new Triangle("i8_t1", "200,100 220,200 175,125", "#252629", "#2D4054"),
+    //Rain
+    new Ellipse("i8_e2", "14%", "86%", "10", "5", "none", "#2D4054"),
+    new Ellipse("i8_e3", "63%", "91%", "10", "5", "none", "#2D4054"),
+    new Ellipse("i8_e4", "26%", "94%", "10", "5", "none", "#2D4054"),
+    new Ellipse("i8_e5", "89%", "89%", "10", "5", "none", "#2D4054"),
+    new Ellipse("i8_e6", "49%", "90%", "10", "5", "none", "#5D767B"),
+    new Ellipse("i8_e7", "83%", "80%", "10", "5", "none", "#5D767B"),
   ],
-  title: "Title",
+  title: "Crow on the Grave",
   year: 2000,
   artist: "A Literal Crow",
-  audioUrl: "",
+  audioUrl: "https://docs.google.com/uc?export=download&id=19XOSLsjikfU3M1whFgDj5p9I4tZld89x",
   poemUrl:
       "https://poetrydb.org/title/Pain%20has%20but%20one%20Acquaintance/lines.json",
   poemId: "poem8",
 };
 const installation9 = {
   shapes: [
-    new Rect("i9_r1", "0", "0", "350", "350", "#94C4BD", "#94C4BD"),
-    new Rect("i9_r2", "100", "150", "100", "100", "#66776B", "#324655"),
-    new Rect("i9_r3", "50", "200", "100", "100", "#324655", "#66776B"),
-    new Circle("i9_c1", "270", "65", "50", "3", "#324655", "#66776B"),
-    new Circle("i9_c2", "300", "270", "30", "3", "#66776B", "#324655"),
+    new Rect("i9_r1", "0", "0", "100%", "100%", "#94C4BD", "#94C4BD"),
+    new Ellipse("i9_e1", "50%", "43%", "10%", "10%", "#324655", "#324655"),
+    new Triangle("i9_t1","116,165 116,210 80,220" , "#324655", "#324655"),
+    new Triangle("i9_t2","231,165 231,210, 267,220", "#324655", "#324655"),
+    new Triangle("i9_t3","140,221 150,261 110,275", "#324655", "#324655"),
+    new Triangle("i9_t4","207,221 197,261 237,275", "#324655", "#324655"),
+    new Rect("i9_r2", "33%", "43%", "33%", "23%", "#66776B", "#66776B"),
+    new Triangle("i9_t5", "116,231 231,231 175,290", "#66776B", "#66776B"),
   ],
-  title: "Title",
+  title: "Happy Turtle",
   year: 1881,
   artist: "A Literal Crow",
-  audioUrl: "",
+  audioUrl: "https://docs.google.com/uc?export=download&id=1GcEfc1iy6p-EK-22SlyvSacaYC3igZT8",
   poemUrl:
       "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem9",
