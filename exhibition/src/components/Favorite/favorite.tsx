@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from "react";
-//import FavoriteInstallation from "../FavoriteInstallations/favoriteinstallation";
+
+export let favoriteInstallations = [];
 
 export const Fav = (installation: any) => {
   installation = installation.installation;
   const [favorites, setFavorites] = useState<any[]>([]);
   const addFavorite = () => {
-    // change title to id after merging of MR #13 on GitLab (and add ids in installations.ts)
-    if (favorites.some((favorite) => favorite.title === installation.title)) {
+    if (favorites.some((favorite) => favorite === installation.id)) {
       setFavorites(
-        favorites.filter((favorite) => favorite.title !== installation.title)
+        favorites.filter((favorite) => favorite !== installation.id)
       );
     } else {
-      setFavorites((favorites) => favorites.concat(installation));
+      setFavorites((favorites) => favorites.concat(installation.id));
     }
   };
 
   useEffect(() => {
-    window.localStorage.setItem("favorites", favorites.toString());
+    window.localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
-  return (
-    <div>
-      <button onClick={addFavorite}>FAAAVEE</button>
-      <div>
-        {favorites.length > 0 ? (
-          <p>{favorites.map((favorite) => favorite.title + "\n")}</p>
-        ) : (
-          <p>No faves yet</p>
-        )}
-      </div>
-    </div>
-  );
+  if (favorites.length > 0) {
+    favoriteInstallations = JSON.parse(
+      window.localStorage.getItem("favorites")!!
+    );
+  }
+
+  return <button onClick={addFavorite}>Add to favorites</button>;
 };

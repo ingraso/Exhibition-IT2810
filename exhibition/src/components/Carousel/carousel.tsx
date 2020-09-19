@@ -10,27 +10,47 @@ import "../../installations/installation7.css";
 import "../../installations/installation8.css";
 import "../../installations/installation9.css";
 import InstallationContent from "../InstallationContent/installationContent";
-import { installations } from "../../installations/installations";
+import { allInstallations } from "../../installations/installations";
 import InstallationInfo from "../InstallationInfo/installationInfo";
 import Poetry from "../Poetry/poetry";
 import Audio from "../Audio/audio";
-import { Fav } from "../Favorite/favorite";
+import { Fav, favoriteInstallations } from "../Favorite/favorite";
 
 interface CarouselState {
   displayedInstallationIndex: number;
 }
 
-class Carousel extends React.Component<{}, CarouselState> {
-  constructor(props: {}) {
+interface CarouselProps {
+  displayOnlyFavorites: Boolean;
+}
+
+let currentInstallations = allInstallations;
+
+class Carousel extends React.Component<CarouselProps, CarouselState> {
+  constructor(props: CarouselProps) {
     super(props);
     this.state = {
       displayedInstallationIndex: 0,
     };
   }
   render() {
+    //this.setState({ displayedInstallationIndex: 0 });
+    if (this.props.displayOnlyFavorites) {
+      currentInstallations = favoriteInstallations.map(
+        (favInstallationId) =>
+          allInstallations.filter((inst) => inst.id === favInstallationId)[0]
+      );
+    } else {
+      currentInstallations = allInstallations;
+    }
+
+    const currentInstallation =
+      currentInstallations[this.state.displayedInstallationIndex];
+
     const changeInstallation = (next: Boolean) => {
       if (next) {
-        this.state.displayedInstallationIndex === installations.length - 1
+        this.state.displayedInstallationIndex ===
+        currentInstallations.length - 1
           ? this.setState({ displayedInstallationIndex: 0 })
           : this.setState({
               displayedInstallationIndex:
@@ -39,7 +59,7 @@ class Carousel extends React.Component<{}, CarouselState> {
       } else {
         this.state.displayedInstallationIndex === 0
           ? this.setState({
-              displayedInstallationIndex: installations.length - 1,
+              displayedInstallationIndex: currentInstallations.length - 1,
             })
           : this.setState({
               displayedInstallationIndex:
@@ -55,37 +75,25 @@ class Carousel extends React.Component<{}, CarouselState> {
         </div>
 
         <div id="installation">
-          <InstallationContent
-            installation={
-              installations[this.state.displayedInstallationIndex].shapes
-            }
-          />
+          <InstallationContent installation={currentInstallation.shapes} />
           <Poetry
-            url={installations[this.state.displayedInstallationIndex].poemUrl}
-            id={installations[this.state.displayedInstallationIndex].poemId}
+            url={currentInstallation.poemUrl}
+            id={currentInstallation.poemId}
           />
         </div>
-        <Audio
-          audioUrl={
-            installations[this.state.displayedInstallationIndex].audioUrl
-          }
-        />
+        <Audio audioUrl={currentInstallation.audioUrl} />
         <div className="arrows right" onClick={() => changeInstallation(true)}>
           <div className="rightArrow"></div>
         </div>
         <div id="artInfo">
           <InstallationInfo
-            installationTitle={
-              installations[this.state.displayedInstallationIndex].title
-            }
-            year={installations[this.state.displayedInstallationIndex].year}
-            artist={installations[this.state.displayedInstallationIndex].artist}
+            installationTitle={currentInstallation.title}
+            year={currentInstallation.year}
+            artist={currentInstallation.artist}
           />
         </div>
 
-        <Fav
-          installation={installations[this.state.displayedInstallationIndex]}
-        />
+        <Fav installation={currentInstallation} />
       </div>
     );
   }
