@@ -6,7 +6,7 @@ A component for showing/hiding the menu.
 The open-hook is used to decide if the menu is shown or not. 
 */
 
-const Menu = () => {
+const Menu = ({ favOnClick } : { favOnClick: any }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,6 +21,9 @@ const Menu = () => {
             <div className="line-two"></div>
           </div>
         </div>
+        <button id="displayFavButton" onClick={favOnClick} type="button">
+          Only display favorites
+        </button>
         <div
           id="up-arrow"
           className={open ? "open" : "closed"}
