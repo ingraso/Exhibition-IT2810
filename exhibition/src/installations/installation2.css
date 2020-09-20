@@ -1,4 +1,8 @@
-#c8 {
+/*Position and animation of all circles*/
+
+#i2_c1 {
+  cx: 9%;
+  cy: 22%;
   animation: circle-animation-8 4s infinite;
 }
 
@@ -8,13 +12,38 @@
   }
 }
 
-#c9,
-#c10 {
+#i2_c2 {
+  cx: 50%;
+  cy: 29%;
+}
+
+#i2_c3 {
+  cx: 29%;
+  cy: 57%;
+}
+
+#i2_c2,
+#i2_c3 {
   animation: circle-animation-9 4s infinite;
 }
 
 @keyframes circle-animation-9 {
   50% {
     transform: scale(1.5);
+  }
+}
+
+/*When the screen height shrinks i2_c3 will
+disappear if the scal does not shrink.*/
+
+@media screen and (max-height: 500px) {
+  #i2_c3 {
+    animation: circle-animation-max-height 4s infinite;
+  }
+
+  @keyframes circle-animation-max-height {
+    50% {
+      transform: scale(1.3);
+    }
   }
 }
