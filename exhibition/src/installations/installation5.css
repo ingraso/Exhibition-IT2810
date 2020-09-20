@@ -1,0 +1,150 @@
+#poem5 {
+  color: white;
+}
+
+#i5_r0 {
+  width: 100%;
+  height: 100%;
+}
+
+#i5_r1 {
+  animation: fadeIn 9s linear 0s infinite;
+  opacity: 0%;
+}
+
+#i5_r2 {
+  x: 5%;
+  y: 98.5%;
+  animation: fadeIn 9s linear 0.5s infinite;
+  opacity: 0%;
+}
+
+#i5_r3 {
+  x: 98.5%;
+  y: 5%;
+  animation: fadeIn 9s linear 1s infinite;
+  opacity: 0%;
+}
+
+#i5_r4 {
+  x: 10%;
+  y: 5%;
+  animation: fadeIn 9s linear 1.5s infinite;
+  opacity: 0%;
+}
+
+#i5_r5 {
+  x: 10%;
+  y: 10%;
+  animation: fadeIn 9s linear 2s infinite;
+  opacity: 0%;
+}
+
+#i5_r6 {
+  x: 15%;
+  y: 88.5%;
+  animation: fadeIn 9s linear 2.5s infinite;
+  opacity: 0%;
+}
+
+#i5_r7 {
+  x: 88%;
+  y: 15%;
+  animation: fadeIn 9s linear 3s infinite;
+  opacity: 0%;
+}
+
+#i5_r8 {
+  x: 20%;
+  y: 15%;
+  animation: fadeIn 9s linear 3.5s infinite;
+  opacity: 0%;
+}
+
+#i5_r9 {
+  x: 20%;
+  y: 20%;
+  animation: fadeIn 9s linear 4s infinite;
+  opacity: 0%;
+}
+
+#i5_r10 {
+  x: 25%;
+  y: 75.5%;
+  animation: fadeIn 9s linear 4.5s infinite;
+  opacity: 0%;
+}
+
+#i5_r11 {
+  x: 75%;
+  y: 25%;
+  animation: fadeIn 9s linear 5s infinite;
+  opacity: 0%;
+}
+
+#i5_r12 {
+  x: 30%;
+  y: 25%;
+  animation: fadeIn 9s linear 5.5s infinite;
+  opacity: 0%;
+}
+
+#i5_r13 {
+  x: 30%;
+  y: 30%;
+  animation: fadeIn 9s linear 6s infinite;
+  opacity: 0%;
+}
+
+#i5_r14 {
+  x: 35%;
+  y: 63%;
+  animation: fadeIn 9s linear 6.5s infinite;
+  opacity: 0%;
+}
+
+#i5_r15 {
+  x: 62%;
+  y: 35%;
+  animation: fadeIn 9s linear 7s infinite;
+  opacity: 0%;
+}
+
+#i5_r16 {
+  x: 40%;
+  y: 35%;
+  animation: fadeIn 9s linear 7.5s infinite;
+  opacity: 0%;
+}
+
+#i5_r17 {
+  x: 40%;
+  y: 40%;
+  animation: fadeIn 9s linear 8s infinite;
+  opacity: 0%;
+}
+
+#i5_r18 {
+  x: 45%;
+  y: 50%;
+  animation: fadeIn 9s linear 8.5s infinite;
+  opacity: 0%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  5% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  60% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
