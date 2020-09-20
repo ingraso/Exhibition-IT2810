@@ -128,7 +128,7 @@
 /*When screens width shrinks, we move the menu 
 to the top of the page*/
 
-@media screen and (max-width: 800px) {
+@media (max-width: 650px) and (orientation: portrait) {
   /*Styling for menu*/
 
   .open#menu {

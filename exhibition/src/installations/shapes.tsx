@@ -83,3 +83,62 @@ export class Rect {
     );
   };
 }
+
+export class Ellipse {
+  id: string;
+  cx: string;
+  cy: string;
+  rx: string;
+  ry: string;
+  fill: string;
+  stroke: string;
+
+  constructor(id: string, cx: string, cy: string, rx: string, ry:string, fill: string, stroke: string) {
+    this.id = id;
+    this.cx = cx;
+    this.cy = cy;
+    this.rx = rx;
+    this.ry = ry;
+    this.fill = fill;
+    this.stroke = stroke;
+  }
+
+  createEllipse = () => {
+    return (
+        <ellipse
+          id={this.id}
+          cx={this.cx}
+          cy={this.cy}
+          rx={this.rx}
+          ry={this.ry}
+          fill={this.fill}
+          stroke={this.stroke}
+        />
+    );
+  };
+}
+
+export class Triangle {
+  id: string;
+  points: string;
+  stroke: string;
+  fill: string;
+
+  constructor(id: string, points: string, stroke: string, fill: string) {
+    this.id = id;
+    this.points = points;
+    this.stroke = stroke;
+    this.fill = fill;
+  }
+
+  createTriangle = () => {
+    return(
+      <polygon
+        id={this.id}
+        points={this.points}
+        stroke={this.stroke}
+        fill={this.fill}
+      />
+    );
+  };
+}

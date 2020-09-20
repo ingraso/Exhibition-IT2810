@@ -62,8 +62,10 @@ class Carousel extends React.Component<{}, CarouselState> {
               id={installations[this.state.displayedInstallationIndex].poemId}
             />
           </div>
-          <Audio 
-            audioUrl={installations[this.state.displayedInstallationIndex].audioUrl}
+          <Audio
+            audioUrl={
+              installations[this.state.displayedInstallationIndex].audioUrl
+            }
           />
           <div
             className="arrows right"
