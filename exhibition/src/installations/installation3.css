@@ -5,7 +5,22 @@
 #c11,
 #c12,
 #c13 {
+  cx: 50%;
+  cy: 50%;
+  stroke-width: 10%;
   animation: circle-animation-10 10s ease-in-out infinite;
+}
+
+#c11 {
+  r: 30%;
+}
+
+#c12 {
+  r: 20%;
+}
+
+#c13 {
+  r: 10%;
 }
 
 @keyframes circle-animation-10 {
