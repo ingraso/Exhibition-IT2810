@@ -30,6 +30,7 @@ export class Circle {
   createCircle = () => {
     return (
       <circle
+        key={this.id}
         id={this.id}
         cx={this.cx}
         cy={this.cy}
@@ -72,6 +73,7 @@ export class Rect {
   createRect = () => {
     return (
       <rect
+        key={this.id}
         id={this.id}
         x={this.rx}
         y={this.ry}
@@ -93,7 +95,15 @@ export class Ellipse {
   fill: string;
   stroke: string;
 
-  constructor(id: string, cx: string, cy: string, rx: string, ry:string, fill: string, stroke: string) {
+  constructor(
+    id: string,
+    cx: string,
+    cy: string,
+    rx: string,
+    ry: string,
+    fill: string,
+    stroke: string
+  ) {
     this.id = id;
     this.cx = cx;
     this.cy = cy;
@@ -105,15 +115,16 @@ export class Ellipse {
 
   createEllipse = () => {
     return (
-        <ellipse
-          id={this.id}
-          cx={this.cx}
-          cy={this.cy}
-          rx={this.rx}
-          ry={this.ry}
-          fill={this.fill}
-          stroke={this.stroke}
-        />
+      <ellipse
+        key={this.id}
+        id={this.id}
+        cx={this.cx}
+        cy={this.cy}
+        rx={this.rx}
+        ry={this.ry}
+        fill={this.fill}
+        stroke={this.stroke}
+      />
     );
   };
 }
@@ -132,8 +143,9 @@ export class Triangle {
   }
 
   createTriangle = () => {
-    return(
+    return (
       <polygon
+        key={this.id}
         id={this.id}
         points={this.points}
         stroke={this.stroke}
