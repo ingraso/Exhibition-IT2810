@@ -26,15 +26,20 @@ interface CarouselProps {
 
 let currentInstallations = allInstallations;
 
+function indexFromSessionStorage(sessionStorageKey: string) {
+  const carouselIndex = sessionStorage.getItem(sessionStorageKey) || 0;
+  return Number(carouselIndex);
+}
+
 class Carousel extends React.Component<CarouselProps, CarouselState> {
   constructor(props: CarouselProps) {
     super(props);
     this.state = {
-      displayedInstallationIndex: 0,
+      displayedInstallationIndex: indexFromSessionStorage("carouselIndex"),
     };
   }
+
   render() {
-    //this.setState({ displayedInstallationIndex: 0 });
     if (this.props.displayOnlyFavorites) {
       currentInstallations = favoriteInstallations.map(
         (favInstallationId) =>
@@ -51,20 +56,49 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       if (next) {
         this.state.displayedInstallationIndex ===
         currentInstallations.length - 1
-          ? this.setState({ displayedInstallationIndex: 0 })
-          : this.setState({
-              displayedInstallationIndex:
-                this.state.displayedInstallationIndex + 1,
-            });
+          ? this.setState({ displayedInstallationIndex: 0 }, () => {
+              sessionStorage.setItem(
+                "carouselIndex",
+                String(this.state.displayedInstallationIndex)
+              );
+            })
+          : this.setState(
+              {
+                displayedInstallationIndex:
+                  this.state.displayedInstallationIndex + 1,
+              },
+              () => {
+                sessionStorage.setItem(
+                  "carouselIndex",
+                  String(this.state.displayedInstallationIndex)
+                );
+              }
+            );
       } else {
         this.state.displayedInstallationIndex === 0
-          ? this.setState({
-              displayedInstallationIndex: currentInstallations.length - 1,
-            })
-          : this.setState({
-              displayedInstallationIndex:
-                this.state.displayedInstallationIndex - 1,
-            });
+          ? this.setState(
+              {
+                displayedInstallationIndex: currentInstallations.length - 1,
+              },
+              () => {
+                sessionStorage.setItem(
+                  "carouselIndex",
+                  String(this.state.displayedInstallationIndex)
+                );
+              }
+            )
+          : this.setState(
+              {
+                displayedInstallationIndex:
+                  this.state.displayedInstallationIndex - 1,
+              },
+              () => {
+                sessionStorage.setItem(
+                  "carouselIndex",
+                  String(this.state.displayedInstallationIndex)
+                );
+              }
+            );
       }
     };
 
