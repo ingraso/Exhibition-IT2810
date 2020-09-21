@@ -2,24 +2,24 @@
   background-color: #ecb5ff;
 }
 
-#c11,
-#c12,
-#c13 {
+#i3_c1,
+#i3_c2,
+#i3_c3 {
   cx: 50%;
   cy: 50%;
   stroke-width: 10%;
   animation: circle-animation-10 10s ease-in-out infinite;
 }
 
-#c11 {
+#i3_c1 {
   r: 30%;
 }
 
-#c12 {
+#i3_c2 {
   r: 20%;
 }
 
-#c13 {
+#i3_c3 {
   r: 10%;
 }
 
