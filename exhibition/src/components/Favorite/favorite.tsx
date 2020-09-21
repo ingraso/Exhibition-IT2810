@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-export let favoriteInstallations = [];
+export let favoriteInstallationIds = [];
+let isFavorite = false;
 
 export const Fav = (installation: any) => {
   installation = installation.installation;
@@ -10,8 +11,12 @@ export const Fav = (installation: any) => {
       setFavorites(
         favorites.filter((favorite) => favorite !== installation.id)
       );
+      document.getElementById("favoriteButton")!!.innerHTML =
+        "Add to favorites";
     } else {
       setFavorites((favorites) => favorites.concat(installation.id));
+      document.getElementById("favoriteButton")!!.innerHTML =
+        "Remove from favorites";
     }
   };
 
@@ -20,10 +25,14 @@ export const Fav = (installation: any) => {
   }, [favorites]);
 
   if (favorites.length > 0) {
-    favoriteInstallations = JSON.parse(
+    favoriteInstallationIds = JSON.parse(
       window.localStorage.getItem("favorites")!!
     );
   }
 
-  return <button onClick={addFavorite}>Add to favorites</button>;
+  return (
+    <button id="favoriteButton" onClick={addFavorite}>
+      Add to favorites
+    </button>
+  );
 };
