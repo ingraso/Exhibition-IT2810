@@ -14,7 +14,7 @@ import { allInstallations } from "../../installations/installations";
 import InstallationInfo from "../InstallationInfo/installationInfo";
 import Poetry from "../Poetry/poetry";
 import Audio from "../Audio/audio";
-import { Fav, favoriteInstallations } from "../Favorite/favorite";
+import { Fav, favoriteInstallationIds } from "../Favorite/favorite";
 import {filteredInstallations, updateFilteredInstallations} from "../InstallationFilter/installationFilter";
 
 interface CarouselState {
@@ -23,6 +23,7 @@ interface CarouselState {
 
 interface CarouselProps {
   displayOnlyFavorites: Boolean;
+  changeDisplay: Boolean;
 }
 
 let currentInstallations = filteredInstallations;
@@ -43,7 +44,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   render() {
     updateFilteredInstallations();
     if (this.props.displayOnlyFavorites) {
-      currentInstallations = favoriteInstallations.map(
+      currentInstallations = favoriteInstallationIds.map(
         (favInstallationId) =>
           allInstallations.filter((inst) => inst.id === favInstallationId)[0]
       );
@@ -103,6 +104,14 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
             );
       }
     };
+
+    if (currentInstallation.id in favoriteInstallationIds) {
+      document.getElementById("favoriteButton")!!.innerHTML =
+        "Remove from favorites";
+    } else {
+      document.getElementById("favoriteButton")!!.innerHTML =
+        "Add to favorites";
+    }
 
     return (
       <div id="carousel">
