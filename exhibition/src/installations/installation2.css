@@ -1,6 +1,6 @@
 /*Position and animation of all circles*/
 
-#c8 {
+#i2_c1 {
   cx: 9%;
   cy: 22%;
   animation: circle-animation-8 4s infinite;
@@ -12,18 +12,18 @@
   }
 }
 
-#c9 {
+#i2_c2 {
   cx: 50%;
   cy: 29%;
 }
 
-#c10 {
+#i2_c3 {
   cx: 29%;
   cy: 57%;
 }
 
-#c9,
-#c10 {
+#i2_c2,
+#i2_c3 {
   animation: circle-animation-9 4s infinite;
 }
 
@@ -37,7 +37,7 @@
 disappear if the scal does not shrink.*/
 
 @media screen and (max-height: 500px) {
-  #c10 {
+  #i2_c3 {
     animation: circle-animation-max-height 4s infinite;
   }
 
