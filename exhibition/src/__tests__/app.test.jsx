@@ -4,7 +4,9 @@ import App from "../App";
 
 afterEach(cleanup);
 
-it("installationInfo snappshot", () => {
-    const {container} = render(<App />);
-    expect(container).toMatchSnapshot();
+/*To  test that the component hierarchy is the way we expect it to be*/
+
+it("installationInfo snapshot", () => {
+  const { container } = render(<App />);
+  expect(container).toMatchSnapshot();
 });
