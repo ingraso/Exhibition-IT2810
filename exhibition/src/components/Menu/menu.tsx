@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./menu.css";
+import {InstallationFilter} from "../InstallationFilter/installationFilter";
 
 /*
 A component for showing/hiding the menu. 
@@ -24,6 +25,12 @@ const Menu = ({ favOnClick } : { favOnClick: any }) => {
         <button id="displayFavButton" onClick={favOnClick} type="button">
           Only display favorites
         </button>
+        <div>
+          <input type="checkbox" id="filter1" name="a_filter" value="a" onChange={() => InstallationFilter("a")}/>
+          <label htmlFor="filter1"> Filter a</label><br/>
+          <input type="checkbox" id="filter2" name="b_filter" value="b" onChange={() => InstallationFilter( "b")}/>
+          <label htmlFor="filter2"> Filter b</label>
+        </div>
         <div
           id="up-arrow"
           className={open ? "open" : "closed"}
