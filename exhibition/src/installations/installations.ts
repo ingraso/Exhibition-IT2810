@@ -32,7 +32,7 @@ const installation1 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/Through%20the%20Dark%20Sod%20--%20as%20Education/lines.json",
   poemId: "poem1",
-  tags: ["a"],
+  tags: ["Dark", "Circles"],
 };
 const installation2 : Installation = {
   id: 2,
@@ -49,7 +49,7 @@ const installation2 : Installation = {
     "https://docs.google.com/uc?export=download&id=13-YgFevw6zqpnV96zCkuvxCZL9ij7FvA",
   poemUrl: "https://poetrydb.org/lines/Snow%20flakes./lines.json",
   poemId: "poem2",
-  tags: ["a"],
+  tags: ["Light", "Circles"],
 };
 const installation3 : Installation = {
   id: 3,
@@ -67,7 +67,7 @@ const installation3 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/Great%20Streets%20of%20silence%20led%20away/lines.json",
   poemId: "poem3",
-  tags: ["a"],
+  tags: ["Light", "Circles"],
 };
 const installation4 : Installation = {
   id: 4,
@@ -93,7 +93,7 @@ const installation4 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/Not%20at%20Home%20to%20Callers/lines.json",
   poemId: "poem4",
-  tags: ["a"],
+  tags: ["Colorful", "Rectangles"],
 };
 const installation5 : Installation = {
   id: 5,
@@ -125,7 +125,7 @@ const installation5 : Installation = {
     "https://docs.google.com/uc?export=download&id=1gRJLJnj3TcYAO52syqnoRQ7LP-Nocr5q",
   poemUrl: "https://poetrydb.org/title,linecount/Edinburgh;4/lines.json",
   poemId: "poem5",
-  tags: ["a"],
+  tags: ["Dark", "Rectangles"],
 };
 const installation6 : Installation = {
   id: 6,
@@ -145,7 +145,7 @@ const installation6 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/Nature%20assigns%20the%20Sun%20--/lines.json",
   poemId: "poem6",
-  tags: ["b"],
+  tags: ["Colorful", "Rectangles"],
 };
 const installation7 : Installation = {
   id: 7,
@@ -163,7 +163,7 @@ const installation7 : Installation = {
     "https://docs.google.com/uc?export=download&id=1t7nx2CCSaqM-qirDU2bSgtQWcW6CpzU0",
   poemUrl: "https://poetrydb.org/title/Yesterday%20is%20History,/lines.json",
   poemId: "poem7",
-  tags: ["b"],
+  tags: ["Rectangles", "Circles"],
 };
 const installation8 : Installation = {
   id: 8,
@@ -196,7 +196,7 @@ const installation8 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/Pain%20has%20but%20one%20Acquaintance/lines.json",
   poemId: "poem8",
-  tags: ["b"],
+  tags: ["Figures"],
 };
 const installation9 : Installation = {
   id: 9,
@@ -218,7 +218,7 @@ const installation9 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem9",
-  tags: ["b"],
+  tags: ["Figures", "Colorful"],
 };
 
 export const allInstallations : Installation[] = [
