@@ -52,6 +52,11 @@
   z-index: 2;
 }
 
+/* Styling for favorite-button */
+#displayFavButton {
+  grid-area: favoriteBlock;
+}
+
 /*Styling for blurry-area*/
 
 #blurry-area {

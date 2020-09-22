@@ -1,22 +1,44 @@
 import React, { useState } from "react";
 import Carousel from "./components/Carousel/carousel";
+import { favoriteInstallationIds } from "./components/Favorite/favorite";
 import Header from "./components/Header/header";
 import Menu from "./components/Menu/menu";
+import { useInstallationIndex } from "./state/installationIndexContext";
 
+/**
+ * App is the component at the highest level in this webapp.
+ * It runs displayFavorites() when the button in the menu is
+ * pressed.
+ *
+ * @param displayFav this hook tells us wheter the user wants
+ *    to display only its favorited installations or not.
+ * @param setInstallationIndex sets the index to 0 to start
+ *    the carousel from the first element after a display
+ *    change.
+ */
 function App() {
   const [displayFav, setDisplayFav] = useState(false);
+  const { setInstallationIndex } = useInstallationIndex();
+
   const displayFavorites = () => {
-    setDisplayFav(!displayFav);
-    if (displayFav) {
-      document.getElementById("displayFavButton")!!.innerHTML =
-        "Display only favorites";
+    if (favoriteInstallationIds.length > 0) {
+      setInstallationIndex(0);
+
+      setDisplayFav(!displayFav);
+      if (displayFav) {
+        document.getElementById("displayFavButton")!!.innerHTML =
+          "Display only favorites";
+      } else {
+        document.getElementById("displayFavButton")!!.innerHTML =
+          "Display all installations";
+      }
     } else {
-      document.getElementById("displayFavButton")!!.innerHTML =
-        "Display all installations";
+      alert("You don't have any favorites yet!");
     }
   };
+
   return (
-    <div className="App">
+    <div>
       <Header />
       <Menu favOnClick={displayFavorites} />
       <Carousel displayOnlyFavorites={displayFav} />

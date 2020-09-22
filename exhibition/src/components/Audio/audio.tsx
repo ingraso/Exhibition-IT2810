@@ -4,8 +4,11 @@ interface AudioProps {
   audioUrl: string;
 }
 
-/*Component for the Audio controller.
-Takes in the url source of the audio as a prop*/
+/**
+ * Audio is the component that controls the audio.
+ *
+ * @param audioUrl is the url source of the audio.
+ */
 
 class Audio extends React.Component<AudioProps> {
   render() {
@@ -13,7 +16,7 @@ class Audio extends React.Component<AudioProps> {
       <div className="audio-control">
         <audio controls key={this.props.audioUrl}>
           <source src={this.props.audioUrl} />
-          Your browser does not support audio-tag
+          Your browser does not support audio-tag.
         </audio>
       </div>
     );
