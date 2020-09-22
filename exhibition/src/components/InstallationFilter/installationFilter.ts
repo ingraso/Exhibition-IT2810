@@ -1,15 +1,18 @@
-import {allInstallations, Installation} from "../../installations/installations";
+import {
+  allInstallations,
+  Installation,
+} from "../../installations/installations";
 
 export let filteredInstallations: Installation[] = allInstallations;
 
 export const InstallationFilter = (new_tag: string) => {
-    if(window.sessionStorage.getItem("tags") === null) {
-        window.sessionStorage.setItem("tags", JSON.stringify([]));
-    }
+  if (window.sessionStorage.getItem("tags") === null) {
+    window.sessionStorage.setItem("tags", JSON.stringify([]));
+  }
 
-    let tags : string[] = JSON.parse(window.sessionStorage.getItem("tags")!!);
+  let tags: string[] = JSON.parse(window.sessionStorage.getItem("tags")!!);
 
-    /*if (tags.some((tag) => tag === new_tag)) {
+  /*if (tags.some((tag) => tag === new_tag)) {
         filteredInstallations.filter((installation) => installation.tags.every((tag) => tag !== new_tag));
         tags.filter((tag) => tag !== new_tag);
         window.sessionStorage.setItem("tags", JSON.stringify(tags));
@@ -20,27 +23,28 @@ export const InstallationFilter = (new_tag: string) => {
         window.sessionStorage.setItem("tags", JSON.stringify(tags));
     }*/
 
+  if (tags.some((tag) => tag === new_tag)) {
+    tags.filter((tag) => tag !== new_tag);
+    window.sessionStorage.setItem("tags", JSON.stringify(tags));
+  } else {
+    tags.concat(new_tag);
+    window.sessionStorage.setItem("tags", JSON.stringify(tags));
+  }
+  updateFilteredInstallations();
 
-
-    if (tags.some((tag) => tag === new_tag)) {
-        tags.filter((tag) => tag !== new_tag)
-        window.sessionStorage.setItem("tags", JSON.stringify(tags));
-    } else {
-        tags.concat(new_tag);
-        window.sessionStorage.setItem("tags", JSON.stringify(tags));
-    }
-    updateFilteredInstallations();
-
-    console.log(tags);
+  console.log(tags);
 };
 
 export const updateFilteredInstallations = () => {
-    if(window.sessionStorage.getItem("tags") === null) {
-        window.sessionStorage.setItem("tags", JSON.stringify([]));
-    }
+  if (window.sessionStorage.getItem("tags") === null) {
+    window.sessionStorage.setItem("tags", JSON.stringify([]));
+  }
 
-    let tags : string[] = JSON.parse(window.sessionStorage.getItem("tags")!!);
-    if (tags.length > 0)
-        filteredInstallations = allInstallations.filter((installation) => installation.tags.some((tag) => tags.includes(tag)));
+  let tags: string[] = JSON.parse(window.sessionStorage.getItem("tags")!!);
+  if (tags.length > 0) {
+      filteredInstallations = allInstallations.filter((installation) =>
+        installation.tags.some((tag) => tags.includes(tag))
+      );
+  }
+  console.log(tags);
 };
-
