@@ -44,7 +44,8 @@ const Menu = ({
         </div>
         <div id="up-arrow" onClick={() => setOpen(!open)}></div>
         <div id="blurry-area"></div>
-        <div id="filterCheckboxes">
+        <div id="Filters">
+          <h2 id="filterTitle">Filter by:</h2>
           <input
             type="checkbox"
             id="filter1"
