@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./menu.css";
-import {InstallationFilter} from "../InstallationFilter/installationFilter";
+import {InstallationFilter, tagIsChosen} from "../InstallationFilter/installationFilter";
+import {favoriteInstallationIds} from "../Favorite/favorite";
 
 /**
  * Menu is a component for showing/hiding the menu. 
@@ -34,10 +35,10 @@ const Menu = ({ favOnClick, filterOnClick }: { favOnClick: any, filterOnClick: a
         </div>
         <div id="up-arrow" onClick={() => setOpen(!open)}></div>
         <div id="blurry-area"></div>
-        <div>
-          <input type="checkbox" id="filter1" name="a_filter" value="a" onChange={() => filterCheckboxClick("a")}/>
+        <div id="filterCheckboxes">
+          <input type="checkbox" id="filter1" name="a_filter" onChange={() => filterCheckboxClick("a")} defaultChecked={tagIsChosen("a")}/>
           <label htmlFor="filter1"> Filter a</label><br/>
-          <input type="checkbox" id="filter2" name="b_filter" value="b" onChange={() => filterCheckboxClick( "b")}/>
+          <input type="checkbox" id="filter2" name="b_filter" onChange={() => filterCheckboxClick("b")} defaultChecked={tagIsChosen("b")}/>
           <label htmlFor="filter2"> Filter b</label>
         </div>
       </div>
