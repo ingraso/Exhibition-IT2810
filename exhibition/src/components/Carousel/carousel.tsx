@@ -40,6 +40,18 @@ let currentInstallations = filteredInstallations;
  *    only favorited installations is displayed.
  */
 
+/**
+ * Carousel is the main component in the webapp. It displays
+ * the installations, changes between which installation is
+ * displayed and can display installations based on filters
+ * or favorites.
+ *
+ * @param displayedInstallationIndex represents the index of
+ *    which installation is displayed.
+ * @param displayOnlyFavorites is a boolean representing if
+ *    only favorited installations is displayed.
+ */
+
 class Carousel extends React.Component<CarouselProps, CarouselState> {
   static contextType = InstallationIndexContext;
   context!: React.ContextType<typeof InstallationIndexContext>;
@@ -53,6 +65,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
   render() {
     const { installationIndex, setInstallationIndex } = this.context;
+
     if (this.props.displayOnlyFavorites) {
       currentInstallations = favoriteInstallationIds.map(
         (favInstallationId) =>
