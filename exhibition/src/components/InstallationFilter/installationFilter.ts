@@ -32,8 +32,7 @@ export const updateFilteredInstallations = () => {
     filteredInstallations = allInstallations.filter((installation) =>
       installation.tags.some((tag) => tags.includes(tag))
     );
-  }
-  else {
+  } else {
     filteredInstallations = allInstallations;
   }
 };
@@ -43,6 +42,9 @@ export const tagIsChosen = (tag: string) => {
     console.log("tags null");
     return false;
   }
-  console.log("Tags: ", JSON.parse(window.sessionStorage.getItem("tags")!!).includes(tag));
+  console.log(
+    "Tags: ",
+    JSON.parse(window.sessionStorage.getItem("tags")!!).includes(tag)
+  );
   return JSON.parse(window.sessionStorage.getItem("tags")!!).includes(tag);
-}
+};
