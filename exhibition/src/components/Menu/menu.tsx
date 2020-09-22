@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./menu.css";
 import {InstallationFilter} from "../InstallationFilter/installationFilter";
 
-/*
-A component for showing/hiding the menu. 
-The open-hook is used to decide if the menu is shown or not. 
-*/
+/**
+ * Menu is a component for showing/hiding the menu. 
+
+ * @param open this hook is used to decide if the menu is shown or not.
+ */
 
 const Menu = ({ favOnClick }: { favOnClick: any }) => {
   const [open, setOpen] = useState(false);

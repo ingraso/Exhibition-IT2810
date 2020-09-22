@@ -7,6 +7,12 @@ interface InstallationInfoProps {
   artist: string;
 }
 
+/**
+ * InstallationInfo contains info about the installation.
+ * This includes the title, year it was created and the
+ * artist who created it.
+ */
+
 class InstallationInfo extends React.Component<InstallationInfoProps, {}> {
   render() {
     return (
