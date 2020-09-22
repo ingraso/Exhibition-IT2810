@@ -53,21 +53,26 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
   render() {
     const { installationIndex, setInstallationIndex } = this.context;
-    updateFilteredInstallations();
     if (this.props.displayOnlyFavorites) {
       currentInstallations = favoriteInstallationIds.map(
         (favInstallationId) =>
           allInstallations.filter((inst) => inst.id === favInstallationId)[0]
       );
     } else {
+      updateFilteredInstallations();
       currentInstallations = filteredInstallations;
     }
 
     const currentInstallation = currentInstallations[installationIndex];
 
     const changeInstallation = (next: Boolean) => {
+
+      if(!this.props.displayOnlyFavorites) {
+        updateFilteredInstallations();
+        currentInstallations = filteredInstallations;
+      }
       if (next) {
-        installationIndex === currentInstallations.length - 1
+        installationIndex >= currentInstallations.length - 1
           ? setInstallationIndex(0)
           : setInstallationIndex(installationIndex + 1);
       } else {
