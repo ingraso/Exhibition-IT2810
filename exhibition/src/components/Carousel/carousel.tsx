@@ -41,9 +41,6 @@ let currentInstallations = filteredInstallations;
  */
 
 class Carousel extends React.Component<CarouselProps, CarouselState> {
-  constructor(props: CarouselProps) {
-    super(props);
-  }
   static contextType = InstallationIndexContext;
   context!: React.ContextType<typeof InstallationIndexContext>;
 
