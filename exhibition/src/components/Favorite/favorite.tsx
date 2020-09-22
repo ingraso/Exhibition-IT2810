@@ -1,32 +1,38 @@
 import React, { useEffect, useState } from "react";
 
+// an array containing all the favorited installations' ids
 export let favoriteInstallationIds = [];
-let isFavorite = false;
 
-export const Fav = (installation: any) => {
+/**
+ * FavoriteButton saves the installation's id to HTML
+ * localstorage.
+ *
+ * @param installation contains all info about an
+ *    installation, like its id.
+ * @param favoriteIds is an array of all the favorited
+ *    installations' ids.
+ */
+
+export const FavoriteButton = (installation: any) => {
   installation = installation.installation;
-  const [favorites, setFavorites] = useState<any[]>([]);
+  const [favoriteIds, setFavoriteIds] = useState<any[]>([]);
   const addFavorite = () => {
-    if (favorites.some((favorite) => favorite === installation.id)) {
-      setFavorites(
-        favorites.filter((favorite) => favorite !== installation.id)
+    if (favoriteIds.some((favorite) => favorite === installation.id)) {
+      setFavoriteIds(
+        favoriteIds.filter((favorite) => favorite !== installation.id)
       );
-      document.getElementById("favoriteButton")!!.innerHTML =
-        "Add to favorites";
     } else {
-      setFavorites((favorites) => favorites.concat(installation.id));
-      document.getElementById("favoriteButton")!!.innerHTML =
-        "Remove from favorites";
+      setFavoriteIds((favoriteIds) => favoriteIds.concat(installation.id));
     }
   };
 
   useEffect(() => {
-    window.localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
+    window.localStorage.setItem("favoriteIds", JSON.stringify(favoriteIds));
+  }, [favoriteIds]);
 
-  if (favorites.length > 0) {
+  if (window.localStorage.getItem("favoriteIds") !== null) {
     favoriteInstallationIds = JSON.parse(
-      window.localStorage.getItem("favorites")!!
+      window.localStorage.getItem("favoriteIds")!!
     );
   }
 
