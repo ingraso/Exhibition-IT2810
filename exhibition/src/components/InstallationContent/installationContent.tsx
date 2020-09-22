@@ -5,6 +5,15 @@ interface InstallationContentProps {
   installation: Object[];
 }
 
+/**
+ * InstallationContent contains the svg of the installations.
+ * It initializes a installation's shapes into its respective
+ * objects.
+ *
+ * @param installation is an installation and contains a list
+ *     of shapes.
+ */
+
 class InstallationContent extends React.Component<
   InstallationContentProps,
   {}

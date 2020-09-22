@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import "./menu.css";
 
-/*
-A component for showing/hiding the menu. 
-The open-hook is used to decide if the menu is shown or not. 
-*/
+/**
+ * Menu is a component for showing/hiding the menu. 
+
+ * @param open this hook is used to decide if the menu is shown or not.
+ */
 
 const Menu = ({ favOnClick }: { favOnClick: any }) => {
   const [open, setOpen] = useState(false);
 
+  const favButtonClick = () => {
+    favOnClick();
+    setOpen(!open);
+  };
+
   return (
     <div>
       <div id="menu" className={open ? "open" : "closed"}>
-        <button id="displayFavButton" onClick={favOnClick} type="button">
+        <button id="displayFavButton" onClick={favButtonClick} type="button">
           Only display favorites
         </button>
         <div id="close-button" onClick={() => setOpen(!open)}>
