@@ -12,27 +12,17 @@ export const InstallationFilter = (new_tag: string) => {
 
   let tags: string[] = JSON.parse(window.sessionStorage.getItem("tags")!!);
 
-  /*if (tags.some((tag) => tag === new_tag)) {
-        filteredInstallations.filter((installation) => installation.tags.every((tag) => tag !== new_tag));
-        tags.filter((tag) => tag !== new_tag);
-        window.sessionStorage.setItem("tags", JSON.stringify(tags));
-    } else {
-        filteredInstallations.concat(allInstallations.filter((installation) => installation.tags.some((tag) => tag === new_tag)));
-        filteredInstallations.filter((installation, index) => filteredInstallations.indexOf(installation) === index);
-        tags.concat(new_tag);
-        window.sessionStorage.setItem("tags", JSON.stringify(tags));
-    }*/
-
-  if (tags.some((tag) => tag === new_tag)) {
-    tags.filter((tag) => tag !== new_tag);
+  if (tags.includes(new_tag)) {
+    tags = tags.filter((tag) => tag !== new_tag);
     window.sessionStorage.setItem("tags", JSON.stringify(tags));
+    console.log("tag in tagList. New tag =", new_tag)
   } else {
-    tags.concat(new_tag);
+    tags.push(new_tag);
     window.sessionStorage.setItem("tags", JSON.stringify(tags));
+    console.log("New tag: ", new_tag)
   }
+  console.log("Updated tags list: ", tags)
   updateFilteredInstallations();
-
-  console.log(tags);
 };
 
 export const updateFilteredInstallations = () => {
@@ -46,5 +36,5 @@ export const updateFilteredInstallations = () => {
         installation.tags.some((tag) => tags.includes(tag))
       );
   }
-  console.log(tags);
+  console.log("uFI tags: ", tags);
 };
