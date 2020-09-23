@@ -54,9 +54,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
     if (favoriteInstallationIds.some((favId) => favId === inst.id)) {
       star?.classList.add("filledStar");
-      star?.classList.remove("emptyStar");
     } else {
-      star?.classList.add("emptyStar");
       star?.classList.remove("filledStar");
     }
   }
@@ -86,10 +84,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
           : setInstallationIndex(installationIndex - 1);
       }
     };
-
-    // console.log(favoriteInstallationIds.some((id) => id === currentInstallation.id));
-    // cannot reach the starButton, because it renders after this. Have to solve
-    // it to change the text/change color on star/heart
 
     return (
       <div id="carousel">
