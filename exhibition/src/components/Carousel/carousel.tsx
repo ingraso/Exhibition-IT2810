@@ -23,6 +23,7 @@ import {
 
 interface CarouselProps {
   displayOnlyFavorites: Boolean;
+  updateFilters: Boolean;
 }
 
 let currentInstallations = filteredInstallations;
@@ -80,8 +81,10 @@ class Carousel extends React.Component<CarouselProps, {}> {
         (favInstallationId) =>
           allInstallations.filter((inst) => inst.id === favInstallationId)[0]
       );
-    } else {
+    } else if (this.props.updateFilters) {
       updateFilteredInstallations();
+      currentInstallations = filteredInstallations;
+    } else {
       currentInstallations = filteredInstallations;
     }
 
@@ -89,7 +92,6 @@ class Carousel extends React.Component<CarouselProps, {}> {
 
     const changeInstallation = (next: Boolean) => {
       if (!this.props.displayOnlyFavorites) {
-        updateFilteredInstallations();
         currentInstallations = filteredInstallations;
       }
       if (next) {

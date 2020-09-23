@@ -10,12 +10,15 @@
   background-color: #bcc5ff;
   box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
   z-index: 2;
-  grid-template: 1fr 3fr 4fr 1fr 1fr / 1fr 10fr 2fr;
+  grid-template: 1fr 5fr 1fr 2fr 2fr 2fr 2fr / 1fr 10fr 2fr;
   grid-template-areas:
     ". filterTitle close-button"
     ". filters ."
     ". . ."
-    ". favoriteBlock .";
+    ". apply_btn ."
+    ". . ."
+    ". favoriteBlock ."
+    ". . .";
 }
 
 .closed#menu {
@@ -80,6 +83,10 @@
 #filters {
   grid-area: filters;
   font-family: georgia, serif;
+}
+
+#apply_btn {
+  grid-area: apply_btn;
 }
 
 /*Styling for blurry-area*/
@@ -160,44 +167,26 @@ to the top of the page*/
     top: 60px;
     width: 100%;
     height: 400px;
-    grid-template: 1fr 7fr 2fr 2fr 1fr / 1fr 8fr 8fr 1fr 3fr 1fr;
+    grid-template: 1fr 7fr 1fr 2fr 1fr / 1fr 8fr 1fr 8fr 1fr 3fr 1fr;
     justify-content: left;
     grid-template-areas:
-      ". filterTitle filterTitle . . ."
-      ". filters filters filters filters ."
-      ". . . . . ."
-      ". favoriteBlock favoriteBlock . arrow .";
+      ". filterTitle filterTitle filterTitle filterTitle filterTitle ."
+      ". filters filters filters filters . ."
+      ". . . . . . ."
+      ". apply_btn . favoriteBlock . arrow .";
   }
 
   /* Styling av filters */
   #filters {
     font-family: georgia, serif;
-    display: inline-grid;
     grid-area: filters;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr;
-    grid-template-areas:
-      "filterOneLeft filterOneRight"
-      "filterTwoLeft filterTwoRight"
-      "filterThreeLeft filterThreeRight";
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 
-  #filter1 {
-    grid-area: filterOneLeft;
-  }
-  #filter2 {
-    grid-area: filterOneRight;
-  }
-  #filter3 {
-    grid-area: filterTwoLeft;
-  }
-  #filter4 {
-    grid-area: filterTwoRight;
-  }
-  #filter5 {
-    grid-area: filterThreeLeft;
-  }
-  #filter6 {
-    grid-area: filterThreeRight;
+  #apply_btn {
+    grid-area: apply_btn;
   }
 
   /* Styling for favorite-button */
