@@ -8,7 +8,12 @@ import {
 /**
  * Menu is a component for showing/hiding the menu. 
 
- * @param open this hook is used to decide if the menu is shown or not.
+ * @var open this hook is used to decide if the 
+ *    menu is shown or not.
+ * @var favOnClick is a function sent from App,
+ *    which displays the favorite installations.
+ * @var filterOnClick is a function sent from
+ *    App, which displays the filtered installations.
  */
 
 const Menu = ({
@@ -38,11 +43,11 @@ const Menu = ({
         </button>
         <div id="close-button" onClick={() => setOpen(!open)}>
           <div className="line-one">
-            <div className="line-two"/>
+            <div className="line-two" />
           </div>
         </div>
-        <div id="up-arrow" onClick={() => setOpen(!open)}/>
-        <div id="blurry-area"/>
+        <div id="up-arrow" onClick={() => setOpen(!open)} />
+        <div id="blurry-area" />
 
         <h2 id="filterTitle">Filter by:</h2>
         <div id="filters">
@@ -118,9 +123,9 @@ const Menu = ({
         className={open ? "open" : "closed"}
         onClick={() => setOpen(!open)}
       >
-        <div id="top-line"/>
-        <div id="middle-line"/>
-        <div id="bottom-line"/>
+        <div id="top-line" />
+        <div id="middle-line" />
+        <div id="bottom-line" />
       </div>
     </div>
   );
