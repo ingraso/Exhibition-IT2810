@@ -60,15 +60,15 @@ class Carousel extends React.Component<CarouselProps, {}> {
     }
 
     if (currentInstallations.length <= 1) {
-      leftArrow?.classList.remove("purpleButton");
-      rightArrow?.classList.remove("purpleButton");
-      leftArrow?.classList.add("greyButton");
-      rightArrow?.classList.add("greyButton");
+      leftArrow?.classList.remove("allowedArrow");
+      rightArrow?.classList.remove("allowedArrow");
+      leftArrow?.classList.add("disabledButton");
+      rightArrow?.classList.add("disabledButton");
     } else {
-      leftArrow?.classList.remove("greyButton");
-      rightArrow?.classList.remove("greyButton");
-      leftArrow?.classList.add("purpleButton");
-      rightArrow?.classList.add("purpleButton");
+      leftArrow?.classList.remove("disabledButton");
+      rightArrow?.classList.remove("disabledButton");
+      leftArrow?.classList.add("allowedArrow");
+      rightArrow?.classList.add("allowedArrow");
     }
   }
 
@@ -107,7 +107,7 @@ class Carousel extends React.Component<CarouselProps, {}> {
       <div id="carousel">
         <div
           id="left"
-          className="arrows purpleButton"
+          className="arrows allowedArrow"
           onClick={() => changeInstallation(false)}
         >
           <div className="leftArrow"></div>
@@ -126,7 +126,7 @@ class Carousel extends React.Component<CarouselProps, {}> {
         </div>
         <div
           id="right"
-          className="arrows purpleButton"
+          className="arrows allowedArrow"
           onClick={() => changeInstallation(true)}
         >
           <div className="rightArrow"></div>

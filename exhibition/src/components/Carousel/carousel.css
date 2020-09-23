@@ -29,22 +29,22 @@
   justify-self: center;
 }
 
-.purpleButton {
+.allowedArrow {
   background-color: #bcc5ff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.purpleButton:hover {
+.allowedArrow:hover {
   background-color: #97a5ff;
   cursor: pointer;
 }
 
-.greyButton {
+.disabledButton {
   background-color: #c9c9c9;
   opacity: 0.6;
 }
 
-.greyButton:hover {
+.disabledButton:hover {
   cursor: not-allowed;
 }
 
