@@ -12,7 +12,7 @@ export interface Installation {
   tags: string[];
 }
 
-const installation1 : Installation = {
+const installation1: Installation = {
   id: 1,
   shapes: [
     new Rect("i1_r1", "0", "0", "350", "350", "#4e4e4e", "#4e4e4e"),
@@ -34,7 +34,7 @@ const installation1 : Installation = {
   poemId: "poem1",
   tags: ["Dark", "Circles"],
 };
-const installation2 : Installation = {
+const installation2: Installation = {
   id: 2,
   shapes: [
     new Rect("i2_r1", "0", "0", "350", "350", "#f7c4d4", "#f7c4d4"),
@@ -51,7 +51,7 @@ const installation2 : Installation = {
   poemId: "poem2",
   tags: ["Light", "Circles"],
 };
-const installation3 : Installation = {
+const installation3: Installation = {
   id: 3,
   shapes: [
     new Rect("i3_r1", "0", "0", "350", "350", "#ecb5ff", "#ecb5ff"),
@@ -69,7 +69,7 @@ const installation3 : Installation = {
   poemId: "poem3",
   tags: ["Colorful", "Circles"],
 };
-const installation4 : Installation = {
+const installation4: Installation = {
   id: 4,
   shapes: [
     new Rect("i4_r1", "1", "1", "60", "190", "green", ""),
@@ -87,7 +87,7 @@ const installation4 : Installation = {
   ],
   title: "Moving rectangles",
   year: 2000,
-  artist: "Unknown",
+  artist: "Milly Kinson",
   audioUrl:
     "https://docs.google.com/uc?export=download&id=1nHadQ-Dy8C_s_wJ31nTHzDfIYdIwjYoA",
   poemUrl:
@@ -95,7 +95,7 @@ const installation4 : Installation = {
   poemId: "poem4",
   tags: ["Colorful", "Rectangles"],
 };
-const installation5 : Installation = {
+const installation5: Installation = {
   id: 5,
   shapes: [
     new Rect("i5_r0", "1", "1", "1", "1", "black", "black"),
@@ -118,16 +118,16 @@ const installation5 : Installation = {
     new Rect("i5_r17", "1", "1", "5", "40", "#666666", "#666666"),
     new Rect("i5_r18", "1", "1", "20", "5", "#333333", "#333333"),
   ],
-  title: "Doomeday",
+  title: "Doomsday",
   year: 1984,
-  artist: "The Doom Himself",
+  artist: "Milly Kinson",
   audioUrl:
     "https://docs.google.com/uc?export=download&id=1gRJLJnj3TcYAO52syqnoRQ7LP-Nocr5q",
   poemUrl: "https://poetrydb.org/title,linecount/Edinburgh;4/lines.json",
   poemId: "poem5",
   tags: ["Dark", "Rectangles"],
 };
-const installation6 : Installation = {
+const installation6: Installation = {
   id: 6,
   shapes: [
     new Rect("i6_r0", "0", "0", "1", "1", "#e2ffd1", "#e2ffd1"),
@@ -147,7 +147,7 @@ const installation6 : Installation = {
   poemId: "poem6",
   tags: ["Colorful", "Rectangles"],
 };
-const installation7 : Installation = {
+const installation7: Installation = {
   id: 7,
   shapes: [
     new Rect("i7_r1", "0%", "0%", "100%", "100%", "#656E70", "#464049"),
@@ -165,7 +165,7 @@ const installation7 : Installation = {
   poemId: "poem7",
   tags: ["Dark", "Rectangles", "Circles"],
 };
-const installation8 : Installation = {
+const installation8: Installation = {
   id: 8,
   shapes: [
     new Rect("i8_r1", "0", "0", "100%", "100%", "#B1B697", "#B1B697"),
@@ -198,7 +198,7 @@ const installation8 : Installation = {
   poemId: "poem8",
   tags: ["Colorful", "Complex"],
 };
-const installation9 : Installation = {
+const installation9: Installation = {
   id: 9,
   shapes: [
     new Rect("i9_r1", "0", "0", "100%", "100%", "#94C4BD", "#94C4BD"),
@@ -221,7 +221,7 @@ const installation9 : Installation = {
   tags: ["Complex", "Colorful"],
 };
 
-export const allInstallations : Installation[] = [
+export const allInstallations: Installation[] = [
   installation1,
   installation2,
   installation3,

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./menu.css";
 import {
+  applyFilters,
+  applyPossible,
   InstallationFilter,
   tagIsChosen,
 } from "../InstallationFilter/installationFilter";
@@ -27,7 +29,14 @@ const Menu = ({
 
   const filterCheckboxClick = (new_tag: string) => {
     InstallationFilter(new_tag);
-    filterOnClick();
+  };
+
+  const applyButtonClick = () => {
+    if (applyPossible()) {
+      applyFilters();
+      filterOnClick();
+      setOpen(!open);
+    }
   };
 
   return (
@@ -38,11 +47,11 @@ const Menu = ({
         </button>
         <div id="close-button" onClick={() => setOpen(!open)}>
           <div className="line-one">
-            <div className="line-two"/>
+            <div className="line-two" />
           </div>
         </div>
-        <div id="up-arrow" onClick={() => setOpen(!open)}/>
-        <div id="blurry-area"/>
+        <div id="up-arrow" onClick={() => setOpen(!open)} />
+        <div id="blurry-area" />
 
         <h2 id="filterTitle">Display pictures with:</h2>
         <div id="filters">
@@ -79,8 +88,8 @@ const Menu = ({
               <label htmlFor="colorfulCheckbox"> Colorful </label>
             </div>
           </div>
-          <div id="shape_filters">
-            <h4>Shapes</h4>
+          <div id="shapesFilters">
+            <h4>Shapes:</h4>
             <div id="filter4">
               <input
                 type="checkbox"
@@ -112,16 +121,52 @@ const Menu = ({
               <label htmlFor="complexCheckbox"> Complex </label>
             </div>
           </div>
+          <div id="artistFilters">
+            <h4>Artist:</h4>
+            <div id="filter7">
+              <input
+                type="checkbox"
+                id="cassattCheckbox"
+                name="cassatt_filter"
+                onChange={() => filterCheckboxClick("Mary Cassatt")}
+                defaultChecked={tagIsChosen("Mary Cassatt")}
+              />
+              <label htmlFor="cassattCheckbox"> Mary Cassatt </label>
+            </div>
+            <div id="filter8">
+              <input
+                type="checkbox"
+                id="kinsonCheckbox"
+                name="kinson_filter"
+                onChange={() => filterCheckboxClick("Milly Kinson")}
+                defaultChecked={tagIsChosen("Milly Kinson")}
+              />
+              <label htmlFor="kinsonCheckbox"> Milly Kinson </label>
+            </div>
+            <div id="filter9">
+              <input
+                type="checkbox"
+                id="crowCheckbox"
+                name="crow_filter"
+                onChange={() => filterCheckboxClick("A Literal Crow")}
+                defaultChecked={tagIsChosen("A Literal Crow")}
+              />
+              <label htmlFor="crowCheckbox"> A Literal Crow </label>
+            </div>
+          </div>
         </div>
+        <button id="apply_btn" onClick={applyButtonClick}>
+          Apply filters
+        </button>
       </div>
       <div
         id="burger-button"
         className={open ? "open" : "closed"}
         onClick={() => setOpen(!open)}
       >
-        <div id="top-line"/>
-        <div id="middle-line"/>
-        <div id="bottom-line"/>
+        <div id="top-line" />
+        <div id="middle-line" />
+        <div id="bottom-line" />
       </div>
     </div>
   );

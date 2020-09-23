@@ -16,7 +16,10 @@ import Poetry from "../Poetry/poetry";
 import Audio from "../Audio/audio";
 import { FavoriteButton, favoriteInstallationIds } from "../Favorite/favorite";
 import { InstallationIndexContext } from "../../state/installationIndexContext";
-import {filteredInstallations, updateFilteredInstallations} from "../InstallationFilter/installationFilter";
+import {
+  filteredInstallations,
+  updateFilteredInstallations,
+} from "../InstallationFilter/installationFilter";
 
 interface CarouselState {
   displayedInstallationIndex: number;
@@ -24,6 +27,7 @@ interface CarouselState {
 
 interface CarouselProps {
   displayOnlyFavorites: Boolean;
+  updateFilters: Boolean;
 }
 
 let currentInstallations = filteredInstallations;
@@ -80,17 +84,17 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         (favInstallationId) =>
           allInstallations.filter((inst) => inst.id === favInstallationId)[0]
       );
-    } else {
+    } else if (this.props.updateFilters) {
       updateFilteredInstallations();
+      currentInstallations = filteredInstallations;
+    } else {
       currentInstallations = filteredInstallations;
     }
 
     const currentInstallation = currentInstallations[installationIndex];
 
     const changeInstallation = (next: Boolean) => {
-
-      if(!this.props.displayOnlyFavorites) {
-        updateFilteredInstallations();
+      if (!this.props.displayOnlyFavorites) {
         currentInstallations = filteredInstallations;
       }
       if (next) {
