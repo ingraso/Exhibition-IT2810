@@ -34,7 +34,7 @@ let currentInstallations = filteredInstallations;
  * or favorites.
  *
  * @var displayOnlyFavorites is a boolean representing
- *    wheter favorited or filtered installations are
+ *    whether favorited or filtered installations are
  *    displayed.
  */
 
