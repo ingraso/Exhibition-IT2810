@@ -7,7 +7,7 @@ interface AudioProps {
 /**
  * Audio is the component that controls the audio.
  *
- * @param audioUrl is the url source of the audio.
+ * @var audioUrl is the url source of the audio.
  */
 
 class Audio extends React.Component<AudioProps> {

@@ -16,11 +16,10 @@ import Poetry from "../Poetry/poetry";
 import Audio from "../Audio/audio";
 import { FavoriteButton, favoriteInstallationIds } from "../Favorite/favorite";
 import { InstallationIndexContext } from "../../state/installationIndexContext";
-import {filteredInstallations, updateFilteredInstallations} from "../InstallationFilter/installationFilter";
-
-interface CarouselState {
-  displayedInstallationIndex: number;
-}
+import {
+  filteredInstallations,
+  updateFilteredInstallations,
+} from "../InstallationFilter/installationFilter";
 
 interface CarouselProps {
   displayOnlyFavorites: Boolean;
@@ -34,25 +33,12 @@ let currentInstallations = filteredInstallations;
  * displayed and can display installations based on filters
  * or favorites.
  *
- * @param displayedInstallationIndex represents the index of
- *    which installation is displayed.
- * @param displayOnlyFavorites is a boolean representing if
- *    only favorited installations is displayed.
+ * @var displayOnlyFavorites is a boolean representing
+ *    wheter favorited or filtered installations are
+ *    displayed.
  */
 
-/**
- * Carousel is the main component in the webapp. It displays
- * the installations, changes between which installation is
- * displayed and can display installations based on filters
- * or favorites.
- *
- * @param displayedInstallationIndex represents the index of
- *    which installation is displayed.
- * @param displayOnlyFavorites is a boolean representing if
- *    only favorited installations is displayed.
- */
-
-class Carousel extends React.Component<CarouselProps, CarouselState> {
+class Carousel extends React.Component<CarouselProps, {}> {
   static contextType = InstallationIndexContext;
   context!: React.ContextType<typeof InstallationIndexContext>;
 
@@ -88,8 +74,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     const currentInstallation = currentInstallations[installationIndex];
 
     const changeInstallation = (next: Boolean) => {
-
-      if(!this.props.displayOnlyFavorites) {
+      if (!this.props.displayOnlyFavorites) {
         updateFilteredInstallations();
         currentInstallations = filteredInstallations;
       }

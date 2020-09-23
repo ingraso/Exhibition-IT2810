@@ -1,5 +1,5 @@
 import React from "react";
-import "./installationInfo.css"
+import "./installationInfo.css";
 
 interface InstallationInfoProps {
   installationTitle: string;
@@ -13,17 +13,23 @@ interface InstallationInfoProps {
  * artist who created it.
  */
 
-class InstallationInfo extends React.Component<InstallationInfoProps, {}> {
-  render() {
-    return (
-      <div>
-        <h2 id="installation-title">
-          {this.props.installationTitle} ({this.props.year})
-        </h2>
-        <h4 id="artist">{this.props.artist}</h4>
-      </div>
-    );
-  }
-}
+const InstallationInfo = ({
+  installationTitle,
+  year,
+  artist,
+}: {
+  installationTitle: string;
+  year: number;
+  artist: string;
+}) => {
+  return (
+    <div>
+      <h2 id="installation-title">
+        {installationTitle} ({year})
+      </h2>
+      <h4 id="artist">{artist}</h4>
+    </div>
+  );
+};
 
 export default InstallationInfo;
