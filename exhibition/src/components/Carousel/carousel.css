@@ -93,9 +93,41 @@
   transform: translate(-50%, -50%);
 }
 
-.audio-control {
-  text-align: center;
+#audioFav {
+  display: flex;
+  justify-content: center;
   grid-area: audio;
+  width: 350px;
+  margin: auto;
+}
+
+/* Styling for star-button
+ * 
+ * The layout is inspired by this:
+ * https://css-tricks.com/star-ratings/
+ */
+
+#star {
+  font-size: 50px;
+  position: relative;
+}
+
+#star:hover::before {
+  cursor: pointer;
+}
+
+#starButton {
+  unicode-bidi: bidi-override;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: white;
+}
+
+.filledStar::before {
+  content: "\2605";
+  color: yellow;
+  position: absolute;
 }
 
 /*Change layout when width shrinks*/
@@ -161,9 +193,8 @@
     max-width: 350px;
   }
 
-  audio {
+  #audioFav {
     width: 100%;
-    max-width: 350px;
   }
 }
 
@@ -206,5 +237,9 @@ and that the picture shrinks*/
 
   p {
     margin: 0;
+  }
+
+  #starButton {
+    margin-top: -10px;
   }
 }
