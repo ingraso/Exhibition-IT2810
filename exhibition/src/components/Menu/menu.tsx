@@ -44,72 +44,73 @@ const Menu = ({
         <div id="up-arrow" onClick={() => setOpen(!open)}/>
         <div id="blurry-area"/>
 
-        <h2 id="filterTitle">Display pictures containing:</h2>
+        <h2 id="filterTitle">Display pictures with:</h2>
         <div id="filters">
-          <div id="filter1">
-            <input
-              type="checkbox"
-              id="darkCheckbox"
-              name="dark_filter"
-              onChange={() => filterCheckboxClick("Dark")}
-              defaultChecked={tagIsChosen("Dark")}
-            />
-            <label htmlFor="darkCheckbox"> Dark </label>
+          <div id="paletteFilters">
+            <h4>Palette:</h4>
+            <div id="filter1">
+              <input
+                type="checkbox"
+                id="darkCheckbox"
+                name="dark_filter"
+                onChange={() => filterCheckboxClick("Dark")}
+                defaultChecked={tagIsChosen("Dark")}
+              />
+              <label htmlFor="darkCheckbox"> Dark </label>
+            </div>
+            <div id="filter2">
+              <input
+                type="checkbox"
+                id="lightCheckbox"
+                name="light_filter"
+                onChange={() => filterCheckboxClick("Light")}
+                defaultChecked={tagIsChosen("Light")}
+              />
+              <label htmlFor="lightCheckbox"> Light </label>
+            </div>
+            <div id="filter3">
+              <input
+                type="checkbox"
+                id="colorfulCheckbox"
+                name="colorful_filter"
+                onChange={() => filterCheckboxClick("Colorful")}
+                defaultChecked={tagIsChosen("Colorful")}
+              />
+              <label htmlFor="colorfulCheckbox"> Colorful </label>
+            </div>
           </div>
-          <br />
-          <div id="filter2">
-            <input
-              type="checkbox"
-              id="lightCheckbox"
-              name="light_filter"
-              onChange={() => filterCheckboxClick("Light")}
-              defaultChecked={tagIsChosen("Light")}
-            />
-            <label htmlFor="lightCheckbox"> Light </label>
-          </div>
-          <br />
-          <div id="filter3">
-            <input
-              type="checkbox"
-              id="colorfulCheckbox"
-              name="colorful_filter"
-              onChange={() => filterCheckboxClick("Colorful")}
-              defaultChecked={tagIsChosen("Colorful")}
-            />
-            <label htmlFor="colorfulCheckbox"> Colorful </label>
-          </div>
-          <br />
-          <div id="filter4">
-            <input
-              type="checkbox"
-              id="CirclesCheckbox"
-              name="circles_filter"
-              onChange={() => filterCheckboxClick("Circles")}
-              defaultChecked={tagIsChosen("Circles")}
-            />
-            <label htmlFor="CirclesCheckbox"> Circles </label>
-          </div>
-          <br />
-          <div id="filter5">
-            <input
-              type="checkbox"
-              id="rectanglesCheckbox"
-              name="rect_filter"
-              onChange={() => filterCheckboxClick("Rectangles")}
-              defaultChecked={tagIsChosen("Rectangles")}
-            />
-            <label htmlFor="rectanglesCheckbox"> Rectangles </label>
-          </div>
-          <br />
-          <div id="filter6">
-            <input
-              type="checkbox"
-              id="complexCheckbox"
-              name="complex_filter"
-              onChange={() => filterCheckboxClick("Complex")}
-              defaultChecked={tagIsChosen("Complex")}
-            />
-            <label htmlFor="complexCheckbox"> Complex </label>
+          <div id="shape_filters">
+            <h4>Shapes</h4>
+            <div id="filter4">
+              <input
+                type="checkbox"
+                id="CirclesCheckbox"
+                name="circles_filter"
+                onChange={() => filterCheckboxClick("Circles")}
+                defaultChecked={tagIsChosen("Circles")}
+              />
+              <label htmlFor="CirclesCheckbox"> Circles </label>
+            </div>
+            <div id="filter5">
+              <input
+                type="checkbox"
+                id="rectanglesCheckbox"
+                name="rect_filter"
+                onChange={() => filterCheckboxClick("Rectangles")}
+                defaultChecked={tagIsChosen("Rectangles")}
+              />
+              <label htmlFor="rectanglesCheckbox"> Rectangles </label>
+            </div>
+            <div id="filter6">
+              <input
+                type="checkbox"
+                id="complexCheckbox"
+                name="complex_filter"
+                onChange={() => filterCheckboxClick("Complex")}
+                defaultChecked={tagIsChosen("Complex")}
+              />
+              <label htmlFor="complexCheckbox"> Complex </label>
+            </div>
           </div>
         </div>
       </div>

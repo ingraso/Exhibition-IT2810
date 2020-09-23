@@ -14,7 +14,8 @@ export let filteredInstallations: Installation[] = allInstallations;
 
 export const InstallationFilter = (new_tag: string) => {
   if (window.sessionStorage.getItem("tags") === null) {
-    window.sessionStorage.setItem("tags", JSON.stringify([]));
+    let allTags = allInstallations.map((installation ) => installation.tags).flat(1);
+    window.sessionStorage.setItem("tags", JSON.stringify(allTags.filter((tag, index) => allTags.indexOf(tag) === index)));
   }
 
   let tags: string[] = JSON.parse(window.sessionStorage.getItem("tags")!!);
@@ -36,10 +37,12 @@ export const InstallationFilter = (new_tag: string) => {
 
 export const updateFilteredInstallations = () => {
   if (window.sessionStorage.getItem("tags") === null) {
-    window.sessionStorage.setItem("tags", JSON.stringify([]));
+    let allTags = allInstallations.map((installation ) => installation.tags).flat(1);
+    window.sessionStorage.setItem("tags", JSON.stringify(allTags.filter((tag, index) => allTags.indexOf(tag) === index)));
   }
 
   let tags: string[] = JSON.parse(window.sessionStorage.getItem("tags")!!);
+
   if (tags.length > 0) {
     filteredInstallations = allInstallations.filter((installation) =>
       installation.tags.some((tag) => tags.includes(tag))
