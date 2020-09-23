@@ -10,6 +10,13 @@ interface PoetryProps {
   url: string;
 }
 
+/**
+ * Poetry is a component that makes a fetch call to the given url,
+ * then parses and returns the poem it found.
+ * @param id is the identifying string linking it to the correct installation
+ * @param url is the url the fetch call is made on.
+ */
+
 class Poetry extends React.Component<PoetryProps, PoetryState> {
   constructor(props: PoetryProps) {
     super(props);

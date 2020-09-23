@@ -1,6 +1,18 @@
 import { Circle, Rect, Triangle, Ellipse } from "./shapes";
 
-const installation1 = {
+export interface Installation {
+  id: number;
+  shapes: Object[];
+  title: string;
+  year: number;
+  artist: string;
+  audioUrl: string;
+  poemUrl: string;
+  poemId: string;
+  tags: string[];
+}
+
+const installation1 : Installation = {
   id: 1,
   shapes: [
     new Rect("i1_r1", "0", "0", "350", "350", "#4e4e4e", "#4e4e4e"),
@@ -20,8 +32,9 @@ const installation1 = {
   poemUrl:
     "https://poetrydb.org/title/Through%20the%20Dark%20Sod%20--%20as%20Education/lines.json",
   poemId: "poem1",
+  tags: ["Dark", "Circles"],
 };
-const installation2 = {
+const installation2 : Installation = {
   id: 2,
   shapes: [
     new Rect("i2_r1", "0", "0", "350", "350", "#f7c4d4", "#f7c4d4"),
@@ -36,8 +49,9 @@ const installation2 = {
     "https://docs.google.com/uc?export=download&id=13-YgFevw6zqpnV96zCkuvxCZL9ij7FvA",
   poemUrl: "https://poetrydb.org/lines/Snow%20flakes./lines.json",
   poemId: "poem2",
+  tags: ["Light", "Circles"],
 };
-const installation3 = {
+const installation3 : Installation = {
   id: 3,
   shapes: [
     new Rect("i3_r1", "0", "0", "350", "350", "#ecb5ff", "#ecb5ff"),
@@ -53,8 +67,9 @@ const installation3 = {
   poemUrl:
     "https://poetrydb.org/title/Great%20Streets%20of%20silence%20led%20away/lines.json",
   poemId: "poem3",
+  tags: ["Light", "Circles"],
 };
-const installation4 = {
+const installation4 : Installation = {
   id: 4,
   shapes: [
     new Rect("i4_r1", "1", "1", "60", "190", "green", ""),
@@ -78,8 +93,9 @@ const installation4 = {
   poemUrl:
     "https://poetrydb.org/title/Not%20at%20Home%20to%20Callers/lines.json",
   poemId: "poem4",
+  tags: ["Colorful", "Rectangles"],
 };
-const installation5 = {
+const installation5 : Installation = {
   id: 5,
   shapes: [
     new Rect("i5_r0", "1", "1", "1", "1", "black", "black"),
@@ -109,8 +125,9 @@ const installation5 = {
     "https://docs.google.com/uc?export=download&id=1gRJLJnj3TcYAO52syqnoRQ7LP-Nocr5q",
   poemUrl: "https://poetrydb.org/title,linecount/Edinburgh;4/lines.json",
   poemId: "poem5",
+  tags: ["Dark", "Rectangles"],
 };
-const installation6 = {
+const installation6 : Installation = {
   id: 6,
   shapes: [
     new Rect("i6_r0", "0", "0", "1", "1", "#e2ffd1", "#e2ffd1"),
@@ -128,8 +145,9 @@ const installation6 = {
   poemUrl:
     "https://poetrydb.org/title/Nature%20assigns%20the%20Sun%20--/lines.json",
   poemId: "poem6",
+  tags: ["Colorful", "Rectangles"],
 };
-const installation7 = {
+const installation7 : Installation = {
   id: 7,
   shapes: [
     new Rect("i7_r1", "0%", "0%", "100%", "100%", "#656E70", "#464049"),
@@ -145,8 +163,9 @@ const installation7 = {
     "https://docs.google.com/uc?export=download&id=1t7nx2CCSaqM-qirDU2bSgtQWcW6CpzU0",
   poemUrl: "https://poetrydb.org/title/Yesterday%20is%20History,/lines.json",
   poemId: "poem7",
+  tags: ["Rectangles", "Circles"],
 };
-const installation8 = {
+const installation8 : Installation = {
   id: 8,
   shapes: [
     new Rect("i8_r1", "0", "0", "100%", "100%", "#B1B697", "#B1B697"),
@@ -177,8 +196,9 @@ const installation8 = {
   poemUrl:
     "https://poetrydb.org/title/Pain%20has%20but%20one%20Acquaintance/lines.json",
   poemId: "poem8",
+  tags: ["Figures"],
 };
-const installation9 = {
+const installation9 : Installation = {
   id: 9,
   shapes: [
     new Rect("i9_r1", "0", "0", "100%", "100%", "#94C4BD", "#94C4BD"),
@@ -198,9 +218,10 @@ const installation9 = {
   poemUrl:
     "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem9",
+  tags: ["Figures", "Colorful"],
 };
 
-export const allInstallations = [
+export const allInstallations : Installation[] = [
   installation1,
   installation2,
   installation3,
