@@ -4,7 +4,7 @@ import { favoriteInstallationIds } from "./components/Favorite/favorite";
 import Header from "./components/Header/header";
 import Menu from "./components/Menu/menu";
 import { useInstallationIndex } from "./state/installationIndexContext";
-import {filteredInstallations} from "./components/InstallationFilter/installationFilter";
+import { filteredInstallations } from "./components/InstallationFilter/installationFilter";
 
 /**
  * App is the component at the highest level in this webapp.
@@ -41,12 +41,12 @@ function App() {
   const updateFilteredIndex = () => {
     if (installationIndex > filteredInstallations.length)
       setInstallationIndex(0);
-  }
+  };
 
   return (
     <div>
       <Header />
-      <Menu favOnClick={displayFavorites} filterOnClick={updateFilteredIndex}/>
+      <Menu favOnClick={displayFavorites} filterOnClick={updateFilteredIndex} />
       <Carousel displayOnlyFavorites={displayFav} />
     </div>
   );
