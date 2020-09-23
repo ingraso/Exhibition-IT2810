@@ -61,6 +61,15 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       "carouselIndex",
       String(this.context.installationIndex)
     );
+
+    const inst = currentInstallations[this.context.installationIndex];
+    const star = document.getElementById("star");
+
+    if (favoriteInstallationIds.some((favId) => favId === inst.id)) {
+      star?.classList.add("filledStar");
+    } else {
+      star?.classList.remove("filledStar");
+    }
   }
 
   render() {
@@ -95,18 +104,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       }
     };
 
-    // console.log(favoriteInstallationIds.some((id) => id === currentInstallation.id));
-    // cannot reach the favoriteButton, because it renders after this. Have to solve
-    // it to change the text/change color on star/heart
-    /*
-    if (favoriteInstallationIds.some(id => id === currentInstallation.id)) {
-      document.getElementById("favoriteButton")!!.innerHTML =
-        "Remove from favorites";
-    } else {
-      document.getElementById("favoriteButton")!!.innerHTML =
-        "Add to favorites";
-    }*/
-
     return (
       <div id="carousel">
         <div className="arrows left" onClick={() => changeInstallation(false)}>
@@ -120,8 +117,10 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
             id={currentInstallation.poemId}
           />
         </div>
-        <Audio audioUrl={currentInstallation.audioUrl} />
-
+        <div id="audioFav">
+          <Audio audioUrl={currentInstallation.audioUrl} />
+          <FavoriteButton installation={currentInstallation} />
+        </div>
         <div className="arrows right" onClick={() => changeInstallation(true)}>
           <div className="rightArrow"></div>
         </div>
@@ -132,8 +131,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
             artist={currentInstallation.artist}
           />
         </div>
-
-        <FavoriteButton installation={currentInstallation} />
       </div>
     );
   }
