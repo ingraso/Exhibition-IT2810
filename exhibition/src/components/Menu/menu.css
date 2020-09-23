@@ -3,19 +3,18 @@
 .open#menu {
   display: grid;
   position: fixed;
-  left: 0px;
+  left: 0;
   top: 60px;
   width: 300px;
   height: 100%;
   background-color: #bcc5ff;
-  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
   z-index: 2;
-  grid-template: 1fr 3fr 3fr 3fr 2fr 1fr / 1fr 10fr 2fr;
+  grid-template: 1fr 3fr 4fr 1fr 1fr / 1fr 10fr 2fr;
   grid-template-areas:
-    ". . close-button"
-    ". filter1 ."
-    ". filter2 ."
-    ". filter3 ."
+    ". filterTitle close-button"
+    ". filters ."
+    ". . ."
     ". favoriteBlock .";
 }
 
@@ -57,6 +56,16 @@
   grid-area: favoriteBlock;
 }
 
+/* Styling for Filter selection */
+#filterTitle {
+  grid-area: filterTitle;
+}
+
+#filters {
+  grid-area: filters;
+  font-family: georgia, serif;
+}
+
 /*Styling for blurry-area*/
 
 #blurry-area {
@@ -85,10 +94,10 @@
   top: 75px;
   height: 40px;
   width: 55px;
-  left: 0px;
-  border-radius: 0% 48% 48% 0%;
+  left: 0;
+  border-radius: 0 48% 48% 0;
   background-color: #bcc5ff;
-  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .closed#burger-button:hover {
@@ -131,17 +140,53 @@ to the top of the page*/
 
   .open#menu {
     display: grid;
-    left: 0px;
+    left: 0;
     top: 60px;
     width: 100%;
     height: 400px;
-    grid-template: 4fr 4fr 4fr 2fr / 1fr 8fr 8fr 3fr 1fr;
+    grid-template: 1fr 7fr 2fr 2fr 1fr / 1fr 8fr 8fr 1fr 3fr 1fr;
     justify-content: left;
     grid-template-areas:
-      ". filterOneLeft filterOneRight . ."
-      ". filterTwoLeft filterTwoRight . ."
-      ". filterThreeLeft filterThreeRight . ."
-      ". favourite block arrow .";
+      ". filterTitle filterTitle . . ."
+      ". filters filters filters filters ."
+      ". . . . . ."
+      ". favoriteBlock favoriteBlock . arrow .";
+  }
+
+  /* Styling av filters */
+  #filters {
+    font-family: georgia, serif;
+    display: inline-grid;
+    grid-area: filters;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    grid-template-areas:
+      "filterOneLeft filterOneRight"
+      "filterTwoLeft filterTwoRight"
+      "filterThreeLeft filterThreeRight";
+  }
+
+  #filter1 {
+    grid-area: filterOneLeft;
+  }
+  #filter2 {
+    grid-area: filterOneRight;
+  }
+  #filter3 {
+    grid-area: filterTwoLeft;
+  }
+  #filter4 {
+    grid-area: filterTwoRight;
+  }
+  #filter5 {
+    grid-area: filterThreeLeft;
+  }
+  #filter6 {
+    grid-area: filterThreeRight;
+  }
+
+  /* Styling for favorite-button */
+  #displayFavButton {
+    grid-area: favoriteBlock;
   }
 
   /*Styling for close-button*/
@@ -154,7 +199,7 @@ to the top of the page*/
 
   #blurry-area {
     top: 460px;
-    left: 0px;
+    left: 0;
     width: 100%;
     z-index: 3;
     -webkit-backdrop-filter: blur(4px);
@@ -178,7 +223,7 @@ to the top of the page*/
     width: 20px;
     height: 20px;
     border: solid black;
-    border-width: 0px 2px 2px 0px;
+    border-width: 0 2px 2px 0;
     padding: 3px;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);

@@ -4,7 +4,6 @@ import {
   InstallationFilter,
   tagIsChosen,
 } from "../InstallationFilter/installationFilter";
-import { favoriteInstallationIds } from "../Favorite/favorite";
 
 /**
  * Menu is a component for showing/hiding the menu. 
@@ -39,66 +38,79 @@ const Menu = ({
         </button>
         <div id="close-button" onClick={() => setOpen(!open)}>
           <div className="line-one">
-            <div className="line-two"></div>
+            <div className="line-two"/>
           </div>
         </div>
-        <div id="up-arrow" onClick={() => setOpen(!open)}></div>
-        <div id="blurry-area"></div>
-        <div id="Filters">
-          <h2 id="filterTitle">Filter by:</h2>
-          <input
-            type="checkbox"
-            id="filter1"
-            name="dark_filter"
-            onChange={() => filterCheckboxClick("Dark")}
-            defaultChecked={tagIsChosen("Dark")}
-          />
-          <label htmlFor="filter1"> Dark </label>
+        <div id="up-arrow" onClick={() => setOpen(!open)}/>
+        <div id="blurry-area"/>
+
+        <h2 id="filterTitle">Filter by:</h2>
+        <div id="filters">
+          <div id="filter1">
+            <input
+              type="checkbox"
+              id="input1"
+              name="dark_filter"
+              onChange={() => filterCheckboxClick("Dark")}
+              defaultChecked={tagIsChosen("Dark")}
+            />
+            <label htmlFor="input1"> Dark </label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="filter2"
-            name="light_filter"
-            onChange={() => filterCheckboxClick("Light")}
-            defaultChecked={tagIsChosen("Light")}
-          />
-          <label htmlFor="filter2"> Light </label>
+          <div id="filter2">
+            <input
+              type="checkbox"
+              id="input2"
+              name="light_filter"
+              onChange={() => filterCheckboxClick("Light")}
+              defaultChecked={tagIsChosen("Light")}
+            />
+            <label htmlFor="input2"> Light </label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="filter3"
-            name="colorful_filter"
-            onChange={() => filterCheckboxClick("Colorful")}
-            defaultChecked={tagIsChosen("Colorful")}
-          />
-          <label htmlFor="filter2"> Colorful </label>
+          <div id="filter3">
+            <input
+              type="checkbox"
+              id="input3"
+              name="colorful_filter"
+              onChange={() => filterCheckboxClick("Colorful")}
+              defaultChecked={tagIsChosen("Colorful")}
+            />
+            <label htmlFor="input3"> Colorful </label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="filter4"
-            name="circles_filter"
-            onChange={() => filterCheckboxClick("Circles")}
-            defaultChecked={tagIsChosen("Circles")}
-          />
-          <label htmlFor="filter2"> Circles </label>
+          <div id="filter4">
+            <input
+              type="checkbox"
+              id="input4"
+              name="circles_filter"
+              onChange={() => filterCheckboxClick("Circles")}
+              defaultChecked={tagIsChosen("Circles")}
+            />
+            <label htmlFor="input4"> Circles </label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="filter5"
-            name="rect_filter"
-            onChange={() => filterCheckboxClick("Rectangles")}
-            defaultChecked={tagIsChosen("Rectangles")}
-          />
-          <label htmlFor="filter2"> Rectangles </label>
+          <div id="filter5">
+            <input
+              type="checkbox"
+              id="input5"
+              name="rect_filter"
+              onChange={() => filterCheckboxClick("Rectangles")}
+              defaultChecked={tagIsChosen("Rectangles")}
+            />
+            <label htmlFor="input5"> Rectangles </label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="filter6"
-            name="figures_filter"
-            onChange={() => filterCheckboxClick("Figures")}
-            defaultChecked={tagIsChosen("Figures")}
-          />
-          <label htmlFor="filter2"> Figures </label>
+          <div id="filter6">
+            <input
+              type="checkbox"
+              id="input6"
+              name="figures_filter"
+              onChange={() => filterCheckboxClick("Figures")}
+              defaultChecked={tagIsChosen("Figures")}
+            />
+            <label htmlFor="input6"> Figures </label>
+          </div>
         </div>
       </div>
       <div
@@ -106,9 +118,9 @@ const Menu = ({
         className={open ? "open" : "closed"}
         onClick={() => setOpen(!open)}
       >
-        <div id="top-line"></div>
-        <div id="middle-line"></div>
-        <div id="bottom-line"></div>
+        <div id="top-line"/>
+        <div id="middle-line"/>
+        <div id="bottom-line"/>
       </div>
     </div>
   );
