@@ -16,6 +16,7 @@ import Poetry from "../Poetry/poetry";
 import Audio from "../Audio/audio";
 import { FavoriteButton, favoriteInstallationIds } from "../Favorite/favorite";
 import { InstallationIndexContext } from "../../state/installationIndexContext";
+import {filteredInstallations, updateFilteredInstallations} from "../InstallationFilter/installationFilter";
 
 interface CarouselState {
   displayedInstallationIndex: number;
@@ -25,7 +26,19 @@ interface CarouselProps {
   displayOnlyFavorites: Boolean;
 }
 
-let currentInstallations = allInstallations;
+let currentInstallations = filteredInstallations;
+
+/**
+ * Carousel is the main component in the webapp. It displays
+ * the installations, changes between which installation is
+ * displayed and can display installations based on filters
+ * or favorites.
+ *
+ * @param displayedInstallationIndex represents the index of
+ *    which installation is displayed.
+ * @param displayOnlyFavorites is a boolean representing if
+ *    only favorited installations is displayed.
+ */
 
 /**
  * Carousel is the main component in the webapp. It displays
@@ -59,14 +72,20 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
           allInstallations.filter((inst) => inst.id === favInstallationId)[0]
       );
     } else {
-      currentInstallations = allInstallations;
+      updateFilteredInstallations();
+      currentInstallations = filteredInstallations;
     }
 
     const currentInstallation = currentInstallations[installationIndex];
 
     const changeInstallation = (next: Boolean) => {
+
+      if(!this.props.displayOnlyFavorites) {
+        updateFilteredInstallations();
+        currentInstallations = filteredInstallations;
+      }
       if (next) {
-        installationIndex === currentInstallations.length - 1
+        installationIndex >= currentInstallations.length - 1
           ? setInstallationIndex(0)
           : setInstallationIndex(installationIndex + 1);
       } else {
