@@ -50,11 +50,25 @@ class Carousel extends React.Component<CarouselProps, {}> {
 
     const inst = currentInstallations[this.context.installationIndex];
     const star = document.getElementById("star");
+    const leftArrow = document.getElementById("left");
+    const rightArrow = document.getElementById("right");
 
     if (favoriteInstallationIds.some((favId) => favId === inst.id)) {
       star?.classList.add("filledStar");
     } else {
       star?.classList.remove("filledStar");
+    }
+
+    if (currentInstallations.length <= 1) {
+      leftArrow?.classList.remove("allowedArrow");
+      rightArrow?.classList.remove("allowedArrow");
+      leftArrow?.classList.add("disabledButton");
+      rightArrow?.classList.add("disabledButton");
+    } else {
+      leftArrow?.classList.remove("disabledButton");
+      rightArrow?.classList.remove("disabledButton");
+      leftArrow?.classList.add("allowedArrow");
+      rightArrow?.classList.add("allowedArrow");
     }
   }
 
@@ -91,7 +105,11 @@ class Carousel extends React.Component<CarouselProps, {}> {
 
     return (
       <div id="carousel">
-        <div className="arrows left" onClick={() => changeInstallation(false)}>
+        <div
+          id="left"
+          className="arrows allowedArrow"
+          onClick={() => changeInstallation(false)}
+        >
           <div className="leftArrow"></div>
         </div>
 
@@ -106,7 +124,11 @@ class Carousel extends React.Component<CarouselProps, {}> {
           <Audio audioUrl={currentInstallation.audioUrl} />
           <FavoriteButton installation={currentInstallation} />
         </div>
-        <div className="arrows right" onClick={() => changeInstallation(true)}>
+        <div
+          id="right"
+          className="arrows allowedArrow"
+          onClick={() => changeInstallation(true)}
+        >
           <div className="rightArrow"></div>
         </div>
         <div id="artInfo">

@@ -54,6 +54,22 @@
 /* Styling for favorite-button */
 #displayFavButton {
   grid-area: favoriteBlock;
+
+  padding: 5px 10px;
+  width: 70%;
+  height: 50%;
+  margin: auto;
+}
+
+.allowedButton {
+  background-color: #4e297d;
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.allowedButton:hover {
+  cursor: pointer;
+  background-color: #361a5a;
 }
 
 /* Styling for Filter selection */
