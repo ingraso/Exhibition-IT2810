@@ -39,7 +39,6 @@ export const updateFilteredInstallations = () => {
 
 export const tagIsChosen = (tag: string) => {
   if (window.sessionStorage.getItem("tags") === null) {
-    console.log("tags null");
     return false;
   }
   console.log(
