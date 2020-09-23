@@ -67,7 +67,7 @@ const installation3 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/Great%20Streets%20of%20silence%20led%20away/lines.json",
   poemId: "poem3",
-  tags: ["Light", "Circles"],
+  tags: ["Colorful", "Circles"],
 };
 const installation4 : Installation = {
   id: 4,
@@ -163,7 +163,7 @@ const installation7 : Installation = {
     "https://docs.google.com/uc?export=download&id=1t7nx2CCSaqM-qirDU2bSgtQWcW6CpzU0",
   poemUrl: "https://poetrydb.org/title/Yesterday%20is%20History,/lines.json",
   poemId: "poem7",
-  tags: ["Rectangles", "Circles"],
+  tags: ["Dark", "Rectangles", "Circles"],
 };
 const installation8 : Installation = {
   id: 8,
@@ -196,7 +196,7 @@ const installation8 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/Pain%20has%20but%20one%20Acquaintance/lines.json",
   poemId: "poem8",
-  tags: ["Figures"],
+  tags: ["Colorful", "Complex"],
 };
 const installation9 : Installation = {
   id: 9,
@@ -218,7 +218,7 @@ const installation9 : Installation = {
   poemUrl:
     "https://poetrydb.org/title/The%20words%20the%20happy%20say/lines.json",
   poemId: "poem9",
-  tags: ["Figures", "Colorful"],
+  tags: ["Complex", "Colorful"],
 };
 
 export const allInstallations : Installation[] = [
