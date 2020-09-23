@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 
-/*Component for the header*/
+/* Header that displays the exhibition's title */
 
 const header = () => {
   return (

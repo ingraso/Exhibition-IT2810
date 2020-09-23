@@ -21,10 +21,6 @@ import {
   updateFilteredInstallations,
 } from "../InstallationFilter/installationFilter";
 
-interface CarouselState {
-  displayedInstallationIndex: number;
-}
-
 interface CarouselProps {
   displayOnlyFavorites: Boolean;
   updateFilters: Boolean;
@@ -38,25 +34,12 @@ let currentInstallations = filteredInstallations;
  * displayed and can display installations based on filters
  * or favorites.
  *
- * @param displayedInstallationIndex represents the index of
- *    which installation is displayed.
- * @param displayOnlyFavorites is a boolean representing if
- *    only favorited installations is displayed.
+ * @var displayOnlyFavorites is a boolean representing
+ *    whether favorited or filtered installations are
+ *    displayed.
  */
 
-/**
- * Carousel is the main component in the webapp. It displays
- * the installations, changes between which installation is
- * displayed and can display installations based on filters
- * or favorites.
- *
- * @param displayedInstallationIndex represents the index of
- *    which installation is displayed.
- * @param displayOnlyFavorites is a boolean representing if
- *    only favorited installations is displayed.
- */
-
-class Carousel extends React.Component<CarouselProps, CarouselState> {
+class Carousel extends React.Component<CarouselProps, {}> {
   static contextType = InstallationIndexContext;
   context!: React.ContextType<typeof InstallationIndexContext>;
 

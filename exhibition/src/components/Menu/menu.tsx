@@ -10,7 +10,12 @@ import {
 /**
  * Menu is a component for showing/hiding the menu. 
 
- * @param open this hook is used to decide if the menu is shown or not.
+ * @var open this hook is used to decide if the 
+ *    menu is shown or not.
+ * @var favOnClick is a function sent from App,
+ *    which displays the favorite installations.
+ * @var filterOnClick is a function sent from
+ *    App, which displays the filtered installations.
  */
 
 const Menu = ({
