@@ -54,6 +54,17 @@
 /* Styling for favorite-button */
 #displayFavButton {
   grid-area: favoriteBlock;
+
+  padding: 10px 20px;
+  border: none;
+}
+
+.allowedButton {
+
+}
+
+.allowedButton:hover {
+  cursor: pointer;
 }
 
 /* Styling for Filter selection */
