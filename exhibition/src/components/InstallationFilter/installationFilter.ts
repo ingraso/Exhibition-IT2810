@@ -59,9 +59,5 @@ export const tagIsChosen = (tag: string) => {
   if (window.sessionStorage.getItem("tags") === null) {
     return false;
   }
-  console.log(
-    "Tags: ",
-    JSON.parse(window.sessionStorage.getItem("tags")!!).includes(tag)
-  );
   return JSON.parse(window.sessionStorage.getItem("tags")!!).includes(tag);
 };
