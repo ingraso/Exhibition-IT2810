@@ -7,7 +7,7 @@ interface InstallationContentProps {
 
 /**
  * InstallationContent contains the svg of the installations.
- * It initializes a installation's shapes into its respective
+ * It initializes an installation's shapes into its respective
  * objects.
  *
  * @param installation is an installation and contains a list

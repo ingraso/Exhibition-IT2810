@@ -37,8 +37,10 @@ export const FavoriteButton = (installation: any) => {
   }
 
   return (
-    <button id="favoriteButton" onClick={addFavorite}>
-      Add to favorites
+    <button id="starButton" onClick={addFavorite}>
+      <span id="star" className="filledStar">
+        {"\u2606"}
+      </span>
     </button>
   );
 };
