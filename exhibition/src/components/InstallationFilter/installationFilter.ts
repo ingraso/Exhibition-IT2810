@@ -5,6 +5,13 @@ import {
 
 export let filteredInstallations: Installation[] = allInstallations;
 
+/**
+ * InstallationFilter checks if a tag is in the tags-list in sessionStorage.
+ * If it is, it removes the tag from the list, otherwise the tag is added.
+ * filteredInstallations is then updated.
+ * @param new_tag is a string that should be removed or added to the list of filtered tags.
+ */
+
 export const InstallationFilter = (new_tag: string) => {
   if (window.sessionStorage.getItem("tags") === null) {
     window.sessionStorage.setItem("tags", JSON.stringify([]));
@@ -22,6 +29,11 @@ export const InstallationFilter = (new_tag: string) => {
   updateFilteredInstallations();
 };
 
+/**
+ * updateFilteredInstallations updates the list of installations to be shown,
+ * based on which tags is in the "tags" list in sessionStorage.
+ */
+
 export const updateFilteredInstallations = () => {
   if (window.sessionStorage.getItem("tags") === null) {
     window.sessionStorage.setItem("tags", JSON.stringify([]));
@@ -36,6 +48,12 @@ export const updateFilteredInstallations = () => {
     filteredInstallations = allInstallations;
   }
 };
+
+/**
+ * tagIsChosen returns whether or not the specified tag is in
+ * the "tags" list in sessionStorage.
+ * @param tag is the string that is being searched for.
+ */
 
 export const tagIsChosen = (tag: string) => {
   if (window.sessionStorage.getItem("tags") === null) {
