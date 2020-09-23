@@ -9,8 +9,8 @@ export let favoriteInstallationIds = [];
  *
  * @param installation contains all info about an
  *    installation, like its id.
- * @param favoriteIds is an array of all the favorited
- *    installations' ids.
+ * @var favoriteInstallationIds is an array of all the 
+ *    favorited installations' ids.
  */
 
 export const FavoriteButton = (installation: any) => {

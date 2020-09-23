@@ -10,23 +10,18 @@ interface InstallationContentProps {
  * It initializes an installation's shapes into its respective
  * objects.
  *
- * @param installation is an installation and contains a list
+ * @var installation is an installation and contains a list
  *     of shapes.
  */
 
-class InstallationContent extends React.Component<
-  InstallationContentProps,
-  {}
-> {
-  render() {
-    return (
-      <div>
-        <svg className="picture" width="350" height="350">
-          {this.props.installation.map((shape: Object) => createShape(shape))}
-        </svg>
-      </div>
-    );
-  }
-}
+const InstallationContent = ({ installation }: { installation: Object[] }) => {
+  return (
+    <div>
+      <svg className="picture" width="350" height="350">
+        {installation.map((shape: Object) => createShape(shape))}
+      </svg>
+    </div>
+  );
+};
 
 export default InstallationContent;
