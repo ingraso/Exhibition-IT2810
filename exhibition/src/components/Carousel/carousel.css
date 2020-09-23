@@ -112,7 +112,7 @@
   position: relative;
 }
 
-#star:hover::before {
+#star:hover {
   cursor: pointer;
 }
 
