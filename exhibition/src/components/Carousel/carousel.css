@@ -25,22 +25,28 @@
   padding: 10px;
   height: 30px;
   width: 30px;
-  background-color: #bcc5ff;
   align-self: center;
   justify-self: center;
+}
+
+.allowedArrow {
+  background-color: #bcc5ff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.arrows:hover {
+.allowedArrow:hover {
   background-color: #97a5ff;
   cursor: pointer;
 }
 
-.arrows:hover .arrow {
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 10px;
+.disabledButton {
+  background-color: #c9c9c9;
+  opacity: 0.7;
+  border: none;
+}
+
+.disabledButton:hover {
+  cursor: not-allowed;
 }
 
 .leftArrow {
@@ -164,11 +170,11 @@
     background-color: #97a5ff;
   }
 
-  .left {
+  #left {
     justify-self: start;
   }
 
-  .right {
+  #right {
     justify-self: end;
   }
 

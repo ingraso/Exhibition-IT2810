@@ -43,6 +43,16 @@ function App() {
       setInstallationIndex(0);
   };
 
+  const displayFavButton = document.getElementById("displayFavButton");
+
+  if (favoriteInstallationIds.length === 0) {
+    displayFavButton?.classList.remove("allowedButton");
+    displayFavButton?.classList.add("disabledButton");
+  } else {
+    displayFavButton?.classList.remove("disabledButton");
+    displayFavButton?.classList.add("allowedButton");
+  }
+
   return (
     <div>
       <Header />
