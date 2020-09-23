@@ -44,7 +44,7 @@ const Menu = ({
         <div id="up-arrow" onClick={() => setOpen(!open)}/>
         <div id="blurry-area"/>
 
-        <h2 id="filterTitle">Filter by:</h2>
+        <h2 id="filterTitle">Display pictures containing:</h2>
         <div id="filters">
           <div id="filter1">
             <input
@@ -104,12 +104,12 @@ const Menu = ({
           <div id="filter6">
             <input
               type="checkbox"
-              id="figuresCheckbox"
-              name="figures_filter"
-              onChange={() => filterCheckboxClick("Figures")}
-              defaultChecked={tagIsChosen("Figures")}
+              id="complexCheckbox"
+              name="complex_filter"
+              onChange={() => filterCheckboxClick("Complex")}
+              defaultChecked={tagIsChosen("Complex")}
             />
-            <label htmlFor="figuresCheckbox"> Figures </label>
+            <label htmlFor="complexCheckbox"> Complex </label>
           </div>
         </div>
       </div>
