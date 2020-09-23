@@ -107,7 +107,7 @@ class Carousel extends React.Component<CarouselProps, {}> {
       <div id="carousel">
         <div
           id="left"
-          className="arrows purple"
+          className="arrows purpleButton"
           onClick={() => changeInstallation(false)}
         >
           <div className="leftArrow"></div>
@@ -126,7 +126,7 @@ class Carousel extends React.Component<CarouselProps, {}> {
         </div>
         <div
           id="right"
-          className="arrows purple"
+          className="arrows purpleButton"
           onClick={() => changeInstallation(true)}
         >
           <div className="rightArrow"></div>

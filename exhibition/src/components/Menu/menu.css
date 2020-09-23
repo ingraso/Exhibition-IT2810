@@ -55,16 +55,28 @@
 #displayFavButton {
   grid-area: favoriteBlock;
 
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
+  width: 70%;
+  height: 50%;
+  margin: auto;
 }
 
 .allowedButton {
-
+  background-color: blue;
 }
 
 .allowedButton:hover {
   cursor: pointer;
+}
+
+.disabledButton {
+  opacity: 0.6;
+  background-color: grey;
+}
+
+.disabledButton:hover {
+  cursor: not-allowed;
 }
 
 /* Styling for Filter selection */

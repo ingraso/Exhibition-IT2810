@@ -4,6 +4,7 @@ import {
   InstallationFilter,
   tagIsChosen,
 } from "../InstallationFilter/installationFilter";
+import { favoriteInstallationIds } from "../Favorite/favorite";
 
 /**
  * Menu is a component for showing/hiding the menu. 
@@ -26,8 +27,10 @@ const Menu = ({
   const [open, setOpen] = useState(false);
 
   const favButtonClick = () => {
-    favOnClick();
-    setOpen(!open);
+    if (favoriteInstallationIds.length > 0) {
+      favOnClick();
+      setOpen(!open);
+    }
   };
 
   const filterCheckboxClick = (new_tag: string) => {
@@ -38,7 +41,12 @@ const Menu = ({
   return (
     <div>
       <div id="menu" className={open ? "open" : "closed"}>
-        <button id="displayFavButton" onClick={favButtonClick} type="button">
+        <button
+          id="displayFavButton"
+          className="disabledButton"
+          onClick={favButtonClick}
+          type="button"
+        >
           Only display favorites
         </button>
         <div id="close-button" onClick={() => setOpen(!open)}>
