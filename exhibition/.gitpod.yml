@@ -1,2 +1,3 @@
 tasks:
-  - init: npm install
+  - init: cd exhibition && npm install
+    command: npm start
