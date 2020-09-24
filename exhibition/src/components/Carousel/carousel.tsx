@@ -58,10 +58,6 @@ class Carousel extends React.Component<CarouselProps, {}> {
     } else {
       star?.classList.remove("filledStar");
     }
-    sessionStorage.setItem(
-      "carouselIndex",
-      String(this.context.installationIndex)
-    );
   }
 
   styleArrows() {
@@ -84,6 +80,10 @@ class Carousel extends React.Component<CarouselProps, {}> {
   componentDidUpdate() {
     this.updateStar();
     this.styleArrows();
+    sessionStorage.setItem(
+      "carouselIndex",
+      String(this.context.installationIndex)
+    );
   }
 
   render() {
