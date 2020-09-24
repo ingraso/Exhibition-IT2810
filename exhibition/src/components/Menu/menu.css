@@ -227,9 +227,14 @@ to the top of the page */
     grid-area: apply_btn;
   }
 
-  /* Styling for favorite-button */
-  #displayFavButton {
-    grid-area: favoriteBlock;
+  #displayFavButton.disabledButton #favHoverText {
+    right: 20%;
+    margin-top: -75px;
+  }
+
+  #apply_btn.disabledButton #filterHoverText {
+    left: 10%;
+    margin-top: -75px;
   }
 
   /* Styling for close-button */
@@ -304,6 +309,16 @@ to the top of the page */
     display: inline-flex;
     flex-flow: row wrap;
     justify-content: space-between;
+  }
+
+  #displayFavButton.disabledButton #favHoverText {
+    right: 20%;
+    margin-top: 0;
+  }
+
+  #apply_btn.disabledButton #filterHoverText {
+    left: 5%;
+    margin-top: 0;
   }
 }
 
