@@ -4,13 +4,13 @@
   display: grid;
   position: fixed;
   left: 0;
-  top: 60px;
+  top: 70px;
   width: 300px;
-  height: 100%;
+  height: calc(100vh - 70px);
   background-color: #bcc5ff;
   box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
   z-index: 2;
-  grid-template: 1fr 5fr 1fr 2fr 2fr 2fr 2fr / 1fr 10fr 2fr;
+  grid-template: auto auto 1fr auto 1fr auto 1fr / 1fr 10fr 2fr;
   grid-template-areas:
     ". filterTitle close-button"
     ". filters ."
@@ -61,11 +61,12 @@
   padding: 5px 10px;
   width: 70%;
   height: 50%;
-  margin: auto;
+  margin: 0;
 }
 
 .allowedButton {
   background-color: #4e297d;
+  padding: 5px 6px;
   color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -77,6 +78,7 @@
 
 /* Styling for Filter selection */
 #filterTitle {
+  margin: 10px 0;
   grid-area: filterTitle;
 }
 
@@ -214,7 +216,7 @@ to the top of the page*/
       ". apply_btn . favoriteBlock . arrow .";
   }
 
-  /* Styling av filters */
+  /* Styling of filters */
   #filters {
     font-family: georgia, serif;
     grid-area: filters;
