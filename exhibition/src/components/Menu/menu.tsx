@@ -37,6 +37,15 @@ const Menu = ({
 
   const filterCheckboxClick = (new_tag: string) => {
     InstallationFilter(new_tag);
+
+    const applyButton = document.getElementById("apply_btn");
+    if(applyPossible()) {
+      applyButton?.classList.add("allowedButton");
+      applyButton?.classList.remove("disabledButton");
+    } else {
+      applyButton?.classList.remove("allowedButton");
+      applyButton?.classList.add("disabledButton");
+    }
   };
 
   const applyButtonClick = () => {
@@ -69,7 +78,7 @@ const Menu = ({
         <h2 id="filterTitle">Display pictures with:</h2>
         <div id="filters">
           <div id="paletteFilters">
-            <h4>Palette:</h4>
+            <h4 className="filter-category">Palette:</h4>
             <div id="filter1">
               <input
                 type="checkbox"
@@ -102,7 +111,7 @@ const Menu = ({
             </div>
           </div>
           <div id="shapesFilters">
-            <h4>Shapes:</h4>
+            <h4 className="filter-category">Shapes:</h4>
             <div id="filter4">
               <input
                 type="checkbox"
@@ -135,7 +144,7 @@ const Menu = ({
             </div>
           </div>
           <div id="artistFilters">
-            <h4>Artist:</h4>
+            <h4 className="filter-category">Artist:</h4>
             <div id="filter7">
               <input
                 type="checkbox"
@@ -168,7 +177,7 @@ const Menu = ({
             </div>
           </div>
         </div>
-        <button id="apply_btn" onClick={applyButtonClick}>
+        <button id="apply_btn" className="allowedButton" onClick={applyButtonClick}>
           Apply filters
         </button>
       </div>
