@@ -14,9 +14,12 @@ import { allInstallations } from "../../installations/installations";
 import InstallationInfo from "../InstallationInfo/installationInfo";
 import Poetry from "../Poetry/poetry";
 import Audio from "../Audio/audio";
-import { FavoriteButton, favoriteInstallationIds } from "../Favorite/favorite";
+import FavoriteButton, { favoriteInstallationIds } from "../Favorite/favorite";
 import { InstallationIndexContext } from "../../state/installationIndexContext";
-import {filteredInstallations, updateFilteredInstallations} from "../InstallationFilter/installationFilter";
+import {
+  filteredInstallations,
+  updateFilteredInstallations,
+} from "../InstallationFilter/installationFilter";
 
 interface CarouselState {
   displayedInstallationIndex: number;
@@ -40,28 +43,15 @@ let currentInstallations = filteredInstallations;
  *    only favorited installations is displayed.
  */
 
-/**
- * Carousel is the main component in the webapp. It displays
- * the installations, changes between which installation is
- * displayed and can display installations based on filters
- * or favorites.
- *
- * @param displayedInstallationIndex represents the index of
- *    which installation is displayed.
- * @param displayOnlyFavorites is a boolean representing if
- *    only favorited installations is displayed.
- */
-
 class Carousel extends React.Component<CarouselProps, CarouselState> {
+  constructor(props: CarouselProps) {
+    super(props);
+    this.updateStar = this.updateStar.bind(this);
+  }
   static contextType = InstallationIndexContext;
   context!: React.ContextType<typeof InstallationIndexContext>;
 
-  componentDidUpdate() {
-    sessionStorage.setItem(
-      "carouselIndex",
-      String(this.context.installationIndex)
-    );
-
+  updateStar() {
     const inst = currentInstallations[this.context.installationIndex];
     const star = document.getElementById("star");
 
@@ -70,6 +60,14 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     } else {
       star?.classList.remove("filledStar");
     }
+    sessionStorage.setItem(
+      "carouselIndex",
+      String(this.context.installationIndex)
+    );
+  }
+
+  componentDidUpdate() {
+    this.updateStar();
   }
 
   render() {
@@ -88,8 +86,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     const currentInstallation = currentInstallations[installationIndex];
 
     const changeInstallation = (next: Boolean) => {
-
-      if(!this.props.displayOnlyFavorites) {
+      if (!this.props.displayOnlyFavorites) {
         updateFilteredInstallations();
         currentInstallations = filteredInstallations;
       }
@@ -119,7 +116,10 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         </div>
         <div id="audioFav">
           <Audio audioUrl={currentInstallation.audioUrl} />
-          <FavoriteButton installation={currentInstallation} />
+          <FavoriteButton
+            installation={currentInstallation}
+            updateStarCarousel={this.updateStar}
+          />
         </div>
         <div className="arrows right" onClick={() => changeInstallation(true)}>
           <div className="rightArrow"></div>
