@@ -1,5 +1,8 @@
 # Exhibition - IT2810 group 20
 
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.idi.ntnu.no/#https://gitlab.stud.idi.ntnu.no/it2810-h20/team-20/project-2)
+
+
 ## Exhibition
 
 Our exhibition consist of 9 installations that all include some text from PoetryDB, audio from \_\_\_ and art with animations created by using SVG.
