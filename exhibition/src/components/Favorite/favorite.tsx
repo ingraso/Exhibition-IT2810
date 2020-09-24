@@ -1,46 +1,98 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // an array containing all the favorited installations' ids
 export let favoriteInstallationIds = [];
+
+interface FavoriteButtonState {
+  favoriteIds: Array<Number>;
+}
+
+interface FavoriteButtonProps {
+  installation: any;
+  updateStarCarousel: any;
+}
 
 /**
  * FavoriteButton saves the installation's id to HTML
  * localstorage.
  *
- * @param installation contains all info about an
+ * @var favoriteIds is an array of all the favorited
+ *    installations' ids.
+ * @var installation contains all info about an
  *    installation, like its id.
- * @var favoriteInstallationIds is an array of all the 
- *    favorited installations' ids.
+ * @var updateStarCarousel is the updateStar function
+ *    from carousel.tsx
  */
 
-export const FavoriteButton = (installation: any) => {
-  installation = installation.installation;
-  const [favoriteIds, setFavoriteIds] = useState<any[]>([]);
-  const addFavorite = () => {
-    if (favoriteIds.some((favorite) => favorite === installation.id)) {
-      setFavoriteIds(
-        favoriteIds.filter((favorite) => favorite !== installation.id)
+class FavoriteButton extends React.Component<
+  FavoriteButtonProps,
+  FavoriteButtonState
+> {
+  constructor(props: FavoriteButtonProps) {
+    super(props);
+    this.state = { favoriteIds: [] };
+    this.addFavorite = this.addFavorite.bind(this);
+  }
+
+  addFavorite = () => {
+    if (
+      this.state.favoriteIds.some(
+        (favorite) => favorite === this.props.installation.id
+      )
+    ) {
+      this.setState(
+        {
+          favoriteIds: this.state.favoriteIds.filter(
+            (favorite) => favorite !== this.props.installation.id
+          ),
+        },
+        () => {
+          localStorage.setItem(
+            "favoriteIds",
+            JSON.stringify(this.state.favoriteIds)
+          );
+          favoriteInstallationIds = JSON.parse(
+            window.localStorage.getItem("favoriteIds")!!
+          );
+          this.props.updateStarCarousel();
+        }
       );
     } else {
-      setFavoriteIds((favoriteIds) => favoriteIds.concat(installation.id));
+      this.setState(
+        {
+          favoriteIds: this.state.favoriteIds.concat(
+            this.props.installation.id
+          ),
+        },
+        () => {
+          localStorage.setItem(
+            "favoriteIds",
+            JSON.stringify(this.state.favoriteIds)
+          );
+          favoriteInstallationIds = JSON.parse(
+            window.localStorage.getItem("favoriteIds")!!
+          );
+          this.props.updateStarCarousel();
+        }
+      );
     }
   };
 
-  useEffect(() => {
-    window.localStorage.setItem("favoriteIds", JSON.stringify(favoriteIds));
-  }, [favoriteIds]);
+  render() {
+    if (window.localStorage.getItem("favoriteIds") !== null) {
+      favoriteInstallationIds = JSON.parse(
+        window.localStorage.getItem("favoriteIds")!!
+      );
+    }
 
-  if (window.localStorage.getItem("favoriteIds") !== null) {
-    favoriteInstallationIds = JSON.parse(
-      window.localStorage.getItem("favoriteIds")!!
+    return (
+      <button id="starButton" onClick={this.addFavorite}>
+        <span id="star" className="">
+          {"\u2606"}
+        </span>
+      </button>
     );
   }
+}
 
-  return (
-    <button id="starButton" onClick={addFavorite}>
-      <span id="star" className="filledStar">
-        {"\u2606"}
-      </span>
-    </button>
-  );
-};
+export default FavoriteButton;

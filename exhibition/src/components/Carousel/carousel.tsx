@@ -14,7 +14,7 @@ import { allInstallations } from "../../installations/installations";
 import InstallationInfo from "../InstallationInfo/installationInfo";
 import Poetry from "../Poetry/poetry";
 import Audio from "../Audio/audio";
-import { FavoriteButton, favoriteInstallationIds } from "../Favorite/favorite";
+import FavoriteButton, { favoriteInstallationIds } from "../Favorite/favorite";
 import { InstallationIndexContext } from "../../state/installationIndexContext";
 import {
   filteredInstallations,
@@ -37,28 +37,32 @@ let currentInstallations = filteredInstallations;
  * @var displayOnlyFavorites is a boolean representing
  *    whether favorited or filtered installations are
  *    displayed.
+ * @var updateFilters is a boolean saying that when the
+ *    filters are applied they should be updated.
  */
 
 class Carousel extends React.Component<CarouselProps, {}> {
+  constructor(props: CarouselProps) {
+    super(props);
+    this.updateStar = this.updateStar.bind(this);
+  }
   static contextType = InstallationIndexContext;
   context!: React.ContextType<typeof InstallationIndexContext>;
 
-  componentDidUpdate() {
-    sessionStorage.setItem(
-      "carouselIndex",
-      String(this.context.installationIndex)
-    );
-
+  updateStar() {
     const inst = currentInstallations[this.context.installationIndex];
     const star = document.getElementById("star");
-    const leftArrow = document.getElementById("left");
-    const rightArrow = document.getElementById("right");
 
     if (favoriteInstallationIds.some((favId) => favId === inst.id)) {
       star?.classList.add("filledStar");
     } else {
       star?.classList.remove("filledStar");
     }
+  }
+
+  styleArrows() {
+    const leftArrow = document.getElementById("left");
+    const rightArrow = document.getElementById("right");
 
     if (currentInstallations.length <= 1) {
       leftArrow?.classList.remove("allowedArrow");
@@ -71,6 +75,15 @@ class Carousel extends React.Component<CarouselProps, {}> {
       leftArrow?.classList.add("allowedArrow");
       rightArrow?.classList.add("allowedArrow");
     }
+  }
+
+  componentDidUpdate() {
+    this.updateStar();
+    this.styleArrows();
+    sessionStorage.setItem(
+      "carouselIndex",
+      String(this.context.installationIndex)
+    );
   }
 
   render() {
@@ -124,7 +137,10 @@ class Carousel extends React.Component<CarouselProps, {}> {
         </div>
         <div id="audioFav">
           <Audio audioUrl={currentInstallation.audioUrl} />
-          <FavoriteButton installation={currentInstallation} />
+          <FavoriteButton
+            installation={currentInstallation}
+            updateStarCarousel={this.updateStar}
+          />
         </div>
         <div
           id="right"
