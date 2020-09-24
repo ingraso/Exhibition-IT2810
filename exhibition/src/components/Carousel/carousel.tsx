@@ -37,6 +37,8 @@ let currentInstallations = filteredInstallations;
  * @var displayOnlyFavorites is a boolean representing
  *    whether favorited or filtered installations are
  *    displayed.
+ * @var updateFilters is a boolean saying that when the
+ *    filters are applied they should be updated.
  */
 
 class Carousel extends React.Component<CarouselProps, {}> {
@@ -56,7 +58,6 @@ class Carousel extends React.Component<CarouselProps, {}> {
     } else {
       star?.classList.remove("filledStar");
     }
-
     sessionStorage.setItem(
       "carouselIndex",
       String(this.context.installationIndex)
