@@ -52,7 +52,7 @@ const Menu = ({
           type="button"
         >
           Only display favorites
-          <span id="favHoverText">You don't have any favorites yet!</span>
+          <span id="favHoverText">You don't have any favorites yet</span>
         </button>
         <div id="close-button" onClick={() => setOpen(!open)}>
           <div className="line-one">
