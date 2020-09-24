@@ -1,5 +1,4 @@
 /*styling for the carousel*/
-
 #carousel {
   display: grid;
   position: absolute;
@@ -18,7 +17,6 @@
 }
 
 /*Styling for arrows*/
-
 .arrows {
   display: inline-block;
   border-radius: 50%;
@@ -75,7 +73,6 @@
 
 /*Styling for the installations
 (poem, picture and audio)*/
-
 #installation {
   display: inline-block;
   position: relative;
@@ -112,7 +109,6 @@
  * The layout is inspired by this:
  * https://css-tricks.com/star-ratings/
  */
-
 #star {
   font-size: 50px;
   position: relative;
@@ -137,10 +133,8 @@
 }
 
 /*Change layout when width shrinks*/
-
 @media screen and (max-width: 650px) {
   /*Styling for carousel*/
-
   #carousel {
     margin-top: 30px;
     top: 50%;
@@ -156,7 +150,6 @@
   }
 
   /*Styling for arrows*/
-
   .arrows {
     height: 20px;
     width: 20px;
@@ -193,7 +186,6 @@
   }
 
   /*Styling for installations*/
-
   .picture {
     width: 100%;
     max-width: 350px;
@@ -204,16 +196,17 @@
   }
 }
 
-/*When the height is smaller that an installation 
+/* When the height is smaller that an installation 
 we must make sure the carousel starts bellow the header, 
-and that the picture shrinks*/
-
+and that the picture shrinks */
 @media screen and (max-height: 500px) {
+  /* Styling for carousel */
   #carousel {
     height: auto;
     margin-top: 23px;
   }
 
+  /* Styling for arrows */
   .arrows:hover {
     background-color: #bcc5ff;
   }
@@ -222,6 +215,7 @@ and that the picture shrinks*/
     background-color: #97a5ff;
   }
 
+  /* Styling for installations */
   .picture {
     height: 60vh;
   }
@@ -246,6 +240,25 @@ and that the picture shrinks*/
   }
 
   #starButton {
-    margin-top: -10px;
+    margin-top: -20px;
+    height: 10vh;
+  }
+}
+
+/*When the height shrinks we must adjust the 
+audioFav and its content */
+@media screen and (max-width: 350px) {
+  #audioFav {
+    left: 0;
+    margin: 0;
+    width: fit-content;
+  }
+
+  .audio-control {
+    width: 80vw;
+  }
+
+  audio {
+    width: 100%;
   }
 }
