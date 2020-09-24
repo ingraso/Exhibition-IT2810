@@ -89,6 +89,44 @@
   grid-area: apply_btn;
 }
 
+/* Styling for the tooltip message
+ * Inspired by: 
+ * https://www.w3schools.com/howto/howto_css_tooltip.asp
+ */
+
+#apply_btn.disabledButton #filterHoverText,
+#displayFavButton.disabledButton #favHoverText {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  right: 30%;
+  margin-top: 10%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#apply_btn.disabledButton #filterHoverText::after,
+#displayFavButton.disabledButton #favHoverText::after {
+  content: "";
+  position: absolute;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+#apply_btn.disabledButton:hover #filterHoverText,
+#displayFavButton.disabledButton:hover #favHoverText {
+  visibility: visible;
+  opacity: 1;
+}
+
 /*Styling for blurry-area*/
 
 #blurry-area {
