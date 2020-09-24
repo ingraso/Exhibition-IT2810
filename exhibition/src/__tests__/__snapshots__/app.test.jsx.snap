@@ -16,6 +16,7 @@ exports[`installationInfo snapshot 1`] = `
         id="menu"
       >
         <button
+          class="disabledButton"
           id="displayFavButton"
           type="button"
         >
@@ -41,101 +42,173 @@ exports[`installationInfo snapshot 1`] = `
         <h2
           id="filterTitle"
         >
-          Filter by:
+          Display pictures with:
         </h2>
         <div
           id="filters"
         >
           <div
-            id="filter1"
+            id="paletteFilters"
           >
-            <input
-              id="darkCheckbox"
-              name="dark_filter"
-              type="checkbox"
-            />
-            <label
-              for="darkCheckbox"
+            <h4>
+              Palette:
+            </h4>
+            <div
+              id="filter1"
             >
-               Dark 
-            </label>
+              <input
+                checked=""
+                id="darkCheckbox"
+                name="dark_filter"
+                type="checkbox"
+              />
+              <label
+                for="darkCheckbox"
+              >
+                 Dark 
+              </label>
+            </div>
+            <div
+              id="filter2"
+            >
+              <input
+                checked=""
+                id="lightCheckbox"
+                name="light_filter"
+                type="checkbox"
+              />
+              <label
+                for="lightCheckbox"
+              >
+                 Light 
+              </label>
+            </div>
+            <div
+              id="filter3"
+            >
+              <input
+                checked=""
+                id="colorfulCheckbox"
+                name="colorful_filter"
+                type="checkbox"
+              />
+              <label
+                for="colorfulCheckbox"
+              >
+                 Colorful 
+              </label>
+            </div>
           </div>
-          <br />
           <div
-            id="filter2"
+            id="shapesFilters"
           >
-            <input
-              id="lightCheckbox"
-              name="light_filter"
-              type="checkbox"
-            />
-            <label
-              for="lightCheckbox"
+            <h4>
+              Shapes:
+            </h4>
+            <div
+              id="filter4"
             >
-               Light 
-            </label>
+              <input
+                checked=""
+                id="CirclesCheckbox"
+                name="circles_filter"
+                type="checkbox"
+              />
+              <label
+                for="CirclesCheckbox"
+              >
+                 Circles 
+              </label>
+            </div>
+            <div
+              id="filter5"
+            >
+              <input
+                checked=""
+                id="rectanglesCheckbox"
+                name="rect_filter"
+                type="checkbox"
+              />
+              <label
+                for="rectanglesCheckbox"
+              >
+                 Rectangles 
+              </label>
+            </div>
+            <div
+              id="filter6"
+            >
+              <input
+                checked=""
+                id="complexCheckbox"
+                name="complex_filter"
+                type="checkbox"
+              />
+              <label
+                for="complexCheckbox"
+              >
+                 Complex 
+              </label>
+            </div>
           </div>
-          <br />
           <div
-            id="filter3"
+            id="artistFilters"
           >
-            <input
-              id="colorfulCheckbox"
-              name="colorful_filter"
-              type="checkbox"
-            />
-            <label
-              for="colorfulCheckbox"
+            <h4>
+              Artist:
+            </h4>
+            <div
+              id="filter7"
             >
-               Colorful 
-            </label>
-          </div>
-          <br />
-          <div
-            id="filter4"
-          >
-            <input
-              id="CirclesCheckbox"
-              name="circles_filter"
-              type="checkbox"
-            />
-            <label
-              for="CirclesCheckbox"
+              <input
+                checked=""
+                id="cassattCheckbox"
+                name="cassatt_filter"
+                type="checkbox"
+              />
+              <label
+                for="cassattCheckbox"
+              >
+                 Mary Cassatt 
+              </label>
+            </div>
+            <div
+              id="filter8"
             >
-               Circles 
-            </label>
-          </div>
-          <br />
-          <div
-            id="filter5"
-          >
-            <input
-              id="rectanglesCheckbox"
-              name="rect_filter"
-              type="checkbox"
-            />
-            <label
-              for="rectanglesCheckbox"
+              <input
+                checked=""
+                id="kinsonCheckbox"
+                name="kinson_filter"
+                type="checkbox"
+              />
+              <label
+                for="kinsonCheckbox"
+              >
+                 Milly Kinson 
+              </label>
+            </div>
+            <div
+              id="filter9"
             >
-               Rectangles 
-            </label>
-          </div>
-          <br />
-          <div
-            id="filter6"
-          >
-            <input
-              id="figuresCheckbox"
-              name="figures_filter"
-              type="checkbox"
-            />
-            <label
-              for="figuresCheckbox"
-            >
-               Figures 
-            </label>
+              <input
+                checked=""
+                id="crowCheckbox"
+                name="crow_filter"
+                type="checkbox"
+              />
+              <label
+                for="crowCheckbox"
+              >
+                 A Literal Crow 
+              </label>
+            </div>
           </div>
         </div>
+        <button
+          id="apply_btn"
+        >
+          Apply filters
+        </button>
       </div>
       <div
         class="closed"
@@ -156,7 +229,8 @@ exports[`installationInfo snapshot 1`] = `
       id="carousel"
     >
       <div
-        class="arrows left"
+        class="arrows allowedArrow"
+        id="left"
       >
         <div
           class="leftArrow"
@@ -269,7 +343,7 @@ exports[`installationInfo snapshot 1`] = `
           id="starButton"
         >
           <span
-            class="filledStar"
+            class=""
             id="star"
           >
             ☆
@@ -277,7 +351,8 @@ exports[`installationInfo snapshot 1`] = `
         </button>
       </div>
       <div
-        class="arrows right"
+        class="arrows allowedArrow"
+        id="right"
       >
         <div
           class="rightArrow"
