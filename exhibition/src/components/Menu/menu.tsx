@@ -52,6 +52,7 @@ const Menu = ({
           type="button"
         >
           Only display favorites
+          <span id="favHoverText">You don't have any favorites yet!</span>
         </button>
         <div id="close-button" onClick={() => setOpen(!open)}>
           <div className="line-one">
@@ -69,6 +70,9 @@ const Menu = ({
         </div>
         <button id="apply_btn" onClick={applyButtonClick}>
           Apply filters
+          <span id="filterHoverText">
+            No installations fit the chosen filters
+          </span>
         </button>
       </div>
       <div
