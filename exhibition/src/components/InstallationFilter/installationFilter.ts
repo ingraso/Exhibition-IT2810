@@ -79,7 +79,6 @@ export const applyFilters = () => {
  */
 
 export const applyPossible = () => {
-  console.log("Running applyPossible");
   checkSessionStorage();
   let tags: string[] = JSON.parse(
     window.sessionStorage.getItem("notAppliedTags")!!
