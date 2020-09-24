@@ -68,7 +68,7 @@ const Menu = ({
           <FilterGroup divId="shapesFilters" groupName="Shapes" />
           <FilterGroup divId="artistFilters" groupName="Artist" />
         </div>
-        <button id="apply_btn" onClick={applyButtonClick}>
+        <button id="apply_btn" className="allowedButton" onClick={applyButtonClick}>
           Apply filters
           <span id="filterHoverText">
             No installations fit the chosen filters
