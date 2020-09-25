@@ -89,7 +89,6 @@ Application on phone in landscape mode with open menu:
 
 <img src="images/phone_landscape_menu.jpg" alt="Picture of our application on a phone in landscape mode with an open menu" width="60%" />
 
-
 ## Issues and git
 
 Issues in GitLab were used to keep track of which tasks were available, ongoing and done. These were visualized through using the Issue Board functionality, with an additional column, “Code Review” including issues with an open merge request. We also had the policy that each request had to be reviewed by one other person and the convention that all branches correspond to an issue.
