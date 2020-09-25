@@ -19,17 +19,22 @@ import FilterGroup from "../FilterGroup/filterGroup";
  */
 
 const Menu = ({
-  favOnClick,
+  displayFav,
   filterOnClick,
+  displayAll,
 }: {
-  favOnClick: any;
+  displayFav: any;
   filterOnClick: any;
+  displayAll: any;
 }) => {
   const [open, setOpen] = useState(false);
 
   const favButtonClick = () => {
     if (favoriteInstallationIds.length > 0) {
-      favOnClick();
+      displayFav();
+      setOpen(!open);
+    } else if (displayFav && favoriteInstallationIds.length === 0) {
+      displayAll();
       setOpen(!open);
     }
   };
@@ -52,7 +57,7 @@ const Menu = ({
           type="button"
         >
           Only display favorites
-          <span id="favHoverText">You don't have any favorites yet</span>
+          <span id="favHoverText">You don't have any favorites yet!</span>
         </button>
         <div id="close-button" onClick={() => setOpen(!open)}>
           <div className="line-one">
@@ -68,7 +73,11 @@ const Menu = ({
           <FilterGroup divId="shapesFilters" groupName="Shapes" />
           <FilterGroup divId="artistFilters" groupName="Artist" />
         </div>
-        <button id="apply_btn" className="allowedButton" onClick={applyButtonClick}>
+        <button
+          id="apply_btn"
+          className="allowedButton"
+          onClick={applyButtonClick}
+        >
           Apply filters
           <span id="filterHoverText">
             No installations fit the chosen filters

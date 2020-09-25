@@ -19,7 +19,7 @@ ContextBasedApp returns the App component as a context provider and is at the to
 
 
 ## SVG
-The art in the installations are saved as an array with classes from shapes.tsx. The shape-classes accept parameters to specify properties like id, coordinates, and color. When the create<shape>() function is called the components return SVG-objects, which can then be styled and animated in the associated installation’s CSS-file.
+The art in the installations are saved as an array with classes from shapes.tsx. The shape-classes accept parameters to specify properties like id, coordinates, and color. When the create<shape\>() function is called the components return SVG-objects, which can then be styled and animated in the associated installation’s CSS-file.
 
 
 ## Ajax
