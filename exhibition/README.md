@@ -23,7 +23,7 @@ The art in the installations are saved as an array with classes from shapes.tsx.
 
 
 ## Ajax
-The fetch() method was used to retrieve the specified poem in JSON format from PoetryDB, which was then used to update the state of the Poetry component. To avoid complications with asynchronous functions, the then() function was used. The URLs all follow this structure: "https://poetrydb.org/title/\<poemTitle\>/lines.json". 
+The fetch() method was used to retrieve the specified poem in JSON format from PoetryDB, which was then used to update the state of the Poetry component. To avoid complications with asynchronous functions, the then() function was used. The URLs all follow this structure: "https://poetrydb.org/title/<poemTitle\>/lines.json". 
 
 The audio was implemented using the HTML audio-tag, and downloaded from [fesliyanstudios](https://www.fesliyanstudios.com) and [soundclick](https://www.soundclick.com). Soundclick allows you to download music for educational purposes like this, and fesliyanstudios allows the use of their music and sound effects in any non-commercial project. We chose to store the music with Google Drive and used a URL in the audio-tag to play the music, as explained [here](https://stackoverflow.com/questions/32392072/how-to-play-google-drive-mp3-file-using-html-audio-tag).
 
@@ -44,9 +44,9 @@ Our installations’ SVG figures were positioned using percentage in CSS, except
 
 ## Node.js and NPM
 The project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the TypeScript template. Since we developed locally, these commands have been used:
-### npm install
-### npm start
-### npm test
+##### npm install
+##### npm start
+##### npm test
 
 
 ## Testing
