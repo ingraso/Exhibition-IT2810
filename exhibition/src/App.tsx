@@ -16,6 +16,7 @@ import { useInstallationIndex } from "./state/installationIndexContext";
  *    the carousel from the first element after a display
  *    change.
  */
+
 function App() {
   const [displayFav, setDisplayFav] = useState(false);
   const [updateFilters, setUpdateFilters] = useState(true);
@@ -27,10 +28,14 @@ function App() {
 
       setDisplayFav(!displayFav);
       updateFavButton();
-    } else {
-      alert("You don't have any favorites yet!");
     }
   };
+
+  const displayAllInstallations = () => {
+    setInstallationIndex(0);
+    setDisplayFav(false);
+    updateFavButton();
+  }
 
   const updateFilteredIndex = () => {
     if (installationIndex === 0) setUpdateFilters(!updateFilters);
@@ -63,7 +68,11 @@ function App() {
   return (
     <div>
       <Header />
-      <Menu favOnClick={displayFavorites} filterOnClick={updateFilteredIndex} />
+      <Menu
+        displayFav={displayFavorites}
+        displayAll = {displayAllInstallations}
+        filterOnClick={updateFilteredIndex}
+      />
       <Carousel
         displayOnlyFavorites={displayFav}
         updateFilters={updateFilters}
