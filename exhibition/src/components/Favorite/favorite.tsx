@@ -1,4 +1,5 @@
 import React from "react";
+import { Installation } from "../../installations/installations";
 
 // an array containing all the favorited installations' ids
 export let favoriteInstallationIds = [];
@@ -8,8 +9,9 @@ interface FavoriteButtonState {
 }
 
 interface FavoriteButtonProps {
-  installation: any;
+  installation: Installation;
   updateStarCarousel: any;
+  updateFavorites: any;
 }
 
 /**
@@ -18,10 +20,12 @@ interface FavoriteButtonProps {
  *
  * @var favoriteIds is an array of all the favorited
  *    installations' ids.
- * @var installation contains all info about an
+ * @param installation contains all info about an
  *    installation, like its id.
- * @var updateStarCarousel is the updateStar function
- *    from carousel.tsx
+ * @param updateStarCarousel is a function to update
+ *    the star.
+ * @param updateFavorites is a function to update
+ *    the list of favorite installations.
  */
 
 class FavoriteButton extends React.Component<
@@ -55,6 +59,7 @@ class FavoriteButton extends React.Component<
             window.localStorage.getItem("favoriteIds")!!
           );
           this.props.updateStarCarousel();
+          this.props.updateFavorites();
         }
       );
     } else {
@@ -73,6 +78,7 @@ class FavoriteButton extends React.Component<
             window.localStorage.getItem("favoriteIds")!!
           );
           this.props.updateStarCarousel();
+          this.props.updateFavorites();
         }
       );
     }
@@ -87,9 +93,7 @@ class FavoriteButton extends React.Component<
 
     return (
       <button id="starButton" onClick={this.addFavorite}>
-        <span id="star" className="">
-          {"\u2606"}
-        </span>
+        <span id="star">{"\u2606"}</span>
       </button>
     );
   }

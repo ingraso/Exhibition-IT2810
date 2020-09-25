@@ -24,6 +24,7 @@ import {
 interface CarouselProps {
   displayOnlyFavorites: Boolean;
   updateFilters: Boolean;
+  updateFavorites: any;
 }
 
 let currentInstallations = filteredInstallations;
@@ -34,11 +35,13 @@ let currentInstallations = filteredInstallations;
  * displayed and can display installations based on filters
  * or favorites.
  *
- * @var displayOnlyFavorites is a boolean representing
+ * @param displayOnlyFavorites is a boolean representing
  *    whether favorited or filtered installations are
  *    displayed.
- * @var updateFilters is a boolean saying that when the
+ * @param updateFilters is a boolean saying that when the
  *    filters are applied they should be updated.
+ * @param updateFavorites is a function to update
+ *    the list of favorite installations.
  */
 
 class Carousel extends React.Component<CarouselProps, {}> {
@@ -86,9 +89,7 @@ class Carousel extends React.Component<CarouselProps, {}> {
     );
   }
 
-  render() {
-    const { installationIndex, setInstallationIndex } = this.context;
-
+  updateCurrentInstallations = () => {
     if (this.props.displayOnlyFavorites) {
       currentInstallations = favoriteInstallationIds.map(
         (favInstallationId) =>
@@ -100,13 +101,18 @@ class Carousel extends React.Component<CarouselProps, {}> {
     } else {
       currentInstallations = filteredInstallations;
     }
+  };
+
+  render() {
+    const { installationIndex, setInstallationIndex } = this.context;
+
+    this.updateCurrentInstallations();
 
     const currentInstallation = currentInstallations[installationIndex];
 
     const changeInstallation = (next: Boolean) => {
-      if (!this.props.displayOnlyFavorites) {
-        currentInstallations = filteredInstallations;
-      }
+      this.updateCurrentInstallations();
+
       if (next) {
         installationIndex >= currentInstallations.length - 1
           ? setInstallationIndex(0)
@@ -140,6 +146,7 @@ class Carousel extends React.Component<CarouselProps, {}> {
           <FavoriteButton
             installation={currentInstallation}
             updateStarCarousel={this.updateStar}
+            updateFavorites={this.props.updateFavorites}
           />
         </div>
         <div

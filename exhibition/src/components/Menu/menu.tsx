@@ -19,22 +19,17 @@ import FilterGroup from "../FilterGroup/filterGroup";
  */
 
 const Menu = ({
-  displayFav,
+  favOnClick,
   filterOnClick,
-  displayAll,
 }: {
-  displayFav: any;
+  favOnClick: any;
   filterOnClick: any;
-  displayAll: any;
 }) => {
   const [open, setOpen] = useState(false);
 
   const favButtonClick = () => {
     if (favoriteInstallationIds.length > 0) {
-      displayFav();
-      setOpen(!open);
-    } else if (displayFav && favoriteInstallationIds.length === 0) {
-      displayAll();
+      favOnClick();
       setOpen(!open);
     }
   };

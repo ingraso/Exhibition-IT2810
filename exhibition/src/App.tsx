@@ -20,12 +20,12 @@ import { useInstallationIndex } from "./state/installationIndexContext";
 function App() {
   const [displayFav, setDisplayFav] = useState(false);
   const [updateFilters, setUpdateFilters] = useState(true);
+  const [updateFavorites, setUpdateFavorites] = useState(false);
   const { installationIndex, setInstallationIndex } = useInstallationIndex();
 
   const displayFavorites = () => {
     if (favoriteInstallationIds.length > 0) {
       setInstallationIndex(0);
-
       setDisplayFav(!displayFav);
       updateFavButton();
     }
@@ -35,7 +35,7 @@ function App() {
     setInstallationIndex(0);
     setDisplayFav(false);
     updateFavButton();
-  }
+  };
 
   const updateFilteredIndex = () => {
     if (installationIndex === 0) setUpdateFilters(!updateFilters);
@@ -55,6 +55,20 @@ function App() {
     }
   };
 
+  const updateDisplayedFavorites = () => {
+    if (displayFav && favoriteInstallationIds.length === 0) {
+      alert("You have no more favorites </3 \n\nDisplaying all installations.");
+      displayAllInstallations();
+    } else if (
+      displayFav &&
+      installationIndex >= favoriteInstallationIds.length
+    ) {
+      setInstallationIndex(favoriteInstallationIds.length - 1);
+    }
+
+    setUpdateFavorites(!updateFavorites);
+  };
+
   const displayFavButton = document.getElementById("displayFavButton");
 
   if (favoriteInstallationIds.length === 0) {
@@ -68,14 +82,11 @@ function App() {
   return (
     <div>
       <Header />
-      <Menu
-        displayFav={displayFavorites}
-        displayAll = {displayAllInstallations}
-        filterOnClick={updateFilteredIndex}
-      />
+      <Menu favOnClick={displayFavorites} filterOnClick={updateFilteredIndex} />
       <Carousel
         displayOnlyFavorites={displayFav}
         updateFilters={updateFilters}
+        updateFavorites={updateDisplayedFavorites}
       />
     </div>
   );
