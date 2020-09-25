@@ -57,9 +57,9 @@ We have created a snapshot test of our application that will only pass if the co
 
 Our application has been tested in Google Chrome, Edge and Firefox. The only differences we found was that the checkboxes and audio controller have different appearances in the different browsers, and the blur covering most of the page when the menu is open does not work in Firefox (but there is still a transparent white box covering the page). However neither of these things affect the user experience.
 
-We checked that the application looked good on different screen sizes using the device toolbar in the console, and also checked on our own computers and phones as well, through GitPod. The website looked good on computers, iPhone 7 and Huawei P30 Pro.
+We checked that the application looked good on different screen sizes using the device toolbar in the console, and also checked on our own computers, pads and phones as well, through GitPod. The website looked good on computers, pads, iPhone 7 and Motorola One Vision.
 
-This is what the application looked like on our different devices:
+This is what the application looked like on our different devices: (Click on an image to expand it)
 
 Application on computer:
 
