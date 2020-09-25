@@ -89,9 +89,7 @@ class Carousel extends React.Component<CarouselProps, {}> {
     );
   }
 
-  render() {
-    const { installationIndex, setInstallationIndex } = this.context;
-
+  updateCurrentInstallations = () => {
     if (this.props.displayOnlyFavorites) {
       currentInstallations = favoriteInstallationIds.map(
         (favInstallationId) =>
@@ -103,18 +101,17 @@ class Carousel extends React.Component<CarouselProps, {}> {
     } else {
       currentInstallations = filteredInstallations;
     }
+  };
+
+  render() {
+    const { installationIndex, setInstallationIndex } = this.context;
+
+    this.updateCurrentInstallations();
 
     const currentInstallation = currentInstallations[installationIndex];
 
     const changeInstallation = (next: Boolean) => {
-      if (!this.props.displayOnlyFavorites) {
-        currentInstallations = filteredInstallations;
-      } else {
-        currentInstallations = favoriteInstallationIds.map(
-          (favInstallationId) =>
-            allInstallations.filter((inst) => inst.id === favInstallationId)[0]
-        );
-      }
+      this.updateCurrentInstallations();
 
       if (next) {
         installationIndex >= currentInstallations.length - 1
