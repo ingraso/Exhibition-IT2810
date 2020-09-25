@@ -58,6 +58,27 @@ We checked that the application looked good on different screen sizes using the 
 
 This is what the application looked like on our different devices: 
 
+Application on computer:  
+![Picture of our application on a computer](assignment2_computer.png "Application on computer")
+
+Application on computer with open menu:  
+![Picture of our application on a computer with an open menu](assignment2_computer_menu.png "Application on computer with open menu")
+
+Application on iPad in portrait mode with an open menu:  
+![Picture of our application on an iPad in portrait mode with an open menu](ipad_portrait_menu.jpg "Application on iPad in portrait mode with an open menu")
+
+Application on phone in portrait mode:  
+![Picture of our application on a phone in portrait mode](phone_portrait.jpg "Application on phone in portrait mode")
+
+Application on phone in portrait mode with open menu:  
+![Picture of our application on a phone in portrait mode with an open menu](phone_portrait_menu.jpg "Application on phone in portrait mode with open menu")
+
+Application on phone in landscape mode:  
+![Picture of our application on a phone in landscape mode](phone_landscape.jpg "Application on phone in landscape mode")
+
+Application on phone in landscape mode with open menu:  
+![Picture of our application on a phone in landscape mode with an open menu](phone_landscape_menu.jpg "Application on phone in landscape mode with open menu")
+
 
 ## Issues and git
 Issues in GitLab were used to keep track of which tasks were available, ongoing and done. These were visualized through using the Issue Board functionality, with an additional column, “Code Review” including issues with an open merge request. We also had the policy that each request had to be reviewed by one other person and the convention that all branches correspond to an issue. 
