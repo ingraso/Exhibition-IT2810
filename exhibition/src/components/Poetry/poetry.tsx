@@ -13,8 +13,8 @@ interface PoetryProps {
 /**
  * Poetry is a component that makes a fetch call to the given url,
  * then parses and returns the poem it found.
- * @var id is the identifying string linking it to the correct installation
- * @var url is the url the fetch call is made on.
+ * @param id is the identifying string linking it to the correct installation
+ * @param url is the url the fetch call is made on.
  */
 
 class Poetry extends React.Component<PoetryProps, PoetryState> {
@@ -22,26 +22,31 @@ class Poetry extends React.Component<PoetryProps, PoetryState> {
     super(props);
     this.state = {
       txt: [],
-      id: this.props.id,
+      id: "",
     };
     this.fetchPoetry = this.fetchPoetry.bind(this);
   }
 
   fetchPoetry() {
-    fetch(this.props.url)
-      .then((response) => response.json())
-      .then((poem) => {
-        this.setState({ txt: poem[0].lines });
-      });
-    this.setState({ id: this.props.id });
+    if (this.props.id !== this.state.id) {
+      fetch(this.props.url)
+        .then((response) => response.json())
+        .then((poem) => {
+          this.setState({txt: poem[0].lines});
+        });
+      this.setState({id: this.props.id});
+    }
   }
 
   componentDidMount() {
     this.fetchPoetry();
   }
 
+  componentDidUpdate() {
+    this.fetchPoetry();
+  }
+
   render() {
-    if (this.props.id !== this.state.id) this.fetchPoetry();
     return (
       <div id={this.props.id} className={"poem"}>
         {this.state.txt.map((poemLine, index) => (
