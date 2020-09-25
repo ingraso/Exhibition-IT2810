@@ -21,6 +21,11 @@ exports[`installationInfo snapshot 1`] = `
           type="button"
         >
           Only display favorites
+          <span
+            id="favHoverText"
+          >
+            You don't have any favorites yet!
+          </span>
         </button>
         <div
           id="close-button"
@@ -51,7 +56,8 @@ exports[`installationInfo snapshot 1`] = `
             id="paletteFilters"
           >
             <h4>
-              Palette:
+              Palette
+              :
             </h4>
             <div
               id="filter1"
@@ -65,7 +71,9 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="darkCheckbox"
               >
-                 Dark 
+                 
+                Dark
+                 
               </label>
             </div>
             <div
@@ -80,7 +88,9 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="lightCheckbox"
               >
-                 Light 
+                 
+                Light
+                 
               </label>
             </div>
             <div
@@ -95,7 +105,9 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="colorfulCheckbox"
               >
-                 Colorful 
+                 
+                Colorful
+                 
               </label>
             </div>
           </div>
@@ -103,7 +115,8 @@ exports[`installationInfo snapshot 1`] = `
             id="shapesFilters"
           >
             <h4>
-              Shapes:
+              Shapes
+              :
             </h4>
             <div
               id="filter4"
@@ -117,7 +130,9 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="CirclesCheckbox"
               >
-                 Circles 
+                 
+                Circles
+                 
               </label>
             </div>
             <div
@@ -132,7 +147,9 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="rectanglesCheckbox"
               >
-                 Rectangles 
+                 
+                Rectangles
+                 
               </label>
             </div>
             <div
@@ -147,7 +164,9 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="complexCheckbox"
               >
-                 Complex 
+                 
+                Complex
+                 
               </label>
             </div>
           </div>
@@ -155,7 +174,8 @@ exports[`installationInfo snapshot 1`] = `
             id="artistFilters"
           >
             <h4>
-              Artist:
+              Artist
+              :
             </h4>
             <div
               id="filter7"
@@ -169,7 +189,9 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="cassattCheckbox"
               >
-                 Mary Cassatt 
+                 
+                Mary Cassatt
+                 
               </label>
             </div>
             <div
@@ -184,7 +206,9 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="kinsonCheckbox"
               >
-                 Milly Kinson 
+                 
+                Milly Kinson
+                 
               </label>
             </div>
             <div
@@ -199,15 +223,23 @@ exports[`installationInfo snapshot 1`] = `
               <label
                 for="crowCheckbox"
               >
-                 A Literal Crow 
+                 
+                A Literal Crow
+                 
               </label>
             </div>
           </div>
         </div>
         <button
+          class="allowedButton"
           id="apply_btn"
         >
           Apply filters
+          <span
+            id="filterHoverText"
+          >
+            No installations fit the chosen filters
+          </span>
         </button>
       </div>
       <div
@@ -343,7 +375,6 @@ exports[`installationInfo snapshot 1`] = `
           id="starButton"
         >
           <span
-            class=""
             id="star"
           >
             ☆
